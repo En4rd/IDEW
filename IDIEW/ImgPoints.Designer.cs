@@ -39,6 +39,7 @@
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.guna2CircleButton3 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2ShadowPanel2 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.guna2CircleButton4 = new Guna.UI2.WinForms.Guna2CircleButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.guna2ShadowPanel1.SuspendLayout();
             this.guna2ShadowPanel2.SuspendLayout();
@@ -148,6 +149,7 @@
             // guna2ShadowPanel1
             // 
             this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel1.Controls.Add(this.guna2CircleButton4);
             this.guna2ShadowPanel1.Controls.Add(this.guna2CircleButton3);
             this.guna2ShadowPanel1.Controls.Add(this.BtnEliminarPunto);
             this.guna2ShadowPanel1.Controls.Add(this.guna2CircleButton1);
@@ -157,7 +159,7 @@
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.Radius = 5;
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(380, 109);
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(484, 109);
             this.guna2ShadowPanel1.TabIndex = 8;
             // 
             // guna2CircleButton3
@@ -191,6 +193,22 @@
             this.guna2ShadowPanel2.Size = new System.Drawing.Size(230, 109);
             this.guna2ShadowPanel2.TabIndex = 9;
             // 
+            // guna2CircleButton4
+            // 
+            this.guna2CircleButton4.CheckedState.Parent = this.guna2CircleButton4;
+            this.guna2CircleButton4.CustomImages.Parent = this.guna2CircleButton4;
+            this.guna2CircleButton4.FillColor = System.Drawing.Color.White;
+            this.guna2CircleButton4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2CircleButton4.ForeColor = System.Drawing.Color.White;
+            this.guna2CircleButton4.HoverState.Parent = this.guna2CircleButton4;
+            this.guna2CircleButton4.Location = new System.Drawing.Point(384, 19);
+            this.guna2CircleButton4.Name = "guna2CircleButton4";
+            this.guna2CircleButton4.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleButton4.ShadowDecoration.Parent = this.guna2CircleButton4;
+            this.guna2CircleButton4.Size = new System.Drawing.Size(74, 72);
+            this.guna2CircleButton4.TabIndex = 9;
+            this.guna2CircleButton4.Click += new System.EventHandler(this.guna2CircleButton4_Click);
+            // 
             // ImgPoints
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -222,5 +240,6 @@
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton3;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel2;
+        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton4;
     }
 }

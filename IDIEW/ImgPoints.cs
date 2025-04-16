@@ -26,6 +26,8 @@ namespace IDIEW
         private bool modoEditarNumero = false;
         private Color ElipseColor = Color.Blue;
         private Font Elipsefont = new Font("Arial", 12);
+        private Color colorfontdialogs = Color.White;
+        
 
 
         public ImgPoints(Panel panelContenedor)
@@ -51,6 +53,8 @@ namespace IDIEW
                 g.ScaleTransform(zoom, zoom);
                 g.DrawImage(originalImage, Point.Empty);
 
+
+                SolidBrush brush = new SolidBrush(colorfontdialogs);
                 using (Brush redBrush = new SolidBrush(ElipseColor))
                 using (Font font = new Font("Arial", 3))
                 {
@@ -60,7 +64,7 @@ namespace IDIEW
                         int index = item.Item2;
 
                         g.FillEllipse(redBrush, point.X - 5, point.Y - 5, 10,10);
-                        g.DrawString(index.ToString(), Elipsefont, Brushes.White, point.X-4, point.Y - 3);
+                        g.DrawString(index.ToString(), font, brush, point.X-4, point.Y - 3);
                     }
                 }
             }
@@ -233,6 +237,7 @@ namespace IDIEW
             {
                 g.DrawImage(originalImage, Point.Empty);
 
+                SolidBrush brush = new SolidBrush(colorfontdialogs);
                 using (Brush redBrush = new SolidBrush(Color.Red))
                 using (Font font = new Font("Arial", 7))
                 {
@@ -242,7 +247,7 @@ namespace IDIEW
                         int index = tuple.Item2;
 
                         g.FillEllipse(redBrush, point.X-5, point.Y-5, 10, 10);
-                        g.DrawString(index.ToString(), font, Brushes.White, point.X, point.Y);
+                        g.DrawString(index.ToString(), font, brush, point.X, point.Y);
                     }
                 }
             }
@@ -279,6 +284,17 @@ namespace IDIEW
                 if (FontDialog.ShowDialog() == DialogResult.OK)
                 {
                     Elipsefont = FontDialog.Font;
+                }
+            }
+        }
+
+        private void guna2CircleButton4_Click(object sender, EventArgs e)
+        {
+            using (ColorDialog ColorfontDialog = new ColorDialog())
+            {
+                if (ColorfontDialog.ShowDialog() == DialogResult.OK)
+                {
+                    colorfontdialogs = ColorfontDialog.Color;
                 }
             }
         }
