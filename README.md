@@ -13,7 +13,7 @@
 1. [Próximas Características](#próximas-características)
 2. [Requisitos](#requisitos)
 3. [Instalación](#instalación)
-4. [Bugs o correciones](#bugs o correciones)
+4. [Bugs o correciones](#bugs-o-correciones)
 
 ## Próximas Características
 
