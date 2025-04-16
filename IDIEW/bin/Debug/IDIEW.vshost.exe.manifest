@@ -66,14 +66,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="IDIEW.exe" size="93184">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="IDIEW.exe" size="93696">
       <assemblyIdentity name="IDIEW" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>qnictlGyYE5/YDPep0DgTKunajtelnKsprU7F9ivo2o=</dsig:DigestValue>
+        <dsig:DigestValue>MOs2z+qGghYv/sOKIExJ/8v2PiMlkJGQ0m0tm/n4wT4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

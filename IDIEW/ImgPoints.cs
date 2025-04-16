@@ -27,7 +27,6 @@ namespace IDIEW
         private Color ElipseColor = Color.Blue;
         private Font Elipsefont = new Font("Arial", 12);
         private Color colorfontdialogs = Color.White;
-        
 
 
         public ImgPoints(Panel panelContenedor)
@@ -294,6 +293,7 @@ namespace IDIEW
             {
                 if (ColorfontDialog.ShowDialog() == DialogResult.OK)
                 {
+                    guna2CircleButton4.FillColor = ColorfontDialog.Color;
                     colorfontdialogs = ColorfontDialog.Color;
                 }
             }
