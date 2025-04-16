@@ -66,3 +66,34 @@ D:\IDIEW\IDIEW\obj\Debug\IDIEW.ImgPoints.resources
 D:\IDIEW\IDIEW\obj\Debug\IDIEW.csproj.AssemblyReference.cache
 D:\IDIEW\IDIEW\obj\Debug\IDIEW.csproj.CoreCompileInputs.cache
 D:\IDIEW\IDIEW\obj\Debug\IDIEW.csproj.Up2Date
+C:\Users\dell\Desktop\JOSE PEREZ\USB\PROGRAMAS INTALADOS\VISUAL STUDIO\GitHub\IDEW-main\IDEW\IDIEW\bin\Debug\IDIEW.exe.config
+C:\Users\dell\Desktop\JOSE PEREZ\USB\PROGRAMAS INTALADOS\VISUAL STUDIO\GitHub\IDEW-main\IDEW\IDIEW\obj\Debug\IDIEW.exe
+C:\Users\dell\Desktop\JOSE PEREZ\USB\PROGRAMAS INTALADOS\VISUAL STUDIO\GitHub\IDEW-main\IDEW\IDIEW\obj\Debug\IDIEW.pdb
+C:\Users\dell\Desktop\JOSE PEREZ\USB\PROGRAMAS INTALADOS\VISUAL STUDIO\GitHub\IDEW-main\IDEW\IDIEW\bin\Debug\IDIEW.exe.manifest
+C:\Users\dell\Desktop\JOSE PEREZ\USB\PROGRAMAS INTALADOS\VISUAL STUDIO\GitHub\IDEW-main\IDEW\IDIEW\bin\Debug\IDIEW.application
+C:\Users\dell\Desktop\JOSE PEREZ\USB\PROGRAMAS INTALADOS\VISUAL STUDIO\GitHub\IDEW-main\IDEW\IDIEW\bin\Debug\IDIEW.exe
+C:\Users\dell\Desktop\JOSE PEREZ\USB\PROGRAMAS INTALADOS\VISUAL STUDIO\GitHub\IDEW-main\IDEW\IDIEW\bin\Debug\IDIEW.pdb
+C:\Users\dell\Desktop\JOSE PEREZ\USB\PROGRAMAS INTALADOS\VISUAL STUDIO\GitHub\IDEW-main\IDEW\IDIEW\bin\Debug\FireSharp.dll
+C:\Users\dell\Desktop\JOSE PEREZ\USB\PROGRAMAS INTALADOS\VISUAL STUDIO\GitHub\IDEW-main\IDEW\IDIEW\bin\Debug\Microsoft.Threading.Tasks.dll
+C:\Users\dell\Desktop\JOSE PEREZ\USB\PROGRAMAS INTALADOS\VISUAL STUDIO\GitHub\IDEW-main\IDEW\IDIEW\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+C:\Users\dell\Desktop\JOSE PEREZ\USB\PROGRAMAS INTALADOS\VISUAL STUDIO\GitHub\IDEW-main\IDEW\IDIEW\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll
+C:\Users\dell\Desktop\JOSE PEREZ\USB\PROGRAMAS INTALADOS\VISUAL STUDIO\GitHub\IDEW-main\IDEW\IDIEW\bin\Debug\Newtonsoft.Json.dll
+C:\Users\dell\Desktop\JOSE PEREZ\USB\PROGRAMAS INTALADOS\VISUAL STUDIO\GitHub\IDEW-main\IDEW\IDIEW\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\dell\Desktop\JOSE PEREZ\USB\PROGRAMAS INTALADOS\VISUAL STUDIO\GitHub\IDEW-main\IDEW\IDIEW\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\dell\Desktop\JOSE PEREZ\USB\PROGRAMAS INTALADOS\VISUAL STUDIO\GitHub\IDEW-main\IDEW\IDIEW\bin\Debug\Microsoft.Threading.Tasks.xml
+C:\Users\dell\Desktop\JOSE PEREZ\USB\PROGRAMAS INTALADOS\VISUAL STUDIO\GitHub\IDEW-main\IDEW\IDIEW\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
+C:\Users\dell\Desktop\JOSE PEREZ\USB\PROGRAMAS INTALADOS\VISUAL STUDIO\GitHub\IDEW-main\IDEW\IDIEW\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+C:\Users\dell\Desktop\JOSE PEREZ\USB\PROGRAMAS INTALADOS\VISUAL STUDIO\GitHub\IDEW-main\IDEW\IDIEW\bin\Debug\Newtonsoft.Json.xml
+C:\Users\dell\Desktop\JOSE PEREZ\USB\PROGRAMAS INTALADOS\VISUAL STUDIO\GitHub\IDEW-main\IDEW\IDIEW\bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\dell\Desktop\JOSE PEREZ\USB\PROGRAMAS INTALADOS\VISUAL STUDIO\GitHub\IDEW-main\IDEW\IDIEW\bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\dell\Desktop\JOSE PEREZ\USB\PROGRAMAS INTALADOS\VISUAL STUDIO\GitHub\IDEW-main\IDEW\IDIEW\obj\Debug\IDIEW.csproj.App.config
+C:\Users\dell\Desktop\JOSE PEREZ\USB\PROGRAMAS INTALADOS\VISUAL STUDIO\GitHub\IDEW-main\IDEW\IDIEW\obj\Debug\IDIEW.csprojResolveAssemblyReference.cache
+C:\Users\dell\Desktop\JOSE PEREZ\USB\PROGRAMAS INTALADOS\VISUAL STUDIO\GitHub\IDEW-main\IDEW\IDIEW\obj\Debug\IDIEW.add_profile.resources
+C:\Users\dell\Desktop\JOSE PEREZ\USB\PROGRAMAS INTALADOS\VISUAL STUDIO\GitHub\IDEW-main\IDEW\IDIEW\obj\Debug\IDIEW.Form1.resources
+C:\Users\dell\Desktop\JOSE PEREZ\USB\PROGRAMAS INTALADOS\VISUAL STUDIO\GitHub\IDEW-main\IDEW\IDIEW\obj\Debug\IDIEW.Form2.resources
+C:\Users\dell\Desktop\JOSE PEREZ\USB\PROGRAMAS INTALADOS\VISUAL STUDIO\GitHub\IDEW-main\IDEW\IDIEW\obj\Debug\IDIEW.ImgPoints.resources
+C:\Users\dell\Desktop\JOSE PEREZ\USB\PROGRAMAS INTALADOS\VISUAL STUDIO\GitHub\IDEW-main\IDEW\IDIEW\obj\Debug\IDIEW.Main_form.resources
+C:\Users\dell\Desktop\JOSE PEREZ\USB\PROGRAMAS INTALADOS\VISUAL STUDIO\GitHub\IDEW-main\IDEW\IDIEW\obj\Debug\IDIEW.Properties.Resources.resources
+C:\Users\dell\Desktop\JOSE PEREZ\USB\PROGRAMAS INTALADOS\VISUAL STUDIO\GitHub\IDEW-main\IDEW\IDIEW\obj\Debug\IDIEW.csproj.GenerateResource.Cache
+C:\Users\dell\Desktop\JOSE PEREZ\USB\PROGRAMAS INTALADOS\VISUAL STUDIO\GitHub\IDEW-main\IDEW\IDIEW\obj\Debug\IDIEW.exe.manifest
+C:\Users\dell\Desktop\JOSE PEREZ\USB\PROGRAMAS INTALADOS\VISUAL STUDIO\GitHub\IDEW-main\IDEW\IDIEW\obj\Debug\IDIEW.application

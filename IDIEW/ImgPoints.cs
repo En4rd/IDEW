@@ -24,8 +24,8 @@ namespace IDIEW
         private bool isPanning = false;
         private bool modoEliminar = false;
         private bool modoEditarNumero = false;
-        private Color ElipseColor;
-        private Font Elipsefont;
+        private Color ElipseColor = Color.Blue;
+        private Font Elipsefont = new Font("Arial", 12);
 
 
         public ImgPoints(Panel panelContenedor)
