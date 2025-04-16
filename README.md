@@ -1,7 +1,12 @@
-Actualizaciones posibles
+# Nombre del Proyecto
 
-*-Agregar boton de modificacion de tamaño
-*-Modificar guardado de fotos
-*-Centrar texto en elipses
-*-Boton de centar imagen
-*-Color por defecto en botones
+Una breve descripción de lo que hace el proyecto.
+
+## Tabla de Contenidos
+
+1. [Descripción](#descripción)
+2. [Instalación](#instalación)
+3. [Uso](#uso)
+4. [Contribuir](#contribuir)
+5. [Licencia](#licencia)
+6. [Próximas Características](#próximas-características)
