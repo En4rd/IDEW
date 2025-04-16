@@ -13,14 +13,25 @@
 1. [Próximas Características](#próximas-características)
 2. [Requisitos](#requisitos)
 3. [Instalación](#instalación)
+4. [Bugs o correciones](#bugs o correciones)
 
 ## Próximas Características
 
 - Modificar Tamaño del circulo
-- Arreglar guardado de fotos con mayor calidad y disposicion.
-- Centrar texto en elipse.
 - Boton de centrar imagen.
-- Color por defecto en botones
+- Mover figuras.
+- Zoom en posicion del cursor.
+
+  
+## Bugs o correciones
+
+**ImgPoints**
+- Fotos guardadas con baja calidad y dispocicion.
+- Contador pierde continuidad al editar.
+- Desactivar boton de Borrar al editar y viceversa.
+- Color por defecto en botones.
+- Centrar texto en elipse.
+- Boton de fuente no funciona.
 
 ##  Requisitos
 
