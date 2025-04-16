@@ -1,0 +1,68 @@
+c:\users\capar\onedrive\documentos\visual studio 2015\Projects\IDIEW\IDIEW\bin\Debug\IDIEW.exe.config
+c:\users\capar\onedrive\documentos\visual studio 2015\Projects\IDIEW\IDIEW\bin\Debug\IDIEW.exe
+c:\users\capar\onedrive\documentos\visual studio 2015\Projects\IDIEW\IDIEW\bin\Debug\IDIEW.pdb
+c:\users\capar\onedrive\documentos\visual studio 2015\Projects\IDIEW\IDIEW\obj\Debug\IDIEW.csprojResolveAssemblyReference.cache
+c:\users\capar\onedrive\documentos\visual studio 2015\Projects\IDIEW\IDIEW\obj\Debug\IDIEW.Form1.resources
+c:\users\capar\onedrive\documentos\visual studio 2015\Projects\IDIEW\IDIEW\obj\Debug\IDIEW.Properties.Resources.resources
+c:\users\capar\onedrive\documentos\visual studio 2015\Projects\IDIEW\IDIEW\obj\Debug\IDIEW.csproj.GenerateResource.Cache
+c:\users\capar\onedrive\documentos\visual studio 2015\Projects\IDIEW\IDIEW\obj\Debug\IDIEW.exe
+c:\users\capar\onedrive\documentos\visual studio 2015\Projects\IDIEW\IDIEW\obj\Debug\IDIEW.pdb
+D:\IDIEW\IDIEW\bin\Debug\IDIEW.exe.config
+D:\IDIEW\IDIEW\bin\Debug\IDIEW.exe
+D:\IDIEW\IDIEW\bin\Debug\IDIEW.pdb
+D:\IDIEW\IDIEW\obj\Debug\IDIEW.Form1.resources
+D:\IDIEW\IDIEW\obj\Debug\IDIEW.Properties.Resources.resources
+D:\IDIEW\IDIEW\obj\Debug\IDIEW.csproj.GenerateResource.cache
+D:\IDIEW\IDIEW\obj\Debug\IDIEW.exe
+D:\IDIEW\IDIEW\obj\Debug\IDIEW.pdb
+D:\IDIEW\IDIEW\bin\Debug\FireSharp.dll
+D:\IDIEW\IDIEW\bin\Debug\Microsoft.Threading.Tasks.dll
+D:\IDIEW\IDIEW\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+D:\IDIEW\IDIEW\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll
+D:\IDIEW\IDIEW\bin\Debug\Newtonsoft.Json.dll
+D:\IDIEW\IDIEW\bin\Debug\System.Net.Http.Extensions.dll
+D:\IDIEW\IDIEW\bin\Debug\System.Net.Http.Primitives.dll
+D:\IDIEW\IDIEW\bin\Debug\Microsoft.Threading.Tasks.xml
+D:\IDIEW\IDIEW\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
+D:\IDIEW\IDIEW\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+D:\IDIEW\IDIEW\bin\Debug\Newtonsoft.Json.xml
+D:\IDIEW\IDIEW\bin\Debug\System.Net.Http.Extensions.xml
+D:\IDIEW\IDIEW\bin\Debug\System.Net.Http.Primitives.xml
+D:\IDIEW\IDIEW\obj\Debug\IDIEW.csproj.App.config
+E:\IDIEW\IDIEW\bin\Debug\IDIEW.exe.config
+E:\IDIEW\IDIEW\obj\Debug\IDIEW.exe
+E:\IDIEW\IDIEW\obj\Debug\IDIEW.pdb
+E:\IDIEW\IDIEW\obj\Debug\IDIEW.csproj.App.config
+E:\IDIEW\IDIEW\obj\Debug\IDIEW.csprojResolveAssemblyReference.cache
+E:\IDIEW\IDIEW\obj\Debug\IDIEW.Form1.resources
+E:\IDIEW\IDIEW\obj\Debug\IDIEW.Properties.Resources.resources
+E:\IDIEW\IDIEW\obj\Debug\IDIEW.csproj.GenerateResource.Cache
+E:\IDIEW\IDIEW\bin\Debug\IDIEW.exe
+E:\IDIEW\IDIEW\bin\Debug\IDIEW.pdb
+E:\IDIEW\IDIEW\bin\Debug\FireSharp.dll
+E:\IDIEW\IDIEW\bin\Debug\Microsoft.Threading.Tasks.dll
+E:\IDIEW\IDIEW\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+E:\IDIEW\IDIEW\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll
+E:\IDIEW\IDIEW\bin\Debug\Newtonsoft.Json.dll
+E:\IDIEW\IDIEW\bin\Debug\System.Net.Http.Extensions.dll
+E:\IDIEW\IDIEW\bin\Debug\System.Net.Http.Primitives.dll
+E:\IDIEW\IDIEW\bin\Debug\Microsoft.Threading.Tasks.xml
+E:\IDIEW\IDIEW\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
+E:\IDIEW\IDIEW\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+E:\IDIEW\IDIEW\bin\Debug\Newtonsoft.Json.xml
+E:\IDIEW\IDIEW\bin\Debug\System.Net.Http.Extensions.xml
+E:\IDIEW\IDIEW\bin\Debug\System.Net.Http.Primitives.xml
+E:\IDIEW\IDIEW\obj\Debug\IDIEW.Main_form.resources
+E:\IDIEW\IDIEW\obj\Debug\IDIEW.add_profile.resources
+E:\IDIEW\IDIEW\obj\Debug\IDIEW.Form2.resources
+D:\IDIEW\IDIEW\obj\Debug\IDIEW.add_profile.resources
+D:\IDIEW\IDIEW\obj\Debug\IDIEW.Form2.resources
+D:\IDIEW\IDIEW\obj\Debug\IDIEW.Main_form.resources
+D:\IDIEW\IDIEW\bin\Debug\IDIEW.exe.manifest
+D:\IDIEW\IDIEW\bin\Debug\IDIEW.application
+D:\IDIEW\IDIEW\obj\Debug\IDIEW.exe.manifest
+D:\IDIEW\IDIEW\obj\Debug\IDIEW.application
+D:\IDIEW\IDIEW\obj\Debug\IDIEW.ImgPoints.resources
+D:\IDIEW\IDIEW\obj\Debug\IDIEW.csproj.AssemblyReference.cache
+D:\IDIEW\IDIEW\obj\Debug\IDIEW.csproj.CoreCompileInputs.cache
+D:\IDIEW\IDIEW\obj\Debug\IDIEW.csproj.Up2Date
