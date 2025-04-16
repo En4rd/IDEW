@@ -164,6 +164,12 @@ namespace IDIEW
                     zoom = 1.0f;
                     points.Clear();
                     pictureBox1.Invalidate(); // Redibuja
+                    BtnEliminarPunto.Enabled = true;
+                    BtnEditarNumero.Enabled = true;
+                    guna2CircleButton3.Enabled = true;
+                    guna2CircleButton1.Enabled= true;
+                    guna2CircleButton4.Enabled  = true;
+                    guna2CircleButton2.Enabled  = true;
                 }
             }
         }
