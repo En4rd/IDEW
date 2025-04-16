@@ -137,7 +137,7 @@
             this.guna2CircleButton1.CheckedState.Parent = this.guna2CircleButton1;
             this.guna2CircleButton1.CustomImages.Parent = this.guna2CircleButton1;
             this.guna2CircleButton1.Enabled = false;
-            this.guna2CircleButton1.FillColor = System.Drawing.Color.White;
+            this.guna2CircleButton1.FillColor = System.Drawing.Color.Blue;
             this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
             this.guna2CircleButton1.HoverState.Parent = this.guna2CircleButton1;
@@ -158,11 +158,11 @@
             this.guna2ShadowPanel1.Controls.Add(this.guna2CircleButton1);
             this.guna2ShadowPanel1.Controls.Add(this.BtnEditarNumero);
             this.guna2ShadowPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(77)))));
-            this.guna2ShadowPanel1.Location = new System.Drawing.Point(89, 548);
+            this.guna2ShadowPanel1.Location = new System.Drawing.Point(63, 584);
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.Radius = 5;
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(484, 118);
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(471, 118);
             this.guna2ShadowPanel1.TabIndex = 8;
             // 
             // guna2CircleButton4
@@ -207,7 +207,7 @@
             this.guna2ShadowPanel2.Controls.Add(this.Btn_subir);
             this.guna2ShadowPanel2.Controls.Add(this.guna2CircleButton2);
             this.guna2ShadowPanel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(77)))));
-            this.guna2ShadowPanel2.Location = new System.Drawing.Point(750, 557);
+            this.guna2ShadowPanel2.Location = new System.Drawing.Point(749, 584);
             this.guna2ShadowPanel2.Name = "guna2ShadowPanel2";
             this.guna2ShadowPanel2.Radius = 5;
             this.guna2ShadowPanel2.ShadowColor = System.Drawing.Color.Black;
