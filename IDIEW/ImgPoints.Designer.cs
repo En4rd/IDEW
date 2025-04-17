@@ -183,6 +183,7 @@
             this.Btn_Mover.ShadowDecoration.Parent = this.Btn_Mover;
             this.Btn_Mover.Size = new System.Drawing.Size(74, 72);
             this.Btn_Mover.TabIndex = 10;
+            this.Btn_Mover.Text = "Mover";
             this.Btn_Mover.Click += new System.EventHandler(this.Btn_Mover_Click);
             // 
             // guna2CircleButton4

@@ -356,7 +356,7 @@ namespace IDIEW
         private void Btn_Mover_Click(object sender, EventArgs e)
         {
             modoMover = !modoMover;
-            Btn_Mover.Text = modoMover ? "Salir del modo Mover" : "Mover";
+            Btn_Mover.Text = modoMover ? "Salir del modo" : "Mover";
             pictureBox1.Cursor = modoMover ? Cursors.SizeAll : Cursors.Default;
 
             // Desactivar otros modos para evitar conflictos
