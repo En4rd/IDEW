@@ -53,6 +53,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(63, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(889, 515);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
@@ -172,7 +173,7 @@
             this.Btn_Mover.CheckedState.Parent = this.Btn_Mover;
             this.Btn_Mover.CustomImages.Parent = this.Btn_Mover;
             this.Btn_Mover.Enabled = false;
-            this.Btn_Mover.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.Btn_Mover.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.Btn_Mover.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Btn_Mover.ForeColor = System.Drawing.Color.White;
             this.Btn_Mover.HoverState.Parent = this.Btn_Mover;

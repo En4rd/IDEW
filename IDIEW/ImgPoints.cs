@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
+using PdfiumViewer;
+using System.IO;
+
 
 
 namespace IDIEW
@@ -30,8 +33,9 @@ namespace IDIEW
         private bool modoEliminar = false;
         private bool modoEditarNumero = false;
         private Color ElipseColor = Color.Blue;
-        private Font Elipsefont = new Font("Arial", 12);
+        private Font Elipsefont = new Font("Arial", 3);
         private Color colorfontdialogs = Color.White;
+        private PdfiumViewer.PdfDocument pdfDocument;
 
 
         public ImgPoints(Panel panelContenedor)
@@ -39,6 +43,10 @@ namespace IDIEW
             InitializeComponent();
         }
 
+        private Bitmap RenderPdfPageAsImage(PdfiumViewer.PdfDocument doc, int page, int dpi)
+        {
+            return (Bitmap)doc.Render(page, dpi, dpi, true);
+        }
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
@@ -60,17 +68,15 @@ namespace IDIEW
 
                 SolidBrush brush = new SolidBrush(colorfontdialogs);
                 using (Brush redBrush = new SolidBrush(ElipseColor))
-                using (Font font = new Font("Arial", 3))
-                {
                     foreach (var item in points)
                     {
                         PointF point = item.Item1;
                         int index = item.Item2;
 
                         g.FillEllipse(redBrush, point.X - 5, point.Y - 5, 10,10);
-                        g.DrawString(index.ToString(), font, brush, point.X-4, point.Y - 3);
+                        g.DrawString(index.ToString(), Elipsefont, brush, point.X-4, point.Y - 3);
                     }
-                }
+                
             }
 
         }
@@ -163,22 +169,36 @@ namespace IDIEW
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
             {
-                ofd.Filter = "Imágenes|*.jpg;*.jpeg;*.png;*.bmp";
+                ofd.Filter = "Archivos PDF|*.pdf|Imágenes|*.jpg;*.jpeg;*.png;*.bmp";
+
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    originalImage = Image.FromFile(ofd.FileName);
+                    string ext = Path.GetExtension(ofd.FileName).ToLower();
+
+                    if (ext == ".pdf")
+                    {
+                        pdfDocument = PdfiumViewer.PdfDocument.Load(ofd.FileName);
+                        originalImage = RenderPdfPageAsImage(pdfDocument, 0, 1000); // Página 0, DPI 300
+                    }
+                    else
+                    {
+                        pdfDocument = null;
+                        originalImage = Image.FromFile(ofd.FileName);
+                    }
+
                     zoom = 1.0f;
                     points.Clear();
-                    pictureBox1.Invalidate(); // Redibuja
+                    pictureBox1.Invalidate();
                     BtnEliminarPunto.Enabled = true;
                     BtnEditarNumero.Enabled = true;
                     guna2CircleButton3.Enabled = true;
-                    guna2CircleButton1.Enabled= true;
-                    guna2CircleButton4.Enabled  = true;
-                    guna2CircleButton2.Enabled  = true;
+                    guna2CircleButton1.Enabled = true;
+                    guna2CircleButton4.Enabled = true;
+                    guna2CircleButton2.Enabled = true;
                     Btn_Mover.Enabled = true;
                 }
             }
+
         }
 
         private void pictureBox1_MouseWheel(object sender, MouseEventArgs e)
@@ -285,34 +305,44 @@ namespace IDIEW
         {
             if (originalImage == null) return;
 
-            Bitmap bmp = new Bitmap(originalImage.Width, originalImage.Height);
-            using (Graphics g = Graphics.FromImage(bmp))
+            Bitmap finalImage;
+
+            if (pdfDocument != null)
             {
-                g.DrawImage(originalImage, Point.Empty);
-
-                SolidBrush brush = new SolidBrush(colorfontdialogs);
-                using (Brush redBrush = new SolidBrush(Color.Red))
-                using (Font font = new Font("Arial", 7))
+                finalImage = RenderPdfPageAsImage(pdfDocument, 0, 300); // Alta resolución
+            }
+            else
+            {
+                finalImage = new Bitmap(originalImage.Width, originalImage.Height);
+                using (Graphics g = Graphics.FromImage(finalImage))
                 {
-                    foreach (var tuple in points)
-                    {
-                        PointF point = tuple.Item1;
-                        int index = tuple.Item2;
-
-                        g.FillEllipse(redBrush, point.X-5, point.Y-5, 10, 10);
-                        g.DrawString(index.ToString(), font, brush, point.X, point.Y);
-                    }
+                    g.DrawImage(originalImage, Point.Empty);
                 }
             }
+
+            using (Graphics g = Graphics.FromImage(finalImage))
+            {
+                SolidBrush brush = new SolidBrush(colorfontdialogs);
+                using (Brush redBrush = new SolidBrush(ElipseColor))
+                    foreach (var item in points)
+                    {
+                        PointF point = item.Item1;
+                        int index = item.Item2;
+
+                        g.FillEllipse(redBrush, point.X - 5, point.Y - 5, 10, 10);
+                        g.DrawString(index.ToString(), Elipsefont, brush, point.X - 4, point.Y - 3);
+                    }
+
+
+            }
+           
 
             using (SaveFileDialog sfd = new SaveFileDialog())
             {
                 sfd.Filter = "PNG Image|*.png";
-                sfd.Title = "Guardar imagen con puntos";
-                sfd.FileName = "ImagenMarcada.png";
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
-                    bmp.Save(sfd.FileName, System.Drawing.Imaging.ImageFormat.Png);
+                    finalImage.Save(sfd.FileName, System.Drawing.Imaging.ImageFormat.Png);
                 }
             }
         }
