@@ -14,6 +14,11 @@ namespace IDIEW
 {
     public partial class ImgPoints : Form
     {
+        //variables boton mover
+        private bool modoMover = false;
+        private int puntoSeleccionadoIndex = -1;
+        private bool estaMoviendoPunto = false;
+
         private Panel _panelContenedor;
         private Image originalImage;
         private List<Tuple<PointF, int>> points = new List<Tuple<PointF, int>>();
@@ -73,6 +78,8 @@ namespace IDIEW
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
         {
             if (originalImage == null) return;
+
+            if (modoMover) return;
 
             // Ajustamos coordenadas con pan y zoom
             float adjustedX = (e.X - panOffset.X) / zoom;
@@ -169,6 +176,7 @@ namespace IDIEW
                     guna2CircleButton1.Enabled= true;
                     guna2CircleButton4.Enabled  = true;
                     guna2CircleButton2.Enabled  = true;
+                    Btn_Mover.Enabled = true;
                 }
             }
         }
@@ -188,6 +196,29 @@ namespace IDIEW
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
+            if (e.Button == MouseButtons.Left && modoMover)
+            {
+                float adjustedX = (e.X - panOffset.X) / zoom;
+                float adjustedY = (e.Y - panOffset.Y) / zoom;
+                PointF clickedPoint = new PointF(adjustedX, adjustedY);
+
+                float radio = 10 / zoom;
+
+                for (int i = 0; i < points.Count; i++)
+                {
+                    PointF pt = points[i].Item1;
+                    float dx = pt.X - clickedPoint.X;
+                    float dy = pt.Y - clickedPoint.Y;
+
+                    if (Math.Sqrt(dx * dx + dy * dy) <= radio)
+                    {
+                        puntoSeleccionadoIndex = i;
+                        estaMoviendoPunto = true;
+                        break;
+                    }
+                }
+            }
+
             if (e.Button == MouseButtons.Right)
             {
                 isPanning = true;
@@ -198,6 +229,17 @@ namespace IDIEW
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
+            if (modoMover && estaMoviendoPunto && puntoSeleccionadoIndex >= 0)
+            {
+                float adjustedX = (e.X - panOffset.X) / zoom;
+                float adjustedY = (e.Y - panOffset.Y) / zoom;
+
+                var puntoActual = points[puntoSeleccionadoIndex];
+                points[puntoSeleccionadoIndex] = Tuple.Create(new PointF(adjustedX, adjustedY), puntoActual.Item2);
+
+                pictureBox1.Invalidate();
+            }
+
             if (isPanning)
             {
                 Point delta = new Point(e.X - lastMousePos.X, e.Y - lastMousePos.Y);
@@ -210,6 +252,12 @@ namespace IDIEW
 
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
+            if (e.Button == MouseButtons.Left && modoMover)
+            {
+                estaMoviendoPunto = false;
+                puntoSeleccionadoIndex = -1;
+            }
+
             if (e.Button == MouseButtons.Right)
             {
                 isPanning = false;
@@ -304,5 +352,21 @@ namespace IDIEW
                 }
             }
         }
+
+        private void Btn_Mover_Click(object sender, EventArgs e)
+        {
+            modoMover = !modoMover;
+            Btn_Mover.Text = modoMover ? "Salir del modo Mover" : "Mover";
+            pictureBox1.Cursor = modoMover ? Cursors.SizeAll : Cursors.Default;
+
+            // Desactivar otros modos para evitar conflictos
+            modoEliminar = false;
+            modoEditarNumero = false;
+
+            BtnEliminarPunto.Text = "Eliminar";
+            BtnEditarNumero.Text = "Editar";
+            BtnEliminarPunto.FillColor = Color.FromArgb(255, 128, 128);
+        }
+
     }
 }

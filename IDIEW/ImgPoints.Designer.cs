@@ -37,6 +37,7 @@
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.ElipseColorDialog = new System.Windows.Forms.ColorDialog();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.Btn_Mover = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2CircleButton4 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2CircleButton3 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2ShadowPanel2 = new Guna.UI2.WinForms.Guna2ShadowPanel();
@@ -152,6 +153,7 @@
             // guna2ShadowPanel1
             // 
             this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel1.Controls.Add(this.Btn_Mover);
             this.guna2ShadowPanel1.Controls.Add(this.guna2CircleButton4);
             this.guna2ShadowPanel1.Controls.Add(this.guna2CircleButton3);
             this.guna2ShadowPanel1.Controls.Add(this.BtnEliminarPunto);
@@ -162,8 +164,26 @@
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.Radius = 5;
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(471, 118);
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(590, 118);
             this.guna2ShadowPanel1.TabIndex = 8;
+            // 
+            // Btn_Mover
+            // 
+            this.Btn_Mover.CheckedState.Parent = this.Btn_Mover;
+            this.Btn_Mover.CustomImages.Parent = this.Btn_Mover;
+            this.Btn_Mover.Enabled = false;
+            this.Btn_Mover.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.Btn_Mover.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Btn_Mover.ForeColor = System.Drawing.Color.White;
+            this.Btn_Mover.HoverState.Parent = this.Btn_Mover;
+            this.Btn_Mover.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Mover.Image")));
+            this.Btn_Mover.Location = new System.Drawing.Point(480, 20);
+            this.Btn_Mover.Name = "Btn_Mover";
+            this.Btn_Mover.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.Btn_Mover.ShadowDecoration.Parent = this.Btn_Mover;
+            this.Btn_Mover.Size = new System.Drawing.Size(74, 72);
+            this.Btn_Mover.TabIndex = 10;
+            this.Btn_Mover.Click += new System.EventHandler(this.Btn_Mover_Click);
             // 
             // guna2CircleButton4
             // 
@@ -246,5 +266,6 @@
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton3;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel2;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton4;
+        private Guna.UI2.WinForms.Guna2CircleButton Btn_Mover;
     }
 }
