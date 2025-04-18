@@ -19,19 +19,19 @@
 
 - Modificar Tamaño del circulo
 - Boton de centrar imagen.
-- Mover figuras.
+- ~~Mover figuras.~~
 - Zoom en posicion del cursor.
 
   
 ## Bugs o correciones
 
 **ImgPoints**
-- Fotos guardadas con baja calidad y dispocicion.
+- ~~Fotos guardadas con baja calidad y dispocicion.~~
 - Contador pierde continuidad al editar.
 - Desactivar boton de Borrar al editar y viceversa.
-- Color por defecto en botones.
+- ~~Color por defecto en botones.~~
 - Centrar texto en elipse.
-- Boton de fuente no funciona.
+- ~~Boton de fuente no funciona.~~
 
 ##  Requisitos
 
