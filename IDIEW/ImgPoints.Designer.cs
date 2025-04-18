@@ -29,38 +29,38 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImgPoints));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Pnl_Visualizador = new System.Windows.Forms.PictureBox();
             this.Btn_subir = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.BtnEliminarPunto = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.BtnEditarNumero = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.Btn_Guardar = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.Btn_EliminarPunto = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.Btn_EditarNumero = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.Btn_ElipseColor = new Guna.UI2.WinForms.Guna2CircleButton();
             this.ElipseColorDialog = new System.Windows.Forms.ColorDialog();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.Btn_Mover = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.guna2CircleButton4 = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.guna2CircleButton3 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.Btn_FontColor = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.Btn_ElipseFont = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2ShadowPanel2 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pnl_Visualizador)).BeginInit();
             this.guna2ShadowPanel1.SuspendLayout();
             this.guna2ShadowPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // Pnl_Visualizador
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.ErrorImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(63, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(889, 515);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
-            this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseClick);
-            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
-            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
-            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
+            this.Pnl_Visualizador.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Pnl_Visualizador.ErrorImage = null;
+            this.Pnl_Visualizador.Location = new System.Drawing.Point(63, 12);
+            this.Pnl_Visualizador.Name = "Pnl_Visualizador";
+            this.Pnl_Visualizador.Size = new System.Drawing.Size(889, 515);
+            this.Pnl_Visualizador.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Pnl_Visualizador.TabIndex = 2;
+            this.Pnl_Visualizador.TabStop = false;
+            this.Pnl_Visualizador.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
+            this.Pnl_Visualizador.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseClick);
+            this.Pnl_Visualizador.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
+            this.Pnl_Visualizador.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
+            this.Pnl_Visualizador.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
             // 
             // Btn_subir
             // 
@@ -79,87 +79,87 @@
             this.Btn_subir.TabIndex = 3;
             this.Btn_subir.Click += new System.EventHandler(this.Btn_subir_Click);
             // 
-            // guna2CircleButton2
+            // Btn_Guardar
             // 
-            this.guna2CircleButton2.CheckedState.Parent = this.guna2CircleButton2;
-            this.guna2CircleButton2.CustomImages.Parent = this.guna2CircleButton2;
-            this.guna2CircleButton2.Enabled = false;
-            this.guna2CircleButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2CircleButton2.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton2.HoverState.Parent = this.guna2CircleButton2;
-            this.guna2CircleButton2.Image = ((System.Drawing.Image)(resources.GetObject("guna2CircleButton2.Image")));
-            this.guna2CircleButton2.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2CircleButton2.Location = new System.Drawing.Point(129, 20);
-            this.guna2CircleButton2.Name = "guna2CircleButton2";
-            this.guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton2.ShadowDecoration.Parent = this.guna2CircleButton2;
-            this.guna2CircleButton2.Size = new System.Drawing.Size(73, 72);
-            this.guna2CircleButton2.TabIndex = 4;
-            this.guna2CircleButton2.Click += new System.EventHandler(this.guna2CircleButton2_Click);
+            this.Btn_Guardar.CheckedState.Parent = this.Btn_Guardar;
+            this.Btn_Guardar.CustomImages.Parent = this.Btn_Guardar;
+            this.Btn_Guardar.Enabled = false;
+            this.Btn_Guardar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Btn_Guardar.ForeColor = System.Drawing.Color.White;
+            this.Btn_Guardar.HoverState.Parent = this.Btn_Guardar;
+            this.Btn_Guardar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Guardar.Image")));
+            this.Btn_Guardar.ImageSize = new System.Drawing.Size(30, 30);
+            this.Btn_Guardar.Location = new System.Drawing.Point(129, 20);
+            this.Btn_Guardar.Name = "Btn_Guardar";
+            this.Btn_Guardar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.Btn_Guardar.ShadowDecoration.Parent = this.Btn_Guardar;
+            this.Btn_Guardar.Size = new System.Drawing.Size(73, 72);
+            this.Btn_Guardar.TabIndex = 4;
+            this.Btn_Guardar.Click += new System.EventHandler(this.guna2CircleButton2_Click);
             // 
-            // BtnEliminarPunto
+            // Btn_EliminarPunto
             // 
-            this.BtnEliminarPunto.CheckedState.Parent = this.BtnEliminarPunto;
-            this.BtnEliminarPunto.CustomImages.Parent = this.BtnEliminarPunto;
-            this.BtnEliminarPunto.Enabled = false;
-            this.BtnEliminarPunto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.BtnEliminarPunto.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.BtnEliminarPunto.ForeColor = System.Drawing.Color.White;
-            this.BtnEliminarPunto.HoverState.Parent = this.BtnEliminarPunto;
-            this.BtnEliminarPunto.Image = ((System.Drawing.Image)(resources.GetObject("BtnEliminarPunto.Image")));
-            this.BtnEliminarPunto.Location = new System.Drawing.Point(21, 19);
-            this.BtnEliminarPunto.Name = "BtnEliminarPunto";
-            this.BtnEliminarPunto.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.BtnEliminarPunto.ShadowDecoration.Parent = this.BtnEliminarPunto;
-            this.BtnEliminarPunto.Size = new System.Drawing.Size(71, 72);
-            this.BtnEliminarPunto.TabIndex = 5;
-            this.BtnEliminarPunto.Text = "Eliminar";
-            this.BtnEliminarPunto.Click += new System.EventHandler(this.BtnEliminarPunto_Click);
+            this.Btn_EliminarPunto.CheckedState.Parent = this.Btn_EliminarPunto;
+            this.Btn_EliminarPunto.CustomImages.Parent = this.Btn_EliminarPunto;
+            this.Btn_EliminarPunto.Enabled = false;
+            this.Btn_EliminarPunto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.Btn_EliminarPunto.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Btn_EliminarPunto.ForeColor = System.Drawing.Color.White;
+            this.Btn_EliminarPunto.HoverState.Parent = this.Btn_EliminarPunto;
+            this.Btn_EliminarPunto.Image = ((System.Drawing.Image)(resources.GetObject("Btn_EliminarPunto.Image")));
+            this.Btn_EliminarPunto.Location = new System.Drawing.Point(21, 19);
+            this.Btn_EliminarPunto.Name = "Btn_EliminarPunto";
+            this.Btn_EliminarPunto.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.Btn_EliminarPunto.ShadowDecoration.Parent = this.Btn_EliminarPunto;
+            this.Btn_EliminarPunto.Size = new System.Drawing.Size(71, 72);
+            this.Btn_EliminarPunto.TabIndex = 5;
+            this.Btn_EliminarPunto.Text = "Eliminar";
+            this.Btn_EliminarPunto.Click += new System.EventHandler(this.BtnEliminarPunto_Click);
             // 
-            // BtnEditarNumero
+            // Btn_EditarNumero
             // 
-            this.BtnEditarNumero.CheckedState.Parent = this.BtnEditarNumero;
-            this.BtnEditarNumero.CustomImages.Parent = this.BtnEditarNumero;
-            this.BtnEditarNumero.Enabled = false;
-            this.BtnEditarNumero.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.BtnEditarNumero.ForeColor = System.Drawing.Color.White;
-            this.BtnEditarNumero.HoverState.Parent = this.BtnEditarNumero;
-            this.BtnEditarNumero.Image = ((System.Drawing.Image)(resources.GetObject("BtnEditarNumero.Image")));
-            this.BtnEditarNumero.Location = new System.Drawing.Point(108, 19);
-            this.BtnEditarNumero.Name = "BtnEditarNumero";
-            this.BtnEditarNumero.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.BtnEditarNumero.ShadowDecoration.Parent = this.BtnEditarNumero;
-            this.BtnEditarNumero.Size = new System.Drawing.Size(71, 72);
-            this.BtnEditarNumero.TabIndex = 6;
-            this.BtnEditarNumero.Text = "Editar";
-            this.BtnEditarNumero.Click += new System.EventHandler(this.BtnEditarNumero_Click);
+            this.Btn_EditarNumero.CheckedState.Parent = this.Btn_EditarNumero;
+            this.Btn_EditarNumero.CustomImages.Parent = this.Btn_EditarNumero;
+            this.Btn_EditarNumero.Enabled = false;
+            this.Btn_EditarNumero.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Btn_EditarNumero.ForeColor = System.Drawing.Color.White;
+            this.Btn_EditarNumero.HoverState.Parent = this.Btn_EditarNumero;
+            this.Btn_EditarNumero.Image = ((System.Drawing.Image)(resources.GetObject("Btn_EditarNumero.Image")));
+            this.Btn_EditarNumero.Location = new System.Drawing.Point(108, 19);
+            this.Btn_EditarNumero.Name = "Btn_EditarNumero";
+            this.Btn_EditarNumero.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.Btn_EditarNumero.ShadowDecoration.Parent = this.Btn_EditarNumero;
+            this.Btn_EditarNumero.Size = new System.Drawing.Size(71, 72);
+            this.Btn_EditarNumero.TabIndex = 6;
+            this.Btn_EditarNumero.Text = "Editar";
+            this.Btn_EditarNumero.Click += new System.EventHandler(this.BtnEditarNumero_Click);
             // 
-            // guna2CircleButton1
+            // Btn_ElipseColor
             // 
-            this.guna2CircleButton1.CheckedState.Parent = this.guna2CircleButton1;
-            this.guna2CircleButton1.CustomImages.Parent = this.guna2CircleButton1;
-            this.guna2CircleButton1.Enabled = false;
-            this.guna2CircleButton1.FillColor = System.Drawing.Color.Blue;
-            this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton1.HoverState.Parent = this.guna2CircleButton1;
-            this.guna2CircleButton1.Location = new System.Drawing.Point(287, 19);
-            this.guna2CircleButton1.Name = "guna2CircleButton1";
-            this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton1.ShadowDecoration.Parent = this.guna2CircleButton1;
-            this.guna2CircleButton1.Size = new System.Drawing.Size(74, 72);
-            this.guna2CircleButton1.TabIndex = 7;
-            this.guna2CircleButton1.Click += new System.EventHandler(this.guna2CircleButton1_Click);
+            this.Btn_ElipseColor.CheckedState.Parent = this.Btn_ElipseColor;
+            this.Btn_ElipseColor.CustomImages.Parent = this.Btn_ElipseColor;
+            this.Btn_ElipseColor.Enabled = false;
+            this.Btn_ElipseColor.FillColor = System.Drawing.Color.Blue;
+            this.Btn_ElipseColor.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Btn_ElipseColor.ForeColor = System.Drawing.Color.White;
+            this.Btn_ElipseColor.HoverState.Parent = this.Btn_ElipseColor;
+            this.Btn_ElipseColor.Location = new System.Drawing.Point(287, 19);
+            this.Btn_ElipseColor.Name = "Btn_ElipseColor";
+            this.Btn_ElipseColor.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.Btn_ElipseColor.ShadowDecoration.Parent = this.Btn_ElipseColor;
+            this.Btn_ElipseColor.Size = new System.Drawing.Size(74, 72);
+            this.Btn_ElipseColor.TabIndex = 7;
+            this.Btn_ElipseColor.Click += new System.EventHandler(this.guna2CircleButton1_Click);
             // 
             // guna2ShadowPanel1
             // 
             this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2ShadowPanel1.Controls.Add(this.Btn_Mover);
-            this.guna2ShadowPanel1.Controls.Add(this.guna2CircleButton4);
-            this.guna2ShadowPanel1.Controls.Add(this.guna2CircleButton3);
-            this.guna2ShadowPanel1.Controls.Add(this.BtnEliminarPunto);
-            this.guna2ShadowPanel1.Controls.Add(this.guna2CircleButton1);
-            this.guna2ShadowPanel1.Controls.Add(this.BtnEditarNumero);
+            this.guna2ShadowPanel1.Controls.Add(this.Btn_FontColor);
+            this.guna2ShadowPanel1.Controls.Add(this.Btn_ElipseFont);
+            this.guna2ShadowPanel1.Controls.Add(this.Btn_EliminarPunto);
+            this.guna2ShadowPanel1.Controls.Add(this.Btn_ElipseColor);
+            this.guna2ShadowPanel1.Controls.Add(this.Btn_EditarNumero);
             this.guna2ShadowPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(77)))));
             this.guna2ShadowPanel1.Location = new System.Drawing.Point(63, 584);
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
@@ -187,47 +187,47 @@
             this.Btn_Mover.Text = "Mover";
             this.Btn_Mover.Click += new System.EventHandler(this.Btn_Mover_Click);
             // 
-            // guna2CircleButton4
+            // Btn_FontColor
             // 
-            this.guna2CircleButton4.CheckedState.Parent = this.guna2CircleButton4;
-            this.guna2CircleButton4.CustomImages.Parent = this.guna2CircleButton4;
-            this.guna2CircleButton4.Enabled = false;
-            this.guna2CircleButton4.FillColor = System.Drawing.Color.White;
-            this.guna2CircleButton4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2CircleButton4.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton4.HoverState.Parent = this.guna2CircleButton4;
-            this.guna2CircleButton4.Location = new System.Drawing.Point(384, 19);
-            this.guna2CircleButton4.Name = "guna2CircleButton4";
-            this.guna2CircleButton4.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton4.ShadowDecoration.Parent = this.guna2CircleButton4;
-            this.guna2CircleButton4.Size = new System.Drawing.Size(74, 72);
-            this.guna2CircleButton4.TabIndex = 9;
-            this.guna2CircleButton4.Click += new System.EventHandler(this.guna2CircleButton4_Click);
+            this.Btn_FontColor.CheckedState.Parent = this.Btn_FontColor;
+            this.Btn_FontColor.CustomImages.Parent = this.Btn_FontColor;
+            this.Btn_FontColor.Enabled = false;
+            this.Btn_FontColor.FillColor = System.Drawing.Color.White;
+            this.Btn_FontColor.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Btn_FontColor.ForeColor = System.Drawing.Color.White;
+            this.Btn_FontColor.HoverState.Parent = this.Btn_FontColor;
+            this.Btn_FontColor.Location = new System.Drawing.Point(384, 19);
+            this.Btn_FontColor.Name = "Btn_FontColor";
+            this.Btn_FontColor.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.Btn_FontColor.ShadowDecoration.Parent = this.Btn_FontColor;
+            this.Btn_FontColor.Size = new System.Drawing.Size(74, 72);
+            this.Btn_FontColor.TabIndex = 9;
+            this.Btn_FontColor.Click += new System.EventHandler(this.guna2CircleButton4_Click);
             // 
-            // guna2CircleButton3
+            // Btn_ElipseFont
             // 
-            this.guna2CircleButton3.CheckedState.Parent = this.guna2CircleButton3;
-            this.guna2CircleButton3.CustomImages.Parent = this.guna2CircleButton3;
-            this.guna2CircleButton3.Enabled = false;
-            this.guna2CircleButton3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.guna2CircleButton3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2CircleButton3.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton3.HoverState.Parent = this.guna2CircleButton3;
-            this.guna2CircleButton3.Image = ((System.Drawing.Image)(resources.GetObject("guna2CircleButton3.Image")));
-            this.guna2CircleButton3.Location = new System.Drawing.Point(196, 19);
-            this.guna2CircleButton3.Name = "guna2CircleButton3";
-            this.guna2CircleButton3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton3.ShadowDecoration.Parent = this.guna2CircleButton3;
-            this.guna2CircleButton3.Size = new System.Drawing.Size(71, 72);
-            this.guna2CircleButton3.TabIndex = 8;
-            this.guna2CircleButton3.Text = "Fuente";
-            this.guna2CircleButton3.Click += new System.EventHandler(this.guna2CircleButton3_Click);
+            this.Btn_ElipseFont.CheckedState.Parent = this.Btn_ElipseFont;
+            this.Btn_ElipseFont.CustomImages.Parent = this.Btn_ElipseFont;
+            this.Btn_ElipseFont.Enabled = false;
+            this.Btn_ElipseFont.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.Btn_ElipseFont.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Btn_ElipseFont.ForeColor = System.Drawing.Color.White;
+            this.Btn_ElipseFont.HoverState.Parent = this.Btn_ElipseFont;
+            this.Btn_ElipseFont.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ElipseFont.Image")));
+            this.Btn_ElipseFont.Location = new System.Drawing.Point(196, 19);
+            this.Btn_ElipseFont.Name = "Btn_ElipseFont";
+            this.Btn_ElipseFont.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.Btn_ElipseFont.ShadowDecoration.Parent = this.Btn_ElipseFont;
+            this.Btn_ElipseFont.Size = new System.Drawing.Size(71, 72);
+            this.Btn_ElipseFont.TabIndex = 8;
+            this.Btn_ElipseFont.Text = "Fuente";
+            this.Btn_ElipseFont.Click += new System.EventHandler(this.guna2CircleButton3_Click);
             // 
             // guna2ShadowPanel2
             // 
             this.guna2ShadowPanel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2ShadowPanel2.Controls.Add(this.Btn_subir);
-            this.guna2ShadowPanel2.Controls.Add(this.guna2CircleButton2);
+            this.guna2ShadowPanel2.Controls.Add(this.Btn_Guardar);
             this.guna2ShadowPanel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(77)))));
             this.guna2ShadowPanel2.Location = new System.Drawing.Point(749, 584);
             this.guna2ShadowPanel2.Name = "guna2ShadowPanel2";
@@ -244,11 +244,11 @@
             this.ClientSize = new System.Drawing.Size(1019, 714);
             this.Controls.Add(this.guna2ShadowPanel2);
             this.Controls.Add(this.guna2ShadowPanel1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.Pnl_Visualizador);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ImgPoints";
             this.Text = "ImgPoints";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pnl_Visualizador)).EndInit();
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.guna2ShadowPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -257,17 +257,17 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox Pnl_Visualizador;
         private Guna.UI2.WinForms.Guna2CircleButton Btn_subir;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
-        private Guna.UI2.WinForms.Guna2CircleButton BtnEliminarPunto;
-        private Guna.UI2.WinForms.Guna2CircleButton BtnEditarNumero;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
+        private Guna.UI2.WinForms.Guna2CircleButton Btn_Guardar;
+        private Guna.UI2.WinForms.Guna2CircleButton Btn_EliminarPunto;
+        private Guna.UI2.WinForms.Guna2CircleButton Btn_EditarNumero;
+        private Guna.UI2.WinForms.Guna2CircleButton Btn_ElipseColor;
         private System.Windows.Forms.ColorDialog ElipseColorDialog;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton3;
+        private Guna.UI2.WinForms.Guna2CircleButton Btn_ElipseFont;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel2;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton4;
+        private Guna.UI2.WinForms.Guna2CircleButton Btn_FontColor;
         private Guna.UI2.WinForms.Guna2CircleButton Btn_Mover;
     }
 }

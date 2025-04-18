@@ -49,8 +49,8 @@ namespace IDIEW
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            pictureBox1.MouseWheel += pictureBox1_MouseWheel;
-            pictureBox1.Focus(); // Asegura que reciba el scroll
+            Pnl_Visualizador.MouseWheel += pictureBox1_MouseWheel;
+            Pnl_Visualizador.Focus(); // Asegura que reciba el scroll
         }
 
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
@@ -118,7 +118,7 @@ namespace IDIEW
                     {
                         var puntoEditado = Tuple.Create(points[indexToEdit].Item1, nuevoNumero);
                         points[indexToEdit] = puntoEditado;
-                        pictureBox1.Invalidate();
+                        Pnl_Visualizador.Invalidate();
                     }
                 }
             }
@@ -152,7 +152,7 @@ namespace IDIEW
                         points[i] = newTuple;
                     }
 
-                    pictureBox1.Invalidate();
+                    Pnl_Visualizador.Invalidate();
                 }
             }
 
@@ -160,7 +160,7 @@ namespace IDIEW
             else if (e.Button == MouseButtons.Left && !modoEliminar && !modoEditarNumero)
             {
                 points.Add(Tuple.Create(clickedPoint, points.Count + 1));
-                pictureBox1.Invalidate();
+                Pnl_Visualizador.Invalidate();
             }
         }
 
@@ -188,7 +188,7 @@ namespace IDIEW
 
                             // Render directo a Bitmap con alta resolución
                             originalImage = pdfDocument.Render(page, width, height, dpi, dpi, PdfiumViewer.PdfRenderFlags.Annotations);
-                            pictureBox1.Image = (Image)originalImage.Clone();
+                            Pnl_Visualizador.Image = (Image)originalImage.Clone();
                         }
                         catch (Exception ex)
                         {
@@ -200,22 +200,22 @@ namespace IDIEW
                     {
                         pdfDocument = null;
                         originalImage = (Bitmap)Image.FromFile(ofd.FileName);
-                        pictureBox1.Image = (Image)originalImage.Clone();
+                        Pnl_Visualizador.Image = (Image)originalImage.Clone();
                     }
 
                     // Reset de estados
                     zoom = 1.0f;
                     panOffset = PointF.Empty;
                     points.Clear();
-                    pictureBox1.Invalidate();
+                    Pnl_Visualizador.Invalidate();
 
                     // Habilitar botones
-                    BtnEliminarPunto.Enabled = true;
-                    BtnEditarNumero.Enabled = true;
-                    guna2CircleButton3.Enabled = true;
-                    guna2CircleButton1.Enabled = true;
-                    guna2CircleButton4.Enabled = true;
-                    guna2CircleButton2.Enabled = true;
+                    Btn_EliminarPunto.Enabled = true;
+                    Btn_EditarNumero.Enabled = true;
+                    Btn_ElipseFont.Enabled = true;
+                    Btn_ElipseColor.Enabled = true;
+                    Btn_FontColor.Enabled = true;
+                    Btn_Guardar.Enabled = true;
                     Btn_Mover.Enabled = true;
                 }
 
@@ -231,7 +231,7 @@ namespace IDIEW
                 else
                     zoom /= ZoomFactor;
 
-                pictureBox1.Invalidate();
+                Pnl_Visualizador.Invalidate();
             }
         }
 
@@ -264,7 +264,7 @@ namespace IDIEW
             {
                 isPanning = true;
                 lastMousePos = e.Location;
-                pictureBox1.Cursor = Cursors.Hand;
+                Pnl_Visualizador.Cursor = Cursors.Hand;
             }
         }
 
@@ -278,7 +278,7 @@ namespace IDIEW
                 var puntoActual = points[puntoSeleccionadoIndex];
                 points[puntoSeleccionadoIndex] = Tuple.Create(new PointF(adjustedX, adjustedY), puntoActual.Item2);
 
-                pictureBox1.Invalidate();
+                Pnl_Visualizador.Invalidate();
             }
 
             if (isPanning)
@@ -287,7 +287,7 @@ namespace IDIEW
                 panOffset.X += delta.X;
                 panOffset.Y += delta.Y;
                 lastMousePos = e.Location;
-                pictureBox1.Invalidate();
+                Pnl_Visualizador.Invalidate();
             }
         }
 
@@ -302,7 +302,7 @@ namespace IDIEW
             if (e.Button == MouseButtons.Right)
             {
                 isPanning = false;
-                pictureBox1.Cursor = Cursors.Default;
+                Pnl_Visualizador.Cursor = Cursors.Default;
             }
         }
 
@@ -310,16 +310,16 @@ namespace IDIEW
         {
             modoEliminar = !modoEliminar;
 
-            BtnEliminarPunto.FillColor = modoEliminar ? Color.FromArgb(192, 0, 0) : Color.FromArgb(255, 128, 128);
-            BtnEliminarPunto.Text = modoEliminar ? "Salir del modo" : "Eliminar";
-            pictureBox1.Cursor = modoEliminar ? Cursors.Cross : Cursors.Default;
+            Btn_EliminarPunto.FillColor = modoEliminar ? Color.FromArgb(192, 0, 0) : Color.FromArgb(255, 128, 128);
+            Btn_EliminarPunto.Text = modoEliminar ? "Salir del modo" : "Eliminar";
+            Pnl_Visualizador.Cursor = modoEliminar ? Cursors.Cross : Cursors.Default;
         }
 
         private void BtnEditarNumero_Click(object sender, EventArgs e)
         {
             modoEditarNumero = !modoEditarNumero;
-            BtnEditarNumero.Text = modoEditarNumero ? "salir del modo" : "Editar";
-            pictureBox1.Cursor = modoEditarNumero ? Cursors.IBeam : Cursors.Default;
+            Btn_EditarNumero.Text = modoEditarNumero ? "salir del modo" : "Editar";
+            Pnl_Visualizador.Cursor = modoEditarNumero ? Cursors.IBeam : Cursors.Default;
         }
 
         private void guna2CircleButton2_Click(object sender, EventArgs e)
@@ -400,7 +400,7 @@ namespace IDIEW
                 if (ElipseColorDialog.ShowDialog() == DialogResult.OK)
                 {
                     // Por ejemplo, cambiar el color del botón
-                    guna2CircleButton1.FillColor = ElipseColorDialog.Color;
+                    Btn_ElipseColor.FillColor = ElipseColorDialog.Color;
                     ElipseColor = ElipseColorDialog.Color;
                 }
             }
@@ -423,7 +423,7 @@ namespace IDIEW
             {
                 if (ColorfontDialog.ShowDialog() == DialogResult.OK)
                 {
-                    guna2CircleButton4.FillColor = ColorfontDialog.Color;
+                    Btn_FontColor.FillColor = ColorfontDialog.Color;
                     colorfontdialogs = ColorfontDialog.Color;
                 }
             }
@@ -433,15 +433,15 @@ namespace IDIEW
         {
             modoMover = !modoMover;
             Btn_Mover.Text = modoMover ? "Salir del modo" : "Mover";
-            pictureBox1.Cursor = modoMover ? Cursors.SizeAll : Cursors.Default;
+            Pnl_Visualizador.Cursor = modoMover ? Cursors.SizeAll : Cursors.Default;
 
             // Desactivar otros modos para evitar conflictos
             modoEliminar = false;
             modoEditarNumero = false;
 
-            BtnEliminarPunto.Text = "Eliminar";
-            BtnEditarNumero.Text = "Editar";
-            BtnEliminarPunto.FillColor = Color.FromArgb(255, 128, 128);
+            Btn_EliminarPunto.Text = "Eliminar";
+            Btn_EditarNumero.Text = "Editar";
+            Btn_EliminarPunto.FillColor = Color.FromArgb(255, 128, 128);
         }
 
     }
