@@ -12,7 +12,6 @@ using PdfiumViewer;
 using System.IO;
 
 
-
 namespace IDIEW
 {
     public partial class ImgPoints : Form
@@ -177,18 +176,40 @@ namespace IDIEW
 
                     if (ext == ".pdf")
                     {
-                        pdfDocument = PdfiumViewer.PdfDocument.Load(ofd.FileName);
-                        originalImage = RenderPdfPageAsImage(pdfDocument, 0, 1000); // Página 0, DPI 300
+                        try
+                        {
+                            pdfDocument = PdfiumViewer.PdfDocument.Load(ofd.FileName);
+
+                            int dpi = 300;
+                            int page = 0;
+                            var size = pdfDocument.PageSizes[page];
+                            int width = (int)(size.Width * dpi / 72);
+                            int height = (int)(size.Height * dpi / 72);
+
+                            // Render directo a Bitmap con alta resolución
+                            originalImage = pdfDocument.Render(page, width, height, dpi, dpi, PdfiumViewer.PdfRenderFlags.Annotations);
+                            pictureBox1.Image = (Image)originalImage.Clone();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error al cargar el PDF: " + ex.Message);
+                            return;
+                        }
                     }
                     else
                     {
                         pdfDocument = null;
-                        originalImage = Image.FromFile(ofd.FileName);
+                        originalImage = (Bitmap)Image.FromFile(ofd.FileName);
+                        pictureBox1.Image = (Image)originalImage.Clone();
                     }
 
+                    // Reset de estados
                     zoom = 1.0f;
+                    panOffset = PointF.Empty;
                     points.Clear();
                     pictureBox1.Invalidate();
+
+                    // Habilitar botones
                     BtnEliminarPunto.Enabled = true;
                     BtnEditarNumero.Enabled = true;
                     guna2CircleButton3.Enabled = true;
@@ -197,9 +218,9 @@ namespace IDIEW
                     guna2CircleButton2.Enabled = true;
                     Btn_Mover.Enabled = true;
                 }
-            }
 
-        }
+            }
+         }
 
         private void pictureBox1_MouseWheel(object sender, MouseEventArgs e)
         {
@@ -306,36 +327,61 @@ namespace IDIEW
             if (originalImage == null) return;
 
             Bitmap finalImage;
+            float scaleFactor = 1f;
+
+            int baseDpi = 96; // DPI común en pantallas
+            int exportDpi = 500; // Alta resolución deseada
 
             if (pdfDocument != null)
             {
-                finalImage = RenderPdfPageAsImage(pdfDocument, 0, 300); // Alta resolución
+                int page = 0;
+
+                var size = pdfDocument.PageSizes[page];
+                int renderWidth = (int)(size.Width * exportDpi / 72);
+                int renderHeight = (int)(size.Height * exportDpi / 72);
+
+                finalImage = (Bitmap)pdfDocument.Render(page, renderWidth, renderHeight, exportDpi, exportDpi, PdfiumViewer.PdfRenderFlags.Annotations);
+
+                scaleFactor = (float)exportDpi / baseDpi;
             }
             else
             {
-                finalImage = new Bitmap(originalImage.Width, originalImage.Height);
+                finalImage = new Bitmap(originalImage.Width * exportDpi / baseDpi, originalImage.Height * exportDpi / baseDpi);
+                scaleFactor = (float)exportDpi / baseDpi;
+
                 using (Graphics g = Graphics.FromImage(finalImage))
                 {
-                    g.DrawImage(originalImage, Point.Empty);
+                    g.DrawImage(originalImage, new Rectangle(0, 0, finalImage.Width, finalImage.Height));
                 }
             }
 
             using (Graphics g = Graphics.FromImage(finalImage))
             {
-                SolidBrush brush = new SolidBrush(colorfontdialogs);
-                using (Brush redBrush = new SolidBrush(ElipseColor))
+                g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+                using (Brush ellipseBrush = new SolidBrush(ElipseColor))
+                using (Brush textBrush = new SolidBrush(colorfontdialogs))
+                {
                     foreach (var item in points)
                     {
-                        PointF point = item.Item1;
+                        PointF originalPoint = item.Item1;
                         int index = item.Item2;
 
-                        g.FillEllipse(redBrush, point.X - 5, point.Y - 5, 10, 10);
-                        g.DrawString(index.ToString(), Elipsefont, brush, point.X - 4, point.Y - 3);
+                        // Escalar punto
+                        PointF scaledPoint = new PointF(originalPoint.X * scaleFactor, originalPoint.Y * scaleFactor);
+
+                        float ellipseRadius = 5f * scaleFactor;
+                        g.FillEllipse(ellipseBrush, scaledPoint.X - ellipseRadius, scaledPoint.Y - ellipseRadius, ellipseRadius * 2, ellipseRadius * 2);
+
+                        // Escalar fuente
+                        float scaledFontSize = Elipsefont.Size * scaleFactor * 0.2f;
+                        using (Font scaledFont = new Font(Elipsefont.FontFamily, scaledFontSize, Elipsefont.Style))
+                        {
+                            g.DrawString(index.ToString(), scaledFont, textBrush, scaledPoint.X - (4 * scaleFactor), scaledPoint.Y - (2.5f * scaleFactor));
+                        }
                     }
-
-
+                }
             }
-           
 
             using (SaveFileDialog sfd = new SaveFileDialog())
             {
