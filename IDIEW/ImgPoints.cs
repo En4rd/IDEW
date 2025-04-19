@@ -16,36 +16,51 @@ namespace IDIEW
 {
     public partial class ImgPoints : Form
     {
-        //variables boton mover
+        // === Variables de estado para los modos ===
         private bool modoMover = false;
         private int puntoSeleccionadoIndex = -1;
         private bool estaMoviendoPunto = false;
+        private bool modoEliminar = false;
+        private bool modoEditarNumero = false;
 
+        // === Elementos de visualización ===
+        private PdfiumViewer.PdfDocument pdfDocument;
         private Panel _panelContenedor;
         private Image originalImage;
+
+        // === Lista de puntos con su índice asociado ===
         private List<Tuple<PointF, int>> points = new List<Tuple<PointF, int>>();
+
+
+        // === Parámetros de visualización ===
         private float zoom = 1.0f;
         private const float ZoomFactor = 1.1f;
         private Point lastMousePos;
         private PointF panOffset = PointF.Empty;
         private bool isPanning = false;
-        private bool modoEliminar = false;
-        private bool modoEditarNumero = false;
+
+
+        // === Configuración de elipses y texto ===
         private Color ElipseColor = Color.Blue;
         private Font Elipsefont = new Font("Arial", 3);
         private Color colorfontdialogs = Color.White;
-        private PdfiumViewer.PdfDocument pdfDocument;
 
 
+        // === Constructor ===
         public ImgPoints(Panel panelContenedor)
         {
             InitializeComponent();
         }
 
+
+        // === Renderizado de página PDF como imagen ===
         private Bitmap RenderPdfPageAsImage(PdfiumViewer.PdfDocument doc, int page, int dpi)
         {
             return (Bitmap)doc.Render(page, dpi, dpi, true);
         }
+
+
+        // === Al cargar el formulario ===
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
@@ -59,14 +74,15 @@ namespace IDIEW
             {
                 Graphics g = e.Graphics;
 
-                // Aplicar zoom y desplazamiento (pan)
+                // Aplicar zoom y desplazamiento
                 g.TranslateTransform(panOffset.X, panOffset.Y);
                 g.ScaleTransform(zoom, zoom);
                 g.DrawImage(originalImage, Point.Empty);
 
-
+                // Dibujar puntos con texto
                 SolidBrush brush = new SolidBrush(colorfontdialogs);
                 using (Brush redBrush = new SolidBrush(ElipseColor))
+
                     foreach (var item in points)
                     {
                         PointF point = item.Item1;
@@ -80,10 +96,12 @@ namespace IDIEW
 
         }
 
+
+
+        // === Evento clic del mouse ===
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
         {
             if (originalImage == null) return;
-
             if (modoMover) return;
 
             // Ajustamos coordenadas con pan y zoom
@@ -164,6 +182,9 @@ namespace IDIEW
             }
         }
 
+
+
+        // === Cargar archivo PDF o imagen ===
         private void Btn_subir_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
@@ -312,6 +333,9 @@ namespace IDIEW
 
             Btn_EliminarPunto.FillColor = modoEliminar ? Color.FromArgb(192, 0, 0) : Color.FromArgb(255, 128, 128);
             Btn_EliminarPunto.Text = modoEliminar ? "Salir del modo" : "Eliminar";
+
+            Btn_EditarNumero.Enabled = modoEliminar ? false : true;
+            Btn_Mover.Enabled = modoEliminar ? false : true;
             Pnl_Visualizador.Cursor = modoEliminar ? Cursors.Cross : Cursors.Default;
         }
 
@@ -319,6 +343,9 @@ namespace IDIEW
         {
             modoEditarNumero = !modoEditarNumero;
             Btn_EditarNumero.Text = modoEditarNumero ? "salir del modo" : "Editar";
+
+            Btn_Mover.Enabled = modoEditarNumero ? false : true;
+            Btn_EliminarPunto.Enabled = modoEditarNumero ? false : true;
             Pnl_Visualizador.Cursor = modoEditarNumero ? Cursors.IBeam : Cursors.Default;
         }
 
@@ -435,9 +462,8 @@ namespace IDIEW
             Btn_Mover.Text = modoMover ? "Salir del modo" : "Mover";
             Pnl_Visualizador.Cursor = modoMover ? Cursors.SizeAll : Cursors.Default;
 
-            // Desactivar otros modos para evitar conflictos
-            modoEliminar = false;
-            modoEditarNumero = false;
+            Btn_EliminarPunto.Enabled = modoMover ? false : true;
+            Btn_EditarNumero.Enabled = modoMover ? false : true;
 
             Btn_EliminarPunto.Text = "Eliminar";
             Btn_EditarNumero.Text = "Editar";
