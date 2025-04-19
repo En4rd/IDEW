@@ -28,7 +28,7 @@
 **ImgPoints**
 - ~~Fotos guardadas con baja calidad y dispocicion.~~
 - Contador pierde continuidad al editar.
-- Desactivar boton de Borrar al editar y viceversa.
+- ~~Desactivar boton de Borrar al editar y viceversa.~~
 - ~~Color por defecto en botones.~~
 - Centrar texto en elipse.
 - ~~Boton de fuente no funciona.~~
