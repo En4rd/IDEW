@@ -41,6 +41,11 @@ namespace IDIEW
         {
             AbrirFormularioEnPanel(new ImgPoints(panelContenedor));
         }
+
+        private void guna2GradientTileButton4_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioEnPanel(new PdfToTable(panelContenedor));
+        }
     }
     
 }

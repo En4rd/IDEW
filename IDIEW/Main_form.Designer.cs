@@ -41,12 +41,14 @@
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.guna2GradientTileButton4 = new Guna.UI2.WinForms.Guna2GradientTileButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.guna2GradientTileButton4);
             this.panel1.Controls.Add(this.guna2GradientTileButton3);
             this.panel1.Controls.Add(this.guna2GradientTileButton2);
             this.panel1.Controls.Add(this.guna2GradientTileButton1);
@@ -67,10 +69,10 @@
             this.guna2GradientTileButton3.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.guna2GradientTileButton3.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.guna2GradientTileButton3.HoverState.Parent = this.guna2GradientTileButton3;
-            this.guna2GradientTileButton3.Location = new System.Drawing.Point(-3, 528);
+            this.guna2GradientTileButton3.Location = new System.Drawing.Point(0, 362);
             this.guna2GradientTileButton3.Name = "guna2GradientTileButton3";
             this.guna2GradientTileButton3.ShadowDecoration.Parent = this.guna2GradientTileButton3;
-            this.guna2GradientTileButton3.Size = new System.Drawing.Size(169, 259);
+            this.guna2GradientTileButton3.Size = new System.Drawing.Size(169, 221);
             this.guna2GradientTileButton3.TabIndex = 2;
             this.guna2GradientTileButton3.Text = "ImgPoints";
             this.guna2GradientTileButton3.Click += new System.EventHandler(this.guna2GradientTileButton3_Click);
@@ -86,10 +88,10 @@
             this.guna2GradientTileButton2.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.guna2GradientTileButton2.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.guna2GradientTileButton2.HoverState.Parent = this.guna2GradientTileButton2;
-            this.guna2GradientTileButton2.Location = new System.Drawing.Point(0, 257);
+            this.guna2GradientTileButton2.Location = new System.Drawing.Point(0, 196);
             this.guna2GradientTileButton2.Name = "guna2GradientTileButton2";
             this.guna2GradientTileButton2.ShadowDecoration.Parent = this.guna2GradientTileButton2;
-            this.guna2GradientTileButton2.Size = new System.Drawing.Size(166, 279);
+            this.guna2GradientTileButton2.Size = new System.Drawing.Size(166, 172);
             this.guna2GradientTileButton2.TabIndex = 1;
             this.guna2GradientTileButton2.Text = "Img A excel";
             this.guna2GradientTileButton2.Click += new System.EventHandler(this.guna2GradientTileButton2_Click);
@@ -105,10 +107,10 @@
             this.guna2GradientTileButton1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.guna2GradientTileButton1.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.guna2GradientTileButton1.HoverState.Parent = this.guna2GradientTileButton1;
-            this.guna2GradientTileButton1.Location = new System.Drawing.Point(0, 0);
+            this.guna2GradientTileButton1.Location = new System.Drawing.Point(0, 3);
             this.guna2GradientTileButton1.Name = "guna2GradientTileButton1";
             this.guna2GradientTileButton1.ShadowDecoration.Parent = this.guna2GradientTileButton1;
-            this.guna2GradientTileButton1.Size = new System.Drawing.Size(166, 259);
+            this.guna2GradientTileButton1.Size = new System.Drawing.Size(166, 195);
             this.guna2GradientTileButton1.TabIndex = 0;
             this.guna2GradientTileButton1.Text = "Excel To word";
             this.guna2GradientTileButton1.Click += new System.EventHandler(this.guna2GradientTileButton1_Click);
@@ -152,6 +154,25 @@
             // 
             this.guna2Elipse1.TargetControl = this;
             // 
+            // guna2GradientTileButton4
+            // 
+            this.guna2GradientTileButton4.CheckedState.Parent = this.guna2GradientTileButton4;
+            this.guna2GradientTileButton4.CustomImages.Parent = this.guna2GradientTileButton4;
+            this.guna2GradientTileButton4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(77)))));
+            this.guna2GradientTileButton4.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(77)))));
+            this.guna2GradientTileButton4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GradientTileButton4.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientTileButton4.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.guna2GradientTileButton4.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.guna2GradientTileButton4.HoverState.Parent = this.guna2GradientTileButton4;
+            this.guna2GradientTileButton4.Location = new System.Drawing.Point(0, 580);
+            this.guna2GradientTileButton4.Name = "guna2GradientTileButton4";
+            this.guna2GradientTileButton4.ShadowDecoration.Parent = this.guna2GradientTileButton4;
+            this.guna2GradientTileButton4.Size = new System.Drawing.Size(169, 207);
+            this.guna2GradientTileButton4.TabIndex = 3;
+            this.guna2GradientTileButton4.Text = "????";
+            this.guna2GradientTileButton4.Click += new System.EventHandler(this.guna2GradientTileButton4_Click);
+            // 
             // Main_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -184,5 +205,6 @@
         private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
         private Guna.UI2.WinForms.Guna2GradientTileButton guna2GradientTileButton3;
         private System.Windows.Forms.ColorDialog colorDialog1;
+        private Guna.UI2.WinForms.Guna2GradientTileButton guna2GradientTileButton4;
     }
 }
