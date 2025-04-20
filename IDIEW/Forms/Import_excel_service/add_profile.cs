@@ -41,79 +41,63 @@ namespace IDIEW
 
         private async void guna2GradientButton1_Click(object sender, EventArgs e)
         {
-
             try
             {
                 // Validación: Verificar si los TextBox no están vacíos
                 if (string.IsNullOrEmpty(TXT_ALTO.Text) ||
                     string.IsNullOrEmpty(TXT_ANCHO.Text) ||
                     string.IsNullOrEmpty(TXT_PAGINA.Text) ||
-                    string.IsNullOrEmpty(TXT_RANGOS.Text))
+                    string.IsNullOrEmpty(TXT_RANGOS.Text) ||
+                    string.IsNullOrEmpty(Nombre_txt.Text))
                 {
-                    // Mostrar un mensaje de error si algún campo está vacío
                     MessageBox.Show("Todos los campos deben ser completados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                // Crear un objeto JSON con los valores ingresados en los TextBox
-                JObject newData = new JObject
+                // Crear un objeto Perfil desde los TextBox
+                var nuevoPerfil = new Classes.Perfil
                 {
-                    ["Alto"] = TXT_ALTO.Text,
-                    ["Ancho"] = TXT_ANCHO.Text,
-                    ["Pagina"] = TXT_PAGINA.Text,
-                    ["Rangos"] = TXT_RANGOS.Text,
+                    Alto = TXT_ALTO.Text,
+                    Ancho = TXT_ANCHO.Text,
+                    Pagina = TXT_PAGINA.Text,
+                    Rangos = TXT_RANGOS.Text
                 };
 
-                // Obtener la tabla seleccionada y la clave (nombre) desde el TextBox
-                string table = "Perfiles";
-                string userKey = Nombre_txt.Text;
+                string nombrePerfil = Nombre_txt.Text;
 
-                // Enviar los datos a Firebase
-                FirebaseResponse response = await client.SetAsync($"{table}/{userKey}", newData);
+                // Guardar en Firebase
+                bool guardado = await Classes.FireBase.PerfilServiceInstance.GuardarPerfilAsync(nombrePerfil, nuevoPerfil);
 
-                // Mostrar un mensaje de éxito
-                DialogResult result = MessageBox.Show("Datos guardados exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                // Acción a realizar cuando se presiona "OK"
-                if (result == DialogResult.OK)
+                if (guardado)
                 {
-                    // Limpiar los campos de texto
-                    TXT_ALTO.Clear();
-                    TXT_ANCHO.Clear();
-                    TXT_PAGINA.Clear();
-                    TXT_RANGOS.Clear();
-                    Nombre_txt.Clear();
-                    AbrirFormularioEnPanel(new Form1(_panelContenedor));
+                    DialogResult result = MessageBox.Show("Datos guardados exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    if (result == DialogResult.OK)
+                    {
+                        // Limpiar los campos de texto
+                        TXT_ALTO.Clear();
+                        TXT_ANCHO.Clear();
+                        TXT_PAGINA.Clear();
+                        TXT_RANGOS.Clear();
+                        Nombre_txt.Clear();
+
+                        AbrirFormularioEnPanel(new Form1(_panelContenedor)); // Esto asumo que es tu recarga
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Error al guardar el perfil en Firebase.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                // Mostrar un mensaje de error si algo falla al conectar con Firebase
                 MessageBox.Show($"Error al guardar los datos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
         private void add_profile_Load(object sender, EventArgs e)
         {
-            string url = "https://enard-d0ae2-default-rtdb.firebaseio.com/";
-            string secretKey = "AsHzTIxmlBw4qAzqjveHp6U8XpZc5iwYXohNB1xa";
-
-            try
-            {
-                var config = new FirebaseConfig
-                {
-                    AuthSecret = secretKey,
-                    BasePath = url
-                };
-
-                client = new FirebaseClient(config); // Pasamos el objeto de configuración al constructor de FirebaseClient
- 
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ha ocurrido un error al intentar conectar a Firebase: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
 
         }
     }

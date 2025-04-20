@@ -128,6 +128,7 @@
   <ItemGroup>
     <Compile Include="Classes\ImagnImportService.cs" />
     <Compile Include="Classes\FireBase.cs" />
+    <Compile Include="Classes\Perfil.cs" />
     <Compile Include="Forms\Import_excel_service\add_profile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,10 +147,10 @@
     <Compile Include="Forms\Paste_Img_to_excel_service\Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="ImgPoints.cs">
+    <Compile Include="Forms\ImgPoints_Service\ImgPoints.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ImgPoints.Designer.cs">
+    <Compile Include="Forms\ImgPoints_Service\ImgPoints.Designer.cs">
       <DependentUpon>ImgPoints.cs</DependentUpon>
     </Compile>
     <Compile Include="Main_form.cs">
@@ -169,7 +170,7 @@
     <EmbeddedResource Include="Forms\Paste_Img_to_excel_service\Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImgPoints.resx">
+    <EmbeddedResource Include="Forms\ImgPoints_Service\ImgPoints.resx">
       <DependentUpon>ImgPoints.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main_form.resx">

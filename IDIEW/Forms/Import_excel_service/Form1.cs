@@ -24,15 +24,6 @@ namespace IDIEW
         private Panel _panelContenedor;
         private FirebaseClient client;
         private Thread hiloImportacion;
-        public class Perfil
-        {
-            public string key { get; set; }
-
-            public string Alto { get; set; }
-            public string Ancho { get; set; }
-            public string Pagina { get; set; }
-            public string Rangos { get; set; }
-        }
 
         public Form1(Panel panelContenedor)
         {
@@ -119,8 +110,6 @@ namespace IDIEW
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
             // Crear un nuevo hilo para la importación de imágenes
-           
-
             hiloImportacion.Start();
             guna2ProgressBar1.Visible = true;
         }
@@ -134,12 +123,7 @@ namespace IDIEW
         {
             try
             {
-                var servicioPerfiles = new PerfilService(
-                    "https://enard-d0ae2-default-rtdb.firebaseio.com/",
-                    "AsHzTIxmlBw4qAzqjveHp6U8XpZc5iwYXohNB1xa"
-                );
-
-                var perfiles = await servicioPerfiles.ObtenerPerfilesAsync();
+                var perfiles = await Classes.FireBase.PerfilServiceInstance.ObtenerPerfilesAsync();
 
                 if (perfiles != null)
                 {
@@ -164,12 +148,8 @@ namespace IDIEW
 
             try
             {
-                var servicioPerfiles = new PerfilService(
-                    "https://enard-d0ae2-default-rtdb.firebaseio.com/",
-                    "AsHzTIxmlBw4qAzqjveHp6U8XpZc5iwYXohNB1xa"
-                );
-
-                var perfiles = await servicioPerfiles.ObtenerPerfilesAsync();
+                // Ya no necesitas crear una nueva instancia
+                var perfiles = await Classes.FireBase.PerfilServiceInstance.ObtenerPerfilesAsync();
 
                 if (perfiles != null && perfiles.ContainsKey(seleccion))
                 {
@@ -184,10 +164,8 @@ namespace IDIEW
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al cargar perfil: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al obtener el perfil seleccionado: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
         }
 
         private void guna2GradientButton3_Click(object sender, EventArgs e)
@@ -202,6 +180,52 @@ namespace IDIEW
             nuevoFormulario.Dock = DockStyle.Fill;
             _panelContenedor.Controls.Add(nuevoFormulario);
             nuevoFormulario.Show();
+        }
+
+        private async void Btn_Eliminar_Click(object sender, EventArgs e)
+        {
+            string seleccion = Perfiles_cmb.SelectedItem?.ToString();
+
+            if (string.IsNullOrEmpty(seleccion))
+            {
+                MessageBox.Show("Por favor, seleccione un perfil para eliminar.");
+                return;
+            }
+
+            try
+            {
+                var confirmResult = MessageBox.Show($"¿Está seguro de que desea eliminar el perfil '{seleccion}'?",
+                                                    "Confirmar eliminación",
+                                                    MessageBoxButtons.YesNo,
+                                                    MessageBoxIcon.Warning);
+
+                if (confirmResult == DialogResult.Yes)
+                {
+                    bool eliminado = await Classes.FireBase.PerfilServiceInstance.EliminarPerfilAsync(seleccion);
+
+                    if (eliminado)
+                    {
+                        MessageBox.Show("Perfil eliminado correctamente.");
+
+                        // Eliminar el perfil del ComboBox
+                        Perfiles_cmb.Items.Remove(seleccion);
+
+                        // Limpiar campos asociados al perfil
+                        TXT_ALTO.Clear();
+                        TXT_ANCHO.Clear();
+                        TXT_PAGINA.Clear();
+                        TXT_RANGOS.Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hubo un error al eliminar el perfil.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar perfil: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
