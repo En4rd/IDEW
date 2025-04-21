@@ -66,14 +66,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="IDIEW.exe" size="103424">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="IDIEW.exe" size="111104">
       <assemblyIdentity name="IDIEW" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Gzf/IjiCWiOiFvMOdU+RZL2gwQfFOakEfZLOdmIxvhE=</dsig:DigestValue>
+        <dsig:DigestValue>mfiKiMNQKzJcAY/vJSqETz0LDJ90F6MBo6mtaf6HZDo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -173,13 +173,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="IDIEW.exe.config" size="798">
+  <file name="IDIEW.exe.config" size="796">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>Ub7xgX9LTwRN0levuuqXqye8eCOKno3UW3RWQ5Iuea8=</dsig:DigestValue>
+      <dsig:DigestValue>/2dskxAfbI3A8R9yDuL9daItJuwrjZq+iWlbMpjIBG8=</dsig:DigestValue>
     </hash>
   </file>
   <file name="x64\pdfium.dll" size="15807488">

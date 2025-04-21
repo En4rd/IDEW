@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.guna2GradientTileButton4 = new Guna.UI2.WinForms.Guna2GradientTileButton();
             this.guna2GradientTileButton3 = new Guna.UI2.WinForms.Guna2GradientTileButton();
             this.guna2GradientTileButton2 = new Guna.UI2.WinForms.Guna2GradientTileButton();
             this.guna2GradientTileButton1 = new Guna.UI2.WinForms.Guna2GradientTileButton();
@@ -41,7 +42,6 @@
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.guna2GradientTileButton4 = new Guna.UI2.WinForms.Guna2GradientTileButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -57,6 +57,25 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(166, 787);
             this.panel1.TabIndex = 0;
+            // 
+            // guna2GradientTileButton4
+            // 
+            this.guna2GradientTileButton4.CheckedState.Parent = this.guna2GradientTileButton4;
+            this.guna2GradientTileButton4.CustomImages.Parent = this.guna2GradientTileButton4;
+            this.guna2GradientTileButton4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(77)))));
+            this.guna2GradientTileButton4.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(77)))));
+            this.guna2GradientTileButton4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GradientTileButton4.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientTileButton4.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.guna2GradientTileButton4.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.guna2GradientTileButton4.HoverState.Parent = this.guna2GradientTileButton4;
+            this.guna2GradientTileButton4.Location = new System.Drawing.Point(0, 580);
+            this.guna2GradientTileButton4.Name = "guna2GradientTileButton4";
+            this.guna2GradientTileButton4.ShadowDecoration.Parent = this.guna2GradientTileButton4;
+            this.guna2GradientTileButton4.Size = new System.Drawing.Size(169, 207);
+            this.guna2GradientTileButton4.TabIndex = 3;
+            this.guna2GradientTileButton4.Text = "Json To Table";
+            this.guna2GradientTileButton4.Click += new System.EventHandler(this.guna2GradientTileButton4_Click);
             // 
             // guna2GradientTileButton3
             // 
@@ -153,25 +172,6 @@
             // guna2Elipse1
             // 
             this.guna2Elipse1.TargetControl = this;
-            // 
-            // guna2GradientTileButton4
-            // 
-            this.guna2GradientTileButton4.CheckedState.Parent = this.guna2GradientTileButton4;
-            this.guna2GradientTileButton4.CustomImages.Parent = this.guna2GradientTileButton4;
-            this.guna2GradientTileButton4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(77)))));
-            this.guna2GradientTileButton4.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(77)))));
-            this.guna2GradientTileButton4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GradientTileButton4.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientTileButton4.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.guna2GradientTileButton4.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.guna2GradientTileButton4.HoverState.Parent = this.guna2GradientTileButton4;
-            this.guna2GradientTileButton4.Location = new System.Drawing.Point(0, 580);
-            this.guna2GradientTileButton4.Name = "guna2GradientTileButton4";
-            this.guna2GradientTileButton4.ShadowDecoration.Parent = this.guna2GradientTileButton4;
-            this.guna2GradientTileButton4.Size = new System.Drawing.Size(169, 207);
-            this.guna2GradientTileButton4.TabIndex = 3;
-            this.guna2GradientTileButton4.Text = "????";
-            this.guna2GradientTileButton4.Click += new System.EventHandler(this.guna2GradientTileButton4_Click);
             // 
             // Main_form
             // 
