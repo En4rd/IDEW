@@ -16,11 +16,14 @@
 4. [Bugs o correciones](#bugs-o-correciones)
 
 ## Próximas Características
-
+**Img Points** 
 - Modificar Tamaño del circulo
 - Boton de centrar imagen.
 - ~~Mover figuras.~~
 - Zoom en posicion del cursor.
+  
+**Json To Table** 
+- Antes de exportar los archvios a excel permita elegir pictogramas, area y cantidades.
 
   
 ## Bugs o correciones
