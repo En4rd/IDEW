@@ -31,7 +31,7 @@ namespace IDIEW
         private void Btn_Enviar_Click(object sender, EventArgs e)
         {
            Btn_Enviar.Enabled = false;
-           Classes.HDSExcelExporter.ExportarDesdeCarpeta(progressBar);
+            Classes.HDSExcelExporter.ExportarDesdeCarpeta(progressBar, this , panelEditor);
             Btn_Enviar.Enabled = true;
 
         }
@@ -40,5 +40,6 @@ namespace IDIEW
         {
             
         }
+
     }
 }

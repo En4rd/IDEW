@@ -157,6 +157,12 @@
     <Compile Include="Forms\ImgPoints_Service\ImgPoints.Designer.cs">
       <DependentUpon>ImgPoints.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PdfToTable_Service\EditorHDS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PdfToTable_Service\EditorHDS.Designer.cs">
+      <DependentUpon>EditorHDS.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main_form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImgPoints_Service\ImgPoints.resx">
       <DependentUpon>ImgPoints.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PdfToTable_Service\EditorHDS.resx">
+      <DependentUpon>EditorHDS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main_form.resx">
       <DependentUpon>Main_form.cs</DependentUpon>

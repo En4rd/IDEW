@@ -10,5 +10,7 @@ namespace IDIEW.Classes
     {
         public string Archivo { get; set; }
         public Classes.HDSData Datos { get; set; }
+        public string ImagenPictograma { get; set; } // ruta del pictograma seleccionad
+        public List<string> PictogramasSeleccionados { get; set; }  // Agregado para almacenar los pictogramas seleccionados
     }
 }

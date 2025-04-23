@@ -13,14 +13,27 @@ namespace IDIEW.Classes
 {
     public static class HDSExcelExporter
     {
-        public static void ExportarDesdeCarpeta(ProgressBar progressBar)
+        public static void ExportarDesdeCarpeta(ProgressBar progressBar, Form PdfToTable, Panel panelContenedor)
         {
             Thread hilo = new Thread(() =>
             {
-                FolderBrowserDialog folderDialog = new FolderBrowserDialog();
-                if (folderDialog.ShowDialog() != DialogResult.OK) return;
+                // Mostrar diálogo para seleccionar carpeta
+                string carpetaSeleccionada = string.Empty;
+                PdfToTable.Invoke((MethodInvoker)(() =>
+                {
+                    using (var folderDialog = new FolderBrowserDialog())
+                    {
+                        if (folderDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            carpetaSeleccionada = folderDialog.SelectedPath;
+                        }
+                    }
+                }));
 
-                string[] archivosJson = Directory.GetFiles(folderDialog.SelectedPath, "*.json");
+                if (string.IsNullOrEmpty(carpetaSeleccionada)) return;
+
+                // Cargar archivos JSON
+                string[] archivosJson = Directory.GetFiles(carpetaSeleccionada, "*.json");
 
                 List<JsonConDatos> datosList = new List<JsonConDatos>();
                 foreach (var archivo in archivosJson)
@@ -56,23 +69,37 @@ namespace IDIEW.Classes
                 }));
 
                 int contadorHDS = 1;
-
                 foreach (var item in datosList)
                 {
+                    // Obtener pictogramas
+                    var pictogramasDisponibles = Directory.GetFiles(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Pictogramas"))
+                                                           .Select(Path.GetFileName)
+                                                           .ToList();
+
+                    // Mostrar el editor de manera modal y esperar
+                    PdfToTable.Invoke((MethodInvoker)(() =>
+                    {
+                        var editor = new Forms.PdfToTable_Service.EditorHDS(item, pictogramasDisponibles);
+                        if (editor.ShowDialog() != DialogResult.OK)
+                        {
+                            // Si el usuario cancela, salta al siguiente
+                            return;
+                        }
+                    }));
+
+                    // Crear nueva hoja y copiar contenido
                     Worksheet nuevaHoja = (Worksheet)workbook.Sheets.Add(After: workbook.Sheets[hojaIndex]);
                     hojaBase.Copy(Before: nuevaHoja);
                     nuevaHoja = workbook.Sheets[hojaIndex + 1];
 
-                    // Asignar NoHDS incremental solo con número si está vacío
                     if (string.IsNullOrWhiteSpace(item.Datos.NoHDS))
-                    {
                         item.Datos.NoHDS = contadorHDS.ToString();
-                    }
 
                     string nombreSeguro = item.Datos.NombreDelProducto ?? $"Hoja{hojaIndex}";
                     nuevaHoja.Name = nombreSeguro.Length > 31 ? nombreSeguro.Substring(0, 31) : nombreSeguro;
 
-                    LlenarHoja(nuevaHoja, item.Datos);
+                    LlenarHoja(nuevaHoja, item);
+
                     hojaIndex++;
                     contadorHDS++;
 
@@ -82,7 +109,7 @@ namespace IDIEW.Classes
                     }));
                 }
 
-                string rutaSalida = Path.Combine(folderDialog.SelectedPath, "HDS_Exportado.xlsx");
+                string rutaSalida = Path.Combine(carpetaSeleccionada, "HDS_Exportado.xlsx");
                 workbook.SaveAs(rutaSalida);
 
                 workbook.Close(false);
@@ -95,8 +122,10 @@ namespace IDIEW.Classes
             hilo.Start();
         }
 
-        private static void LlenarHoja(Worksheet hoja, Classes.HDSData datos)
+        private static void LlenarHoja(Worksheet hoja, JsonConDatos datosConPictograma)
         {
+            var datos = datosConPictograma.Datos;
+
             hoja.Cells[3, 1] = datos.NoHDS;
             hoja.Cells[3, 2] = datos.NombreDelProducto;
             hoja.Cells[3, 3] = datos.NoCAS;
@@ -120,7 +149,40 @@ namespace IDIEW.Classes
             hoja.Cells[8, 12] = datos.EquipoDeProteccionPersonal;
             hoja.Cells[8, 13] = datos.Incompatibilidad;
             hoja.Cells[8, 14] = datos.CondicionesAEvitar;
+
+            // Insertar imágenes de pictogramas en la celda K8
+            if (datosConPictograma.PictogramasSeleccionados != null && datosConPictograma.PictogramasSeleccionados.Any())
+            {
+                var celdaK8 = hoja.Cells[8, 11] as Range;
+
+                float left = (float)celdaK8.Left + 5;
+                float topInicial = (float)celdaK8.Top + 5;
+                float altoDisponible = (float)celdaK8.Height - 10; // un poco de margen
+                int totalPictogramas = datosConPictograma.PictogramasSeleccionados.Count;
+
+                // Altura sugerida por pictograma (ajustable según lo que quepa)
+                float alturaPictograma = Math.Min(70, altoDisponible / totalPictogramas);
+                float anchoPictograma = 60; // puedes ajustar si lo prefieres más chico
+
+                float top = topInicial;
+
+                foreach (var pictograma in datosConPictograma.PictogramasSeleccionados)
+                {
+                    string rutaPictograma = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Pictogramas", pictograma);
+                    if (File.Exists(rutaPictograma))
+                    {
+                        hoja.Shapes.AddPicture(rutaPictograma,
+                            Microsoft.Office.Core.MsoTriState.msoFalse,
+                            Microsoft.Office.Core.MsoTriState.msoCTrue,
+                            left, top, anchoPictograma, alturaPictograma);
+
+                        top += alturaPictograma + 2; // espacio entre pictogramas
+                    }
+                }
+            }
+        
         }
+        
     }
 }
 

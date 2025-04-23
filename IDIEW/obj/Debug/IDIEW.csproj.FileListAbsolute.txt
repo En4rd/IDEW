@@ -198,3 +198,4 @@ C:\Users\capar\Documents\GitHub\IDEW\IDIEW\bin\Debug\nl\PdfiumViewer.resources.d
 C:\Users\capar\Documents\GitHub\IDEW\IDIEW\bin\Debug\x64\pdfium.dll
 C:\Users\capar\Documents\GitHub\IDEW\IDIEW\bin\Debug\x86\pdfium.dll
 C:\Users\capar\Documents\GitHub\IDEW\IDIEW\obj\Debug\IDIEW.PdfToTable.resources
+C:\Users\capar\Documents\GitHub\IDEW\IDIEW\obj\Debug\IDIEW.Forms.PdfToTable_Service.EditorHDS.resources
