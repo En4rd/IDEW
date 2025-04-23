@@ -14,12 +14,13 @@ namespace IDIEW.Forms.PdfToTable_Service
     public partial class EditorHDS : Form
     {
         private Classes.JsonConDatos datosActual;
+        private Button btnCancelar;
 
 
-        public EditorHDS(Classes.JsonConDatos datos, List<string> pictogramasDisponibles)
+        public EditorHDS(Classes.JsonConDatos datos, List<string> pictogramasDisponibles , int indiceActual, int total)
         {
             InitializeComponent();
-            
+            lblProgreso.Text = $"{indiceActual}/{total}";
             datosActual = datos;
             txtNombreProducto.Text = datos.Datos.NombreDelProducto;
             txtArea.Text = datos.Datos.Area;
@@ -107,10 +108,13 @@ namespace IDIEW.Forms.PdfToTable_Service
             int count = (int)NumPictogramas.Value;
 
             List<ComboBox> comboList = new List<ComboBox> { cmbPictograma1, cmbPictograma2, cmbPictograma3, cmbPictograma4 };
-
+            List<Label> lblList = new List<Label> { Lbl1, Lbl2, Lbl3, Lbl4 };
+            List<PictureBox> pcblist = new List<PictureBox> { pictureBox, pictureBox1, pictureBox2, pictureBox3 };
             for (int i = 0; i < comboList.Count; i++)
             {
                 comboList[i].Visible = i < count;
+                lblList[i].Visible = i < count;
+                pcblist[i].Visible = i < count;
             }
         }
 
@@ -130,6 +134,18 @@ namespace IDIEW.Forms.PdfToTable_Service
         {
             string ruta4 = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Pictogramas", cmbPictograma4.SelectedItem.ToString());
             pictureBox3.Image = Image.FromFile(ruta4);
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            // Confirmar cancelación
+            var confirmar = MessageBox.Show("¿Seguro que deseas cancelar la exportación?", "Confirmar cancelación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirmar == DialogResult.Yes)
+            {
+                Classes.HDSExcelExporter.CancelarExportacion();
+                this.DialogResult = DialogResult.Cancel;
+                this.Close();
+            }
         }
     }
 }

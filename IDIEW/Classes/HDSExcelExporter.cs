@@ -13,11 +13,20 @@ namespace IDIEW.Classes
 {
     public static class HDSExcelExporter
     {
+
+        private static bool _cancelar = false;
+
+        public static void CancelarExportacion()
+        {
+            _cancelar = true;
+        }
+
         public static void ExportarDesdeCarpeta(ProgressBar progressBar, Form PdfToTable, Panel panelContenedor)
         {
             Thread hilo = new Thread(() =>
             {
-                // Mostrar diálogo para seleccionar carpeta
+                bool cancelar = false;
+
                 string carpetaSeleccionada = string.Empty;
                 PdfToTable.Invoke((MethodInvoker)(() =>
                 {
@@ -32,7 +41,6 @@ namespace IDIEW.Classes
 
                 if (string.IsNullOrEmpty(carpetaSeleccionada)) return;
 
-                // Cargar archivos JSON
                 string[] archivosJson = Directory.GetFiles(carpetaSeleccionada, "*.json");
 
                 List<JsonConDatos> datosList = new List<JsonConDatos>();
@@ -71,23 +79,27 @@ namespace IDIEW.Classes
                 int contadorHDS = 1;
                 foreach (var item in datosList)
                 {
-                    // Obtener pictogramas
+                    if (cancelar)
+                        break;
+
                     var pictogramasDisponibles = Directory.GetFiles(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Pictogramas"))
                                                            .Select(Path.GetFileName)
                                                            .ToList();
 
-                    // Mostrar el editor de manera modal y esperar
+                    DialogResult result = DialogResult.None;
                     PdfToTable.Invoke((MethodInvoker)(() =>
                     {
-                        var editor = new Forms.PdfToTable_Service.EditorHDS(item, pictogramasDisponibles);
-                        if (editor.ShowDialog() != DialogResult.OK)
-                        {
-                            // Si el usuario cancela, salta al siguiente
-                            return;
-                        }
+                        int indiceActual = datosList.IndexOf(item) + 1;
+                        var editor = new Forms.PdfToTable_Service.EditorHDS(item, pictogramasDisponibles, indiceActual, datosList.Count);
+                        result = editor.ShowDialog();
                     }));
 
-                    // Crear nueva hoja y copiar contenido
+                    if (result != DialogResult.OK)
+                    {
+                        cancelar = true;
+                        break;
+                    }
+
                     Worksheet nuevaHoja = (Worksheet)workbook.Sheets.Add(After: workbook.Sheets[hojaIndex]);
                     hojaBase.Copy(Before: nuevaHoja);
                     nuevaHoja = workbook.Sheets[hojaIndex + 1];
@@ -109,13 +121,20 @@ namespace IDIEW.Classes
                     }));
                 }
 
-                string rutaSalida = Path.Combine(carpetaSeleccionada, "HDS_Exportado.xlsx");
-                workbook.SaveAs(rutaSalida);
+                if (!cancelar)
+                {
+                    string rutaSalida = Path.Combine(carpetaSeleccionada, "HDS_Exportado.xlsx");
+                    workbook.SaveAs(rutaSalida);
+                    MessageBox.Show("Exportación completada con éxito.");
+                }
+                else
+                {
+                    MessageBox.Show("Exportación cancelada por el usuario.");
+                }
 
                 workbook.Close(false);
                 excelApp.Quit();
 
-                MessageBox.Show("Exportación completada con éxito.");
             });
 
             hilo.SetApartmentState(ApartmentState.STA);

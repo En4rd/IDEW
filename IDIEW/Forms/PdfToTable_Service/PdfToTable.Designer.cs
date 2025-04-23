@@ -45,7 +45,7 @@
             this.Btn_Enviar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.Btn_Enviar.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.Btn_Enviar.HoverState.Parent = this.Btn_Enviar;
-            this.Btn_Enviar.Location = new System.Drawing.Point(240, 235);
+            this.Btn_Enviar.Location = new System.Drawing.Point(241, 213);
             this.Btn_Enviar.Name = "Btn_Enviar";
             this.Btn_Enviar.ShadowDecoration.Parent = this.Btn_Enviar;
             this.Btn_Enviar.Size = new System.Drawing.Size(391, 105);
