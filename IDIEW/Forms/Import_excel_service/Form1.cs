@@ -55,6 +55,8 @@ namespace IDIEW
                         guna2ProgressBar1.Invoke((MethodInvoker)(() =>
                         {
                             guna2ProgressBar1.Value = actual;
+                            guna2ProgressBar1.Maximum = total;
+
                         }));
 
                         lbl_CONTADOR.Invoke((MethodInvoker)(() =>
