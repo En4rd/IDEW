@@ -1,4 +1,5 @@
-﻿using Microsoft.Office.Interop.Excel;
+﻿using IDIEW.Classes;
+using Microsoft.Office.Interop.Excel;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,7 @@ namespace IDIEW
         public PdfToTable(Panel panelContenedor)
         {
             InitializeComponent();
+            ThemeManager.AplicarTema(this);
         }
 
         private void Btn_Enviar_Click(object sender, EventArgs e)

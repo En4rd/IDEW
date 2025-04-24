@@ -26,6 +26,7 @@ namespace IDIEW.Classes
             Thread hilo = new Thread(() =>
             {
                 bool cancelar = false;
+                List<string> archivosFallidos = new List<string>();
 
                 string carpetaSeleccionada = string.Empty;
                 PdfToTable.Invoke((MethodInvoker)(() =>
@@ -57,9 +58,9 @@ namespace IDIEW.Classes
                             Datos = datos
                         });
                     }
-                    catch (Exception ex)
+                    catch
                     {
-                        MessageBox.Show($"Error al procesar {archivo}: {ex.Message}");
+                        archivosFallidos.Add(Path.GetFileName(archivo));
                     }
                 }
 
@@ -125,7 +126,18 @@ namespace IDIEW.Classes
                 {
                     string rutaSalida = Path.Combine(carpetaSeleccionada, "HDS_Exportado.xlsx");
                     workbook.SaveAs(rutaSalida);
-                    MessageBox.Show("Exportación completada con éxito.");
+
+                    string mensaje = "Exportación completada con éxito.";
+                    if (archivosFallidos.Count > 0)
+                    {
+                        mensaje += "\n\nArchivos que no se pudieron procesar:\n" +
+                                   string.Join("\n", archivosFallidos);
+
+                        // Guardar también como archivo de texto
+                        File.WriteAllLines(Path.Combine(carpetaSeleccionada, "Errores_JSON.txt"), archivosFallidos);
+                    }
+
+                    MessageBox.Show(mensaje);
                 }
                 else
                 {

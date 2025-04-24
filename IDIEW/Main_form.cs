@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using IDIEW.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,6 +27,7 @@ namespace IDIEW
         {
             InitializeComponent();
             AbrirFormularioEnPanel(new Form1(panelContenedor));
+            ThemeManager.AplicarTema(this);
         }
 
         private void guna2GradientTileButton1_Click(object sender, EventArgs e)
@@ -45,6 +48,25 @@ namespace IDIEW
         private void guna2GradientTileButton4_Click(object sender, EventArgs e)
         {
             AbrirFormularioEnPanel(new PdfToTable(panelContenedor));
+        }
+
+        private void guna2GradientTileButton5_Click(object sender, EventArgs e)
+        {
+            // Alterna entre claro y oscuro
+            ThemeManager.CambiarTema(!ThemeManager.ModoClaroActivo);
+
+            // Cambia el texto del botón según el tema
+            var btn = sender as Guna2GradientTileButton;
+            if (btn != null)
+            {
+                btn.Text = ThemeManager.ModoClaroActivo ? "Modo Claro" : "Modo Oscuro";
+            }
+
+            // Aplica el nuevo tema a todos los formularios abiertos
+            foreach (Form f in Application.OpenForms)
+            {
+                ThemeManager.AplicarTema(f);
+            }
         }
     }
     

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Excel;
 using System.IO;
+using IDIEW.Classes;
 
 namespace IDIEW
 {
@@ -26,6 +27,7 @@ namespace IDIEW
         {
             InitializeComponent();
             _panelContenedor = panelContenedor;
+            ThemeManager.AplicarTema(this);
         }
 
         private void guna2GradientButton1_Click(object sender, EventArgs e)

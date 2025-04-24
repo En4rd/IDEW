@@ -133,6 +133,7 @@
     <Compile Include="Classes\FireBase.cs" />
     <Compile Include="Classes\JsonConDatos.cs" />
     <Compile Include="Classes\Perfil.cs" />
+    <Compile Include="Classes\ThemeManager.cs" />
     <Compile Include="Forms\Import_excel_service\add_profile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,7 +231,72 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\grid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brightness-low.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu-open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sunny.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file-json.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file-json %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\json %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\control-point %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\control-point %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\control-point.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\json %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\json.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\excel %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file-word.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file-word %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\excel.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
   <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">

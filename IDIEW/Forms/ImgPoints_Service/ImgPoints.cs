@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using Microsoft.VisualBasic;
 using PdfiumViewer;
 using System.IO;
-
+using IDIEW.Classes;
 
 namespace IDIEW
 {
@@ -50,6 +50,7 @@ namespace IDIEW
         public ImgPoints(Panel panelContenedor)
         {
             InitializeComponent();
+            ThemeManager.AplicarTema(this);
         }
 
 

@@ -1,6 +1,7 @@
 ﻿using FireSharp;
 using FireSharp.Config;
 using FireSharp.Response;
+using IDIEW.Classes;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,7 @@ namespace IDIEW
         {
             InitializeComponent();
             _panelContenedor = panelContenedor;
+            ThemeManager.AplicarTema(this);
         }
 
         private void guna2GradientButton2_Click(object sender, EventArgs e)

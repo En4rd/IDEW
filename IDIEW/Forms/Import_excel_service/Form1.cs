@@ -16,6 +16,7 @@ using FireSharp;
 using FireSharp.Response;
 using static IDIEW.Classes.ImagnImportService;
 using static IDIEW.Classes.FireBase;
+using IDIEW.Classes;
 
 namespace IDIEW
 {
@@ -30,6 +31,7 @@ namespace IDIEW
             InitializeComponent();
             _panelContenedor = panelContenedor;
             hiloImportacion = new Thread(ImportarImagenesDesdeExcelAWord);
+            
         }
 
         private async void ImportarImagenesDesdeExcelAWord()
@@ -121,6 +123,7 @@ namespace IDIEW
 
         private async void Form1_Load(object sender, EventArgs e)
         {
+            ThemeManager.AplicarTema(this);
             try
             {
                 var perfiles = await Classes.FireBase.PerfilServiceInstance.ObtenerPerfilesAsync();

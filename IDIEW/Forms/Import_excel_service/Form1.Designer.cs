@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Drag_pnl = new System.Windows.Forms.Panel();
             this.Title_lbl = new System.Windows.Forms.Label();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.Btn_Eliminar = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientButton3 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.label12 = new System.Windows.Forms.Label();
             this.Perfiles_cmb = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -75,7 +76,6 @@
             this.No_de_pagina = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.Btn_Eliminar = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2ShadowPanel1.SuspendLayout();
             this.guna2ShadowPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ukn2_pic)).BeginInit();
@@ -132,6 +132,30 @@
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(205, 381);
             this.guna2ShadowPanel1.TabIndex = 2;
             // 
+            // Btn_Eliminar
+            // 
+            this.Btn_Eliminar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.Btn_Eliminar.BorderRadius = 5;
+            this.Btn_Eliminar.BorderThickness = 1;
+            this.Btn_Eliminar.CheckedState.Parent = this.Btn_Eliminar;
+            this.Btn_Eliminar.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.Btn_Eliminar.CustomImages.Parent = this.Btn_Eliminar;
+            this.Btn_Eliminar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(34)))), ((int)(((byte)(51)))));
+            this.Btn_Eliminar.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(34)))), ((int)(((byte)(51)))));
+            this.Btn_Eliminar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Btn_Eliminar.ForeColor = System.Drawing.Color.White;
+            this.Btn_Eliminar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.Btn_Eliminar.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.Btn_Eliminar.HoverState.Parent = this.Btn_Eliminar;
+            this.Btn_Eliminar.Location = new System.Drawing.Point(119, 68);
+            this.Btn_Eliminar.Name = "Btn_Eliminar";
+            this.Btn_Eliminar.ShadowDecoration.Parent = this.Btn_Eliminar;
+            this.Btn_Eliminar.Size = new System.Drawing.Size(32, 36);
+            this.Btn_Eliminar.TabIndex = 22;
+            this.Btn_Eliminar.Tag = "Dentro de panel";
+            this.Btn_Eliminar.Text = "-";
+            this.Btn_Eliminar.Click += new System.EventHandler(this.Btn_Eliminar_Click);
+            // 
             // guna2GradientButton3
             // 
             this.guna2GradientButton3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -152,6 +176,7 @@
             this.guna2GradientButton3.ShadowDecoration.Parent = this.guna2GradientButton3;
             this.guna2GradientButton3.Size = new System.Drawing.Size(32, 36);
             this.guna2GradientButton3.TabIndex = 21;
+            this.guna2GradientButton3.Tag = "Dentro de panel";
             this.guna2GradientButton3.Text = "+";
             this.guna2GradientButton3.Click += new System.EventHandler(this.guna2GradientButton3_Click);
             // 
@@ -437,6 +462,7 @@
             this.btnExaminarWord.ShadowDecoration.Parent = this.btnExaminarWord;
             this.btnExaminarWord.Size = new System.Drawing.Size(32, 23);
             this.btnExaminarWord.TabIndex = 21;
+            this.btnExaminarWord.Tag = "Dentro de panel";
             this.btnExaminarWord.Text = "...";
             this.btnExaminarWord.Click += new System.EventHandler(this.btnExaminarWord_Click);
             // 
@@ -460,6 +486,7 @@
             this.btnExaminarExcel.ShadowDecoration.Parent = this.btnExaminarExcel;
             this.btnExaminarExcel.Size = new System.Drawing.Size(32, 23);
             this.btnExaminarExcel.TabIndex = 20;
+            this.btnExaminarExcel.Tag = "Dentro de panel";
             this.btnExaminarExcel.Text = "...";
             this.btnExaminarExcel.Click += new System.EventHandler(this.btnExaminarExcel_Click);
             // 
@@ -681,38 +708,39 @@
             this.Registro_dgv.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(77)))));
             this.Registro_dgv.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Registro_dgv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(34)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Registro_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(34)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Registro_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.Registro_dgv.ColumnHeadersHeight = 30;
             this.Registro_dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Error,
             this.No_de_pagina});
             this.Registro_dgv.EnableHeadersVisualStyles = false;
             this.Registro_dgv.GridColor = System.Drawing.Color.LightGray;
-            this.Registro_dgv.Location = new System.Drawing.Point(64, 35);
+            this.Registro_dgv.Location = new System.Drawing.Point(73, 34);
             this.Registro_dgv.Name = "Registro_dgv";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(77)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Format = "null";
-            dataGridViewCellStyle5.NullValue = null;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Registro_dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(77)))));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.NullValue = null;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.Registro_dgv.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.Registro_dgv.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(77)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Format = "null";
+            dataGridViewCellStyle2.NullValue = null;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Registro_dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(77)))));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.NullValue = null;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.Registro_dgv.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.Registro_dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Registro_dgv.Size = new System.Drawing.Size(244, 277);
             this.Registro_dgv.TabIndex = 0;
@@ -721,11 +749,13 @@
             // 
             this.Error.HeaderText = "Error";
             this.Error.Name = "Error";
+            this.Error.ReadOnly = true;
             // 
             // No_de_pagina
             // 
             this.No_de_pagina.HeaderText = "No. de Pagina";
             this.No_de_pagina.Name = "No_de_pagina";
+            this.No_de_pagina.ReadOnly = true;
             // 
             // guna2GradientButton1
             // 
@@ -766,29 +796,6 @@
             this.guna2GradientButton2.TabIndex = 20;
             this.guna2GradientButton2.Text = "Cancelar";
             this.guna2GradientButton2.Click += new System.EventHandler(this.guna2GradientButton2_Click);
-            // 
-            // Btn_Eliminar
-            // 
-            this.Btn_Eliminar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.Btn_Eliminar.BorderRadius = 5;
-            this.Btn_Eliminar.BorderThickness = 1;
-            this.Btn_Eliminar.CheckedState.Parent = this.Btn_Eliminar;
-            this.Btn_Eliminar.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.Btn_Eliminar.CustomImages.Parent = this.Btn_Eliminar;
-            this.Btn_Eliminar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(34)))), ((int)(((byte)(51)))));
-            this.Btn_Eliminar.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(34)))), ((int)(((byte)(51)))));
-            this.Btn_Eliminar.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Btn_Eliminar.ForeColor = System.Drawing.Color.White;
-            this.Btn_Eliminar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.Btn_Eliminar.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.Btn_Eliminar.HoverState.Parent = this.Btn_Eliminar;
-            this.Btn_Eliminar.Location = new System.Drawing.Point(119, 68);
-            this.Btn_Eliminar.Name = "Btn_Eliminar";
-            this.Btn_Eliminar.ShadowDecoration.Parent = this.Btn_Eliminar;
-            this.Btn_Eliminar.Size = new System.Drawing.Size(32, 36);
-            this.Btn_Eliminar.TabIndex = 22;
-            this.Btn_Eliminar.Text = "-";
-            this.Btn_Eliminar.Click += new System.EventHandler(this.Btn_Eliminar_Click);
             // 
             // Form1
             // 
