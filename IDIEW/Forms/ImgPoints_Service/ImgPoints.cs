@@ -11,11 +11,13 @@ using Microsoft.VisualBasic;
 using PdfiumViewer;
 using System.IO;
 using IDIEW.Classes;
+using Newtonsoft.Json;
 
 namespace IDIEW
 {
     public partial class ImgPoints : Form
     {
+        private string rutaArchivoActual;
         // === Variables de estado para los modos ===
         private bool modoMover = false;
         private int puntoSeleccionadoIndex = -1;
@@ -89,10 +91,10 @@ namespace IDIEW
                         PointF point = item.Item1;
                         int index = item.Item2;
 
-                        g.FillEllipse(redBrush, point.X - 5, point.Y - 5, 10,10);
-                        g.DrawString(index.ToString(), Elipsefont, brush, point.X-4, point.Y - 3);
+                        g.FillEllipse(redBrush, point.X - 5, point.Y - 5, 10, 10);
+                        g.DrawString(index.ToString(), Elipsefont, brush, point.X - 4, point.Y - 3);
                     }
-                
+
             }
 
         }
@@ -195,7 +197,7 @@ namespace IDIEW
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
                     string ext = Path.GetExtension(ofd.FileName).ToLower();
-
+                    rutaArchivoActual = ofd.FileName;
                     if (ext == ".pdf")
                     {
                         try
@@ -242,7 +244,7 @@ namespace IDIEW
                 }
 
             }
-         }
+        }
 
         private void pictureBox1_MouseWheel(object sender, MouseEventArgs e)
         {
@@ -471,5 +473,102 @@ namespace IDIEW
             Btn_EliminarPunto.FillColor = Color.FromArgb(255, 128, 128);
         }
 
+
+        public class EstadoProyecto
+        {
+            public string RutaArchivo { get; set; }
+            public bool EsPdf { get; set; }
+            public List<Tuple<float, float, int>> Puntos { get; set; }
+            public float Zoom { get; set; }
+            public float PanOffsetX { get; set; }
+            public float PanOffsetY { get; set; }
+        }
+
+        private void GuardarProyecto()
+        {
+            if (originalImage == null && pdfDocument == null)
+            {
+                MessageBox.Show("No hay archivo cargado para guardar.");
+                return;
+            }
+
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Archivos de Proyecto (*.ipro)|*.ipro";
+
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                var datos = new EstadoProyecto()
+                {
+                    RutaArchivo = rutaArchivoActual,
+                    EsPdf = pdfDocument != null,
+                    Puntos = points.Select(p => Tuple.Create(p.Item1.X, p.Item1.Y, p.Item2)).ToList(),
+                    Zoom = zoom,
+                    PanOffsetX = panOffset.X,
+                    PanOffsetY = panOffset.Y
+                };
+
+                string json = JsonConvert.SerializeObject(datos, Formatting.Indented);
+                File.WriteAllText(sfd.FileName, json);
+            }
+        }
+
+        private void CargarProyecto()
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Archivos de Proyecto (*.ipro)|*.ipro";
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                string json = File.ReadAllText(ofd.FileName);
+                var datos = JsonConvert.DeserializeObject<EstadoProyecto>(json);
+
+                if (datos.EsPdf)
+                {
+                    pdfDocument = PdfiumViewer.PdfDocument.Load(datos.RutaArchivo);
+                    var size = pdfDocument.PageSizes[0];
+                    int dpi = 300;
+                    int width = (int)(size.Width * dpi / 72);
+                    int height = (int)(size.Height * dpi / 72);
+                    originalImage = pdfDocument.Render(0, width, height, dpi, dpi, PdfiumViewer.PdfRenderFlags.Annotations);
+                }
+                else
+                {
+                    originalImage = new Bitmap(datos.RutaArchivo);
+                    pdfDocument = null;
+                }
+
+                rutaArchivoActual = datos.RutaArchivo;
+
+                // Restaurar puntos
+                points = datos.Puntos.Select(p => Tuple.Create(new PointF(p.Item1, p.Item2), p.Item3)).ToList();
+
+                // Restaurar zoom y pan
+                zoom = datos.Zoom;
+                panOffset = new PointF(datos.PanOffsetX, datos.PanOffsetY);
+
+                Pnl_Visualizador.Image = (Image)originalImage.Clone();
+                Pnl_Visualizador.Invalidate();
+            }
+
+        }
+
+        private void guardarProgresoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GuardarProyecto();
+        }
+
+        private void cargarProgresoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CargarProyecto();
+
+            // Habilitar botones
+            Btn_EliminarPunto.Enabled = true;
+            Btn_EditarNumero.Enabled = true;
+            Btn_ElipseFont.Enabled = true;
+            Btn_ElipseColor.Enabled = true;
+            Btn_FontColor.Enabled = true;
+            Btn_Guardar.Enabled = true;
+            Btn_Mover.Enabled = true;
+        }
     }
 }

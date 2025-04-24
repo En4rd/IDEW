@@ -12,7 +12,7 @@ namespace IDIEW.Classes
 {
     public static class ThemeManager
     {
-        public static bool ModoClaroActivo = true;
+        public static bool ModoClaroActivo = false;
         // Si es un Panel, marcamos el flag
        
         private static Color claroFondo = Color.Gainsboro;
@@ -36,7 +36,11 @@ namespace IDIEW.Classes
 
             
             control.ForeColor = texto;
-
+            if (control is MenuStrip)
+            {
+                var msr = (MenuStrip)control;
+                msr.BackColor = fondo;
+            }
             if (control is Panel)
             {
                 var pnll = (Panel)control;

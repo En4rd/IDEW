@@ -45,10 +45,10 @@
             this.Btn_Enviar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.Btn_Enviar.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.Btn_Enviar.HoverState.Parent = this.Btn_Enviar;
-            this.Btn_Enviar.Location = new System.Drawing.Point(241, 213);
+            this.Btn_Enviar.Location = new System.Drawing.Point(260, 269);
             this.Btn_Enviar.Name = "Btn_Enviar";
             this.Btn_Enviar.ShadowDecoration.Parent = this.Btn_Enviar;
-            this.Btn_Enviar.Size = new System.Drawing.Size(391, 105);
+            this.Btn_Enviar.Size = new System.Drawing.Size(430, 153);
             this.Btn_Enviar.TabIndex = 21;
             this.Btn_Enviar.Text = "Iniciar";
             this.Btn_Enviar.Click += new System.EventHandler(this.Btn_Enviar_Click);
