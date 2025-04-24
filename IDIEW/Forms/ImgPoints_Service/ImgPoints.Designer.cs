@@ -48,7 +48,7 @@
             // 
             // Pnl_Visualizador
             // 
-            this.Pnl_Visualizador.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Pnl_Visualizador.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Pnl_Visualizador.ErrorImage = null;
             this.Pnl_Visualizador.Location = new System.Drawing.Point(63, 12);
             this.Pnl_Visualizador.Name = "Pnl_Visualizador";
@@ -161,7 +161,7 @@
             this.guna2ShadowPanel1.Controls.Add(this.Btn_ElipseColor);
             this.guna2ShadowPanel1.Controls.Add(this.Btn_EditarNumero);
             this.guna2ShadowPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(77)))));
-            this.guna2ShadowPanel1.Location = new System.Drawing.Point(63, 584);
+            this.guna2ShadowPanel1.Location = new System.Drawing.Point(63, 543);
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.Radius = 5;
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
@@ -229,7 +229,7 @@
             this.guna2ShadowPanel2.Controls.Add(this.Btn_subir);
             this.guna2ShadowPanel2.Controls.Add(this.Btn_Guardar);
             this.guna2ShadowPanel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(77)))));
-            this.guna2ShadowPanel2.Location = new System.Drawing.Point(749, 584);
+            this.guna2ShadowPanel2.Location = new System.Drawing.Point(745, 543);
             this.guna2ShadowPanel2.Name = "guna2ShadowPanel2";
             this.guna2ShadowPanel2.Radius = 5;
             this.guna2ShadowPanel2.ShadowColor = System.Drawing.Color.Black;

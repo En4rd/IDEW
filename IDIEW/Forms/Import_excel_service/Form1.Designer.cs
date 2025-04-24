@@ -102,7 +102,7 @@
             this.Title_lbl.ForeColor = System.Drawing.Color.White;
             this.Title_lbl.Location = new System.Drawing.Point(64, 54);
             this.Title_lbl.Name = "Title_lbl";
-            this.Title_lbl.Size = new System.Drawing.Size(457, 32);
+            this.Title_lbl.Size = new System.Drawing.Size(456, 32);
             this.Title_lbl.TabIndex = 1;
             this.Title_lbl.Text = "Exportacion de imagenes de excel a word\r\n";
             // 
@@ -600,6 +600,7 @@
             this.guna2ShadowPanel3.Controls.Add(this.LBL_LISTO);
             this.guna2ShadowPanel3.Controls.Add(this.lbl_Intentos);
             this.guna2ShadowPanel3.Controls.Add(this.lbl_CONTADOR);
+            this.guna2ShadowPanel3.Controls.Add(this.guna2ProgressBar1);
             this.guna2ShadowPanel3.Controls.Add(this.label10);
             this.guna2ShadowPanel3.Controls.Add(this.label9);
             this.guna2ShadowPanel3.Controls.Add(this.label11);
@@ -680,11 +681,11 @@
             // guna2ProgressBar1
             // 
             this.guna2ProgressBar1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.guna2ProgressBar1.Location = new System.Drawing.Point(0, 702);
+            this.guna2ProgressBar1.Location = new System.Drawing.Point(260, 60);
             this.guna2ProgressBar1.Name = "guna2ProgressBar1";
             this.guna2ProgressBar1.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.guna2ProgressBar1.ShadowDecoration.Parent = this.guna2ProgressBar1;
-            this.guna2ProgressBar1.Size = new System.Drawing.Size(1018, 33);
+            this.guna2ProgressBar1.Size = new System.Drawing.Size(210, 33);
             this.guna2ProgressBar1.TabIndex = 18;
             this.guna2ProgressBar1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.guna2ProgressBar1.Visible = false;
@@ -806,7 +807,6 @@
             this.Controls.Add(this.guna2GradientButton2);
             this.Controls.Add(this.guna2GradientButton1);
             this.Controls.Add(this.guna2ShadowPanel4);
-            this.Controls.Add(this.guna2ProgressBar1);
             this.Controls.Add(this.guna2ShadowPanel3);
             this.Controls.Add(this.guna2ShadowPanel2);
             this.Controls.Add(this.guna2ShadowPanel1);
