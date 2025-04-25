@@ -14,7 +14,7 @@ namespace IDIEW
 {
     public partial class Main_form : Form
     {
-
+        private bool desplegado = true;
         private void AbrirFormularioEnPanel(Form Form1)
         {
             Form1.TopLevel = false;
@@ -66,6 +66,57 @@ namespace IDIEW
             foreach (Form f in Application.OpenForms)
             {
                 ThemeManager.AplicarTema(f);
+            }
+        }
+
+        private void guna2ImageButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2TileButton1_Click(object sender, EventArgs e)
+        {
+            if (desplegado == true)
+            {
+                panel1.Width = 60;
+                label2.Visible = false;
+                guna2Separator1.Visible = false;
+                label3.Visible = false;
+                guna2Separator2.Visible = false;
+                desplegado = false;
+
+                foreach (Control ctrl in panel1.Controls)
+                {
+                    if (ctrl is Guna.UI2.WinForms.Guna2GradientTileButton)
+                    {
+                        var btn = (Guna2GradientTileButton)ctrl;
+                        btn.ImageSize = new Size(33, 33);
+                        btn.ImageOffset = new Point(0, 15);
+                        btn.TextOffset = new Point(0, 30);
+                    }
+                }
+
+            }
+            else
+            {
+                panel1.Width = 167;
+                desplegado = true;
+
+                label2.Visible = true;
+                guna2Separator1.Visible = true;
+                label3.Visible = true;
+                guna2Separator2.Visible = true;
+                
+                foreach (Control ctrl in panel1.Controls)
+                {
+                    if (ctrl is Guna.UI2.WinForms.Guna2GradientTileButton)
+                    {
+                        var btn = (Guna2GradientTileButton)ctrl;
+                        btn.ImageSize = new Size(20, 20);
+                        btn.ImageOffset = new Point(0, 12);
+                        btn.TextOffset = new Point(0, -12);
+                    }
+                }
             }
         }
     }

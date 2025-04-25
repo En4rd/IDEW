@@ -152,9 +152,26 @@ namespace IDIEW.Classes
 
             }
 
+            
+
             foreach (Control hijo in control.Controls)
             {
                 AplicarTema(hijo);
+            }
+
+            if (control is Guna2TileButton)
+            {
+                var ipc = (Guna2TileButton)control;
+
+                ipc.FillColor = button;
+
+                if (ipc.Tag?.ToString() == "ipcb")
+                {
+                    ipc.Image = ThemeManager.ModoClaroActivo
+            ? Properties.Resources.menu__2_
+            : Properties.Resources.menu__1_;
+                }
+
             }
 
         }

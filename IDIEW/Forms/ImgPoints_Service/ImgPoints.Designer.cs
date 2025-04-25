@@ -45,6 +45,7 @@
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guardarProgresoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cargarProgresoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             ((System.ComponentModel.ISupportInitialize)(this.Pnl_Visualizador)).BeginInit();
             this.guna2ShadowPanel1.SuspendLayout();
             this.guna2ShadowPanel2.SuspendLayout();
@@ -166,7 +167,7 @@
             this.guna2ShadowPanel1.Controls.Add(this.Btn_ElipseColor);
             this.guna2ShadowPanel1.Controls.Add(this.Btn_EditarNumero);
             this.guna2ShadowPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(77)))));
-            this.guna2ShadowPanel1.Location = new System.Drawing.Point(63, 543);
+            this.guna2ShadowPanel1.Location = new System.Drawing.Point(59, 568);
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.Radius = 5;
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
@@ -234,7 +235,7 @@
             this.guna2ShadowPanel2.Controls.Add(this.Btn_subir);
             this.guna2ShadowPanel2.Controls.Add(this.Btn_Guardar);
             this.guna2ShadowPanel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(77)))));
-            this.guna2ShadowPanel2.Location = new System.Drawing.Point(745, 543);
+            this.guna2ShadowPanel2.Location = new System.Drawing.Point(734, 568);
             this.guna2ShadowPanel2.Name = "guna2ShadowPanel2";
             this.guna2ShadowPanel2.Radius = 5;
             this.guna2ShadowPanel2.ShadowColor = System.Drawing.Color.Black;
@@ -251,7 +252,7 @@
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.menuStrip1.Size = new System.Drawing.Size(1019, 29);
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
@@ -279,6 +280,13 @@
             this.cargarProgresoToolStripMenuItem.Text = "Cargar progreso";
             this.cargarProgresoToolStripMenuItem.Click += new System.EventHandler(this.cargarProgresoToolStripMenuItem_Click);
             // 
+            // guna2Separator1
+            // 
+            this.guna2Separator1.Location = new System.Drawing.Point(12, 24);
+            this.guna2Separator1.Name = "guna2Separator1";
+            this.guna2Separator1.Size = new System.Drawing.Size(995, 17);
+            this.guna2Separator1.TabIndex = 11;
+            // 
             // ImgPoints
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -289,6 +297,7 @@
             this.Controls.Add(this.guna2ShadowPanel1);
             this.Controls.Add(this.Pnl_Visualizador);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.guna2Separator1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "ImgPoints";
@@ -321,5 +330,6 @@
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem guardarProgresoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cargarProgresoToolStripMenuItem;
+        private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
     }
 }
