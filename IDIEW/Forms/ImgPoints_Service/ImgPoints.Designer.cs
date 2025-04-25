@@ -54,6 +54,8 @@
             // 
             // Pnl_Visualizador
             // 
+            this.Pnl_Visualizador.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Pnl_Visualizador.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Pnl_Visualizador.ErrorImage = null;
             this.Pnl_Visualizador.Location = new System.Drawing.Point(75, 47);
@@ -159,6 +161,7 @@
             // 
             // guna2ShadowPanel1
             // 
+            this.guna2ShadowPanel1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2ShadowPanel1.Controls.Add(this.Btn_Mover);
             this.guna2ShadowPanel1.Controls.Add(this.Btn_FontColor);
@@ -231,6 +234,7 @@
             // 
             // guna2ShadowPanel2
             // 
+            this.guna2ShadowPanel2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.guna2ShadowPanel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2ShadowPanel2.Controls.Add(this.Btn_subir);
             this.guna2ShadowPanel2.Controls.Add(this.Btn_Guardar);
@@ -244,8 +248,11 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(34)))), ((int)(((byte)(51)))));
             this.menuStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem});
@@ -253,7 +260,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(1019, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(201, 29);
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
             // 
