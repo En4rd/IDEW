@@ -37,8 +37,7 @@
             this.txtCantidad = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbPictograma1 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.ti = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.btnGuardar = new Guna.UI2.WinForms.Guna2GradientButton();
             this.Panel22 = new System.Windows.Forms.Panel();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.lblProgreso = new System.Windows.Forms.Label();
@@ -46,9 +45,6 @@
             this.cmbPictograma3 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cmbPictograma4 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.NumPictogramas = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.txtUso = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -93,13 +89,20 @@
             this.Lbl2 = new System.Windows.Forms.Label();
             this.Lbl3 = new System.Windows.Forms.Label();
             this.Lbl4 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            this.Btn_siguiente = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.panelBotones = new System.Windows.Forms.Panel();
+            this.guna2GradientTileButton1 = new Guna.UI2.WinForms.Guna2GradientTileButton();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.NumPictogramas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNombreProducto
@@ -221,7 +224,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(819, 67);
+            this.label4.Location = new System.Drawing.Point(899, 67);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(96, 21);
             this.label4.TabIndex = 25;
@@ -242,46 +245,35 @@
             this.cmbPictograma1.HoverState.Parent = this.cmbPictograma1;
             this.cmbPictograma1.ItemHeight = 30;
             this.cmbPictograma1.ItemsAppearance.Parent = this.cmbPictograma1;
-            this.cmbPictograma1.Location = new System.Drawing.Point(823, 177);
+            this.cmbPictograma1.Location = new System.Drawing.Point(903, 177);
             this.cmbPictograma1.Name = "cmbPictograma1";
             this.cmbPictograma1.ShadowDecoration.Parent = this.cmbPictograma1;
             this.cmbPictograma1.Size = new System.Drawing.Size(165, 36);
             this.cmbPictograma1.TabIndex = 14;
             this.cmbPictograma1.SelectedIndexChanged += new System.EventHandler(this.cmbPictogramas_SelectedIndexChanged);
             // 
-            // ti
+            // btnGuardar
             // 
-            this.ti.BorderRadius = 5;
-            this.ti.CheckedState.Parent = this.ti;
-            this.ti.CustomImages.Parent = this.ti;
-            this.ti.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ti.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ti.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ti.ForeColor = System.Drawing.Color.White;
-            this.ti.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ti.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ti.HoverState.Parent = this.ti;
-            this.ti.Location = new System.Drawing.Point(833, 683);
-            this.ti.Name = "ti";
-            this.ti.ShadowDecoration.Parent = this.ti;
-            this.ti.Size = new System.Drawing.Size(131, 60);
-            this.ti.TabIndex = 27;
-            this.ti.Text = "Siguiente";
-            this.ti.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // pictureBox
-            // 
-            this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox.Location = new System.Drawing.Point(1015, 170);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(53, 51);
-            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox.TabIndex = 28;
-            this.pictureBox.TabStop = false;
+            this.btnGuardar.BorderRadius = 5;
+            this.btnGuardar.CheckedState.Parent = this.btnGuardar;
+            this.btnGuardar.CustomImages.Parent = this.btnGuardar;
+            this.btnGuardar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnGuardar.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnGuardar.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnGuardar.HoverState.Parent = this.btnGuardar;
+            this.btnGuardar.Location = new System.Drawing.Point(887, 585);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.ShadowDecoration.Parent = this.btnGuardar;
+            this.btnGuardar.Size = new System.Drawing.Size(126, 60);
+            this.btnGuardar.TabIndex = 27;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // Panel22
             // 
-            this.Panel22.Dock = System.Windows.Forms.DockStyle.Top;
             this.Panel22.Location = new System.Drawing.Point(0, 0);
             this.Panel22.Name = "Panel22";
             this.Panel22.Size = new System.Drawing.Size(1176, 53);
@@ -295,7 +287,7 @@
             // 
             this.lblProgreso.AutoSize = true;
             this.lblProgreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProgreso.Location = new System.Drawing.Point(1053, 553);
+            this.lblProgreso.Location = new System.Drawing.Point(987, 500);
             this.lblProgreso.Name = "lblProgreso";
             this.lblProgreso.Size = new System.Drawing.Size(25, 24);
             this.lblProgreso.TabIndex = 30;
@@ -316,7 +308,7 @@
             this.cmbPictograma2.HoverState.Parent = this.cmbPictograma2;
             this.cmbPictograma2.ItemHeight = 30;
             this.cmbPictograma2.ItemsAppearance.Parent = this.cmbPictograma2;
-            this.cmbPictograma2.Location = new System.Drawing.Point(823, 252);
+            this.cmbPictograma2.Location = new System.Drawing.Point(903, 252);
             this.cmbPictograma2.Name = "cmbPictograma2";
             this.cmbPictograma2.ShadowDecoration.Parent = this.cmbPictograma2;
             this.cmbPictograma2.Size = new System.Drawing.Size(165, 36);
@@ -338,7 +330,7 @@
             this.cmbPictograma3.HoverState.Parent = this.cmbPictograma3;
             this.cmbPictograma3.ItemHeight = 30;
             this.cmbPictograma3.ItemsAppearance.Parent = this.cmbPictograma3;
-            this.cmbPictograma3.Location = new System.Drawing.Point(823, 331);
+            this.cmbPictograma3.Location = new System.Drawing.Point(903, 331);
             this.cmbPictograma3.Name = "cmbPictograma3";
             this.cmbPictograma3.ShadowDecoration.Parent = this.cmbPictograma3;
             this.cmbPictograma3.Size = new System.Drawing.Size(165, 36);
@@ -360,7 +352,7 @@
             this.cmbPictograma4.HoverState.Parent = this.cmbPictograma4;
             this.cmbPictograma4.ItemHeight = 30;
             this.cmbPictograma4.ItemsAppearance.Parent = this.cmbPictograma4;
-            this.cmbPictograma4.Location = new System.Drawing.Point(823, 405);
+            this.cmbPictograma4.Location = new System.Drawing.Point(903, 405);
             this.cmbPictograma4.Name = "cmbPictograma4";
             this.cmbPictograma4.ShadowDecoration.Parent = this.cmbPictograma4;
             this.cmbPictograma4.Size = new System.Drawing.Size(165, 36);
@@ -381,7 +373,7 @@
             this.NumPictogramas.FocusedState.Parent = this.NumPictogramas;
             this.NumPictogramas.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NumPictogramas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.NumPictogramas.Location = new System.Drawing.Point(823, 112);
+            this.NumPictogramas.Location = new System.Drawing.Point(903, 112);
             this.NumPictogramas.Maximum = new decimal(new int[] {
             4,
             0,
@@ -397,39 +389,6 @@
             0,
             0});
             this.NumPictogramas.ValueChanged += new System.EventHandler(this.NumPictogramas_ValueChanged);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(1015, 248);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(53, 49);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 35;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Visible = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(1015, 322);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(53, 51);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 36;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Visible = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3.Location = new System.Drawing.Point(1015, 401);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(53, 51);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 37;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Visible = false;
             // 
             // txtUso
             // 
@@ -663,6 +622,7 @@
             // panel1
             // 
             this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.guna2GradientTileButton1);
             this.panel1.Controls.Add(this.label25);
             this.panel1.Controls.Add(this.Organosdd);
             this.panel1.Controls.Add(this.txtOrganos);
@@ -707,10 +667,9 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txtCantidad);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 53);
+            this.panel1.Location = new System.Drawing.Point(167, 51);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(749, 716);
+            this.panel1.Size = new System.Drawing.Size(672, 718);
             this.panel1.TabIndex = 51;
             // 
             // label25
@@ -1180,10 +1139,10 @@
             this.btncancelar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btncancelar.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btncancelar.HoverState.Parent = this.btncancelar;
-            this.btncancelar.Location = new System.Drawing.Point(1003, 683);
+            this.btncancelar.Location = new System.Drawing.Point(1019, 585);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.ShadowDecoration.Parent = this.btncancelar;
-            this.btncancelar.Size = new System.Drawing.Size(131, 60);
+            this.btncancelar.Size = new System.Drawing.Size(113, 60);
             this.btncancelar.TabIndex = 52;
             this.btncancelar.Text = "Cancelar";
             this.btncancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -1193,7 +1152,7 @@
             this.Lbl1.AutoSize = true;
             this.Lbl1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl1.ForeColor = System.Drawing.Color.Black;
-            this.Lbl1.Location = new System.Drawing.Point(780, 179);
+            this.Lbl1.Location = new System.Drawing.Point(860, 179);
             this.Lbl1.Name = "Lbl1";
             this.Lbl1.Size = new System.Drawing.Size(24, 30);
             this.Lbl1.TabIndex = 77;
@@ -1204,7 +1163,7 @@
             this.Lbl2.AutoSize = true;
             this.Lbl2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl2.ForeColor = System.Drawing.Color.Black;
-            this.Lbl2.Location = new System.Drawing.Point(780, 252);
+            this.Lbl2.Location = new System.Drawing.Point(860, 252);
             this.Lbl2.Name = "Lbl2";
             this.Lbl2.Size = new System.Drawing.Size(24, 30);
             this.Lbl2.TabIndex = 78;
@@ -1216,7 +1175,7 @@
             this.Lbl3.AutoSize = true;
             this.Lbl3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl3.ForeColor = System.Drawing.Color.Black;
-            this.Lbl3.Location = new System.Drawing.Point(780, 337);
+            this.Lbl3.Location = new System.Drawing.Point(860, 337);
             this.Lbl3.Name = "Lbl3";
             this.Lbl3.Size = new System.Drawing.Size(24, 30);
             this.Lbl3.TabIndex = 79;
@@ -1228,22 +1187,109 @@
             this.Lbl4.AutoSize = true;
             this.Lbl4.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl4.ForeColor = System.Drawing.Color.Black;
-            this.Lbl4.Location = new System.Drawing.Point(780, 415);
+            this.Lbl4.Location = new System.Drawing.Point(860, 415);
             this.Lbl4.Name = "Lbl4";
             this.Lbl4.Size = new System.Drawing.Size(24, 30);
             this.Lbl4.TabIndex = 80;
             this.Lbl4.Text = "4";
             this.Lbl4.Visible = false;
             // 
-            // label26
+            // Btn_siguiente
             // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(793, 553);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(244, 24);
-            this.label26.TabIndex = 81;
-            this.label26.Text = "Progreso de archivos JSON";
+            this.Btn_siguiente.BackColor = System.Drawing.Color.Transparent;
+            this.Btn_siguiente.BorderRadius = 5;
+            this.Btn_siguiente.CheckedState.Parent = this.Btn_siguiente;
+            this.Btn_siguiente.CustomImages.Parent = this.Btn_siguiente;
+            this.Btn_siguiente.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.Btn_siguiente.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.Btn_siguiente.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Btn_siguiente.ForeColor = System.Drawing.Color.White;
+            this.Btn_siguiente.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.Btn_siguiente.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.Btn_siguiente.HoverState.Parent = this.Btn_siguiente;
+            this.Btn_siguiente.Location = new System.Drawing.Point(889, 651);
+            this.Btn_siguiente.Name = "Btn_siguiente";
+            this.Btn_siguiente.ShadowDecoration.Parent = this.Btn_siguiente;
+            this.Btn_siguiente.Size = new System.Drawing.Size(243, 60);
+            this.Btn_siguiente.TabIndex = 82;
+            this.Btn_siguiente.Text = "Exportar";
+            this.Btn_siguiente.Click += new System.EventHandler(this.Btn_siguiente_Click);
+            // 
+            // panelBotones
+            // 
+            this.panelBotones.AutoScroll = true;
+            this.panelBotones.BackColor = System.Drawing.Color.White;
+            this.panelBotones.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelBotones.Location = new System.Drawing.Point(0, 0);
+            this.panelBotones.Name = "panelBotones";
+            this.panelBotones.Size = new System.Drawing.Size(170, 769);
+            this.panelBotones.TabIndex = 83;
+            // 
+            // guna2GradientTileButton1
+            // 
+            this.guna2GradientTileButton1.BorderRadius = 5;
+            this.guna2GradientTileButton1.CheckedState.Parent = this.guna2GradientTileButton1;
+            this.guna2GradientTileButton1.CustomImages.Parent = this.guna2GradientTileButton1;
+            this.guna2GradientTileButton1.FillColor = System.Drawing.Color.Gainsboro;
+            this.guna2GradientTileButton1.FillColor2 = System.Drawing.Color.Gainsboro;
+            this.guna2GradientTileButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GradientTileButton1.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientTileButton1.HoverState.Parent = this.guna2GradientTileButton1;
+            this.guna2GradientTileButton1.Image = global::IDIEW.Properties.Resources.info;
+            this.guna2GradientTileButton1.Location = new System.Drawing.Point(400, 197);
+            this.guna2GradientTileButton1.Name = "guna2GradientTileButton1";
+            this.guna2GradientTileButton1.ShadowDecoration.Parent = this.guna2GradientTileButton1;
+            this.guna2GradientTileButton1.Size = new System.Drawing.Size(29, 30);
+            this.guna2GradientTileButton1.TabIndex = 77;
+            this.toolTip1.SetToolTip(this.guna2GradientTileButton1, "Temperatura de Ignicion");
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox3.Location = new System.Drawing.Point(1095, 401);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(53, 51);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 37;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Visible = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Location = new System.Drawing.Point(1095, 322);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(53, 51);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 36;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Visible = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(1095, 248);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(53, 49);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 35;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox.Location = new System.Drawing.Point(1095, 170);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(53, 51);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox.TabIndex = 28;
+            this.pictureBox.TabStop = false;
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "Info";
             // 
             // EditorHDS
             // 
@@ -1251,7 +1297,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1176, 769);
-            this.Controls.Add(this.label26);
+            this.Controls.Add(this.panelBotones);
+            this.Controls.Add(this.Btn_siguiente);
             this.Controls.Add(this.Lbl4);
             this.Controls.Add(this.Lbl3);
             this.Controls.Add(this.Lbl2);
@@ -1270,18 +1317,18 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.Panel22);
             this.Controls.Add(this.pictureBox);
-            this.Controls.Add(this.ti);
+            this.Controls.Add(this.btnGuardar);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EditorHDS";
             this.Text = "EditorHDS";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumPictogramas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1297,7 +1344,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2ComboBox cmbPictograma1;
-        private Guna.UI2.WinForms.Guna2GradientButton ti;
+        private Guna.UI2.WinForms.Guna2GradientButton btnGuardar;
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Panel Panel22;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
@@ -1353,6 +1400,9 @@
         private System.Windows.Forms.Label Lbl2;
         private System.Windows.Forms.Label Lbl3;
         private System.Windows.Forms.Label Lbl4;
-        private System.Windows.Forms.Label label26;
+        private Guna.UI2.WinForms.Guna2GradientButton Btn_siguiente;
+        private System.Windows.Forms.Panel panelBotones;
+        private Guna.UI2.WinForms.Guna2GradientTileButton guna2GradientTileButton1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

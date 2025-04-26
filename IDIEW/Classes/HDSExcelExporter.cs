@@ -13,8 +13,9 @@ namespace IDIEW.Classes
 {
     public static class HDSExcelExporter
     {
-
         private static bool _cancelar = false;
+
+
 
         public static void CancelarExportacion()
         {
@@ -64,6 +65,23 @@ namespace IDIEW.Classes
                     }
                 }
 
+                var pictogramasDisponibles = Directory.GetFiles(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Pictogramas"))
+                                                  .Select(Path.GetFileName)
+                                                  .ToList();
+
+                DialogResult result = DialogResult.None;
+                PdfToTable.Invoke((MethodInvoker)(() =>
+                {
+                    var editor = new Forms.PdfToTable_Service.EditorHDS(datosList, pictogramasDisponibles);
+                    result = editor.ShowDialog();
+                }));
+
+                if (result != DialogResult.OK)
+                {
+                    MessageBox.Show("Exportación cancelada por el usuario.");
+                    return;
+                }
+
                 string rutaPlantilla = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Plantillas", "plantilla.xlsx");
                 var excelApp = new Microsoft.Office.Interop.Excel.Application();
                 var workbook = excelApp.Workbooks.Open(rutaPlantilla);
@@ -82,24 +100,6 @@ namespace IDIEW.Classes
                 {
                     if (cancelar)
                         break;
-
-                    var pictogramasDisponibles = Directory.GetFiles(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Pictogramas"))
-                                                           .Select(Path.GetFileName)
-                                                           .ToList();
-
-                    DialogResult result = DialogResult.None;
-                    PdfToTable.Invoke((MethodInvoker)(() =>
-                    {
-                        int indiceActual = datosList.IndexOf(item) + 1;
-                        var editor = new Forms.PdfToTable_Service.EditorHDS(item, pictogramasDisponibles, indiceActual, datosList.Count);
-                        result = editor.ShowDialog();
-                    }));
-
-                    if (result != DialogResult.OK)
-                    {
-                        cancelar = true;
-                        break;
-                    }
 
                     Worksheet nuevaHoja = (Worksheet)workbook.Sheets.Add(After: workbook.Sheets[hojaIndex]);
                     hojaBase.Copy(Before: nuevaHoja);
@@ -122,27 +122,19 @@ namespace IDIEW.Classes
                     }));
                 }
 
-                if (!cancelar)
+                string rutaSalida = Path.Combine(carpetaSeleccionada, "HDS_Exportado.xlsx");
+                workbook.SaveAs(rutaSalida);
+
+                string mensaje = "Exportación completada con éxito.";
+                if (archivosFallidos.Count > 0)
                 {
-                    string rutaSalida = Path.Combine(carpetaSeleccionada, "HDS_Exportado.xlsx");
-                    workbook.SaveAs(rutaSalida);
+                    mensaje += "\n\nArchivos que no se pudieron procesar:\n" +
+                               string.Join("\n", archivosFallidos);
 
-                    string mensaje = "Exportación completada con éxito.";
-                    if (archivosFallidos.Count > 0)
-                    {
-                        mensaje += "\n\nArchivos que no se pudieron procesar:\n" +
-                                   string.Join("\n", archivosFallidos);
-
-                        // Guardar también como archivo de texto
-                        File.WriteAllLines(Path.Combine(carpetaSeleccionada, "Errores_JSON.txt"), archivosFallidos);
-                    }
-
-                    MessageBox.Show(mensaje);
+                    File.WriteAllLines(Path.Combine(carpetaSeleccionada, "Errores_JSON.txt"), archivosFallidos);
                 }
-                else
-                {
-                    MessageBox.Show("Exportación cancelada por el usuario.");
-                }
+
+                MessageBox.Show(mensaje);
 
                 workbook.Close(false);
                 excelApp.Quit();
@@ -181,19 +173,17 @@ namespace IDIEW.Classes
             hoja.Cells[8, 13] = datos.Incompatibilidad;
             hoja.Cells[8, 14] = datos.CondicionesAEvitar;
 
-            // Insertar imágenes de pictogramas en la celda K8
             if (datosConPictograma.PictogramasSeleccionados != null && datosConPictograma.PictogramasSeleccionados.Any())
             {
                 var celdaK8 = hoja.Cells[8, 11] as Range;
 
                 float left = (float)celdaK8.Left + 5;
                 float topInicial = (float)celdaK8.Top + 5;
-                float altoDisponible = (float)celdaK8.Height - 10; // un poco de margen
+                float altoDisponible = (float)celdaK8.Height - 10;
                 int totalPictogramas = datosConPictograma.PictogramasSeleccionados.Count;
 
-                // Altura sugerida por pictograma (ajustable según lo que quepa)
                 float alturaPictograma = Math.Min(70, altoDisponible / totalPictogramas);
-                float anchoPictograma = 60; // puedes ajustar si lo prefieres más chico
+                float anchoPictograma = 60;
 
                 float top = topInicial;
 
@@ -207,13 +197,11 @@ namespace IDIEW.Classes
                             Microsoft.Office.Core.MsoTriState.msoCTrue,
                             left, top, anchoPictograma, alturaPictograma);
 
-                        top += alturaPictograma + 2; // espacio entre pictogramas
+                        top += alturaPictograma + 2;
                     }
                 }
             }
-        
         }
-        
     }
-}
+    }
 

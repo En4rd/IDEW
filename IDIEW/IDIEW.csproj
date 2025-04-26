@@ -133,7 +133,6 @@
     <Compile Include="Classes\FireBase.cs" />
     <Compile Include="Classes\JsonConDatos.cs" />
     <Compile Include="Classes\Perfil.cs" />
-    <Compile Include="Classes\PuntoManagercs.cs" />
     <Compile Include="Classes\ThemeManager.cs" />
     <Compile Include="Forms\Import_excel_service\add_profile.cs">
       <SubType>Form</SubType>
@@ -297,6 +296,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\excel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
