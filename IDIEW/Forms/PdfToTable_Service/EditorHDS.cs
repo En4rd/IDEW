@@ -1,4 +1,6 @@
 ﻿using Guna.UI2.WinForms;
+using IDIEW.Classes;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,7 +22,11 @@ namespace IDIEW.Forms.PdfToTable_Service
         private List<Classes.JsonConDatos> datosList;
         private int indiceActual;
         private List<string> pictogramasDisponibles;
-      
+        private string ArchivoRuta = HDSExcelExporter.CarpetaSeleccionada;
+        private Classes.JsonConDatos datosActualClonado;
+        private Classes.JsonConDatos datosEstadoOriginal;
+
+
 
 
 
@@ -30,7 +36,9 @@ namespace IDIEW.Forms.PdfToTable_Service
             this.datosList = datosList;
             this.pictogramasDisponibles = pictogramasDisponibles;
             indiceActual = 0;
+            guna2ShadowForm1.SetShadowForm(this);  // Aplica la sombra al formulario
 
+            // Configurar parámetros de la sombra
 
             CrearBotonesNavegacion();
             MostrarDatos();
@@ -48,39 +56,66 @@ namespace IDIEW.Forms.PdfToTable_Service
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            if (datosList == null || datosList.Count == 0) return;
+
             var datos = datosList[indiceActual];
 
+            // Actualizar datos en memoria
+            datos.Datos.NombreDelProducto = txtNombreProducto.Text;
             datos.Datos.Area = txtArea.Text;
             datos.Datos.Cantidad = txtCantidad.Text;
             datos.Datos.Uso = txtUso.Text;
             datos.Datos.FechaDeActualizacionDeHDS = txtFecha.Text;
             datos.Datos.TemperaturaDeInflamacion = txtTDI.Text;
             datos.Datos.Fabricante = txtFabricante.Text;
-            datos.Datos.HDSEnEspanol = txtHDSes.Text;
+            datos.Datos.HDSEnEspanol = txtHDEspanol.Text;
             datos.Datos.NoCAS = txtNoCAS.Text;
             datos.Datos.EquipoDeProteccionPersonal = txtEPP.Text;
             datos.Datos.Descripcion = txtDescripcion.Text;
             datos.Datos.Incompatibilidad = txtIncompatibilidad.Text;
-            datos.Datos.CondicionesAEvitar = txtEvitar.Text;
-            datos.Datos.CaracteristicasFisicoQuimicas = txtCaracteristicas.Text;
-            datos.Datos.LimiteDeExposicion = txtLimites.Text;
-            datos.Datos.PrimerosAuxilios = txtPrimeros.Text;
-            datos.Datos.MedidasSanitarias = txtMedidas.Text;
-            datos.Datos.OrganosAfectados = txtOrganos.Text;
+            datos.Datos.CondicionesAEvitar = txtCondicionesAEvitar.Text;
+            datos.Datos.CaracteristicasFisicoQuimicas = txtCaracteristicasFisicoQuimicas.Text;
+            datos.Datos.LimiteDeExposicion = txtLimiteExposicion.Text;
+            datos.Datos.PrimerosAuxilios = txtPrimerosAuxilios.Text;
+            datos.Datos.MedidasSanitarias = txtMedidasSanitarias.Text;
+            datos.Datos.OrganosAfectados = txtOrganosAfectados.Text;
             datos.Datos.Sintomas = txtSintomas.Text;
 
-            List<string> pictosSeleccionados = new List<string>();
-            List<ComboBox> comboList = new List<ComboBox> { cmbPictograma1, cmbPictograma2, cmbPictograma3, cmbPictograma4 };
-            foreach (var cmb in comboList.Where(c => c.Visible && c.SelectedItem != null))
-            {
-                pictosSeleccionados.Add(cmb.SelectedItem.ToString());
-            }
-            datos.PictogramasSeleccionados = pictosSeleccionados;
-            datos.ImagenPictograma = string.Join(";", pictosSeleccionados);
+            // Actualizar pictogramas
+            if (datos.PictogramasSeleccionados == null)
+                datos.PictogramasSeleccionados = new List<string>();
+            else
+                datos.PictogramasSeleccionados.Clear();
 
-            MessageBox.Show("Cambios guardados.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        
-    }
+            var comboList = new List<Guna2ComboBox> { cmbPictograma1, cmbPictograma2, cmbPictograma3, cmbPictograma4 };
+            foreach (var combo in comboList)
+            {
+                if (combo.Visible && combo.SelectedItem != null)
+                {
+                    datos.PictogramasSeleccionados.Add(combo.SelectedItem.ToString());
+                }
+            }
+
+            try
+            {
+                string jsonActualizado = JsonConvert.SerializeObject(datos, Formatting.Indented);
+
+                if (!string.IsNullOrEmpty(datos.Archivo))
+                {
+                    File.WriteAllText(datos.Archivo, jsonActualizado);
+                }
+                datosList[indiceActual] = datos;
+                //  Aquí importante: después de guardar, actualizamos el "original"
+                ClonarEstadoActualComoOriginal();
+                
+
+                MessageBox.Show("Datos guardados correctamente.", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al guardar el archivo: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         private void NumPictogramas_ValueChanged(object sender, EventArgs e)
         {
@@ -141,6 +176,8 @@ namespace IDIEW.Forms.PdfToTable_Service
 
                 Guna2GradientButton btn = new Guna2GradientButton
                 {
+                    ImageAlign= System.Windows.Forms.HorizontalAlignment.Right,
+                    TextAlign = System.Windows.Forms.HorizontalAlignment.Left,
                     Text = nombre.Length > 25 ? nombre.Substring(0, 25) + "..." : nombre,
                     Dock = DockStyle.Top,
                     Tag = index,
@@ -149,14 +186,28 @@ namespace IDIEW.Forms.PdfToTable_Service
                     FillColor2 = Color.White,
                     ForeColor = Color.Black,
                     HoverState = {
-                FillColor = Color.LightGray,
-                FillColor2 = Color.LightGray
+                    FillColor = Color.LightGray,
+                    FillColor2 = Color.LightGray
             },
                     Cursor = Cursors.Hand
                 };
 
                 btn.Click += (s, e) =>
                 {
+                    //  Antes de cambiar, preguntamos si hay cambios
+                    if (HayCambiosSinGuardar())
+                    {
+                        var confirmar = MessageBox.Show(
+                            "Hay cambios sin guardar. ¿Seguro que deseas cambiar de químico?",
+                            "Cambios sin guardar",
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Warning
+                        );
+
+                        if (confirmar != DialogResult.Yes)
+                            return; // No cambiar si no confirma
+                    }
+
                     indiceActual = index;
                     MostrarDatos();
                     ResaltarBotonSeleccionado(btn);
@@ -176,25 +227,25 @@ namespace IDIEW.Forms.PdfToTable_Service
             var datos = datosList[indiceActual];
             lblProgreso.Text = $"{indiceActual + 1}/{datosList.Count}";
 
-            txtNombreProducto.Text = datos.Datos.NombreDelProducto;
-            txtArea.Text = datos.Datos.Area;
-            txtCantidad.Text = datos.Datos.Cantidad;
-            txtUso.Text = datos.Datos.Uso;
-            txtFecha.Text = datos.Datos.FechaDeActualizacionDeHDS;
-            txtTDI.Text = datos.Datos.TemperaturaDeInflamacion;
-            txtFabricante.Text = datos.Datos.Fabricante;
-            txtHDSes.Text = datos.Datos.HDSEnEspanol;
-            txtNoCAS.Text = datos.Datos.NoCAS;
-            txtEPP.Text = datos.Datos.EquipoDeProteccionPersonal;
-            txtDescripcion.Text = datos.Datos.Descripcion;
-            txtIncompatibilidad.Text = datos.Datos.Incompatibilidad;
-            txtEvitar.Text = datos.Datos.CondicionesAEvitar;
-            txtCaracteristicas.Text = datos.Datos.CaracteristicasFisicoQuimicas;
-            txtLimites.Text = datos.Datos.LimiteDeExposicion;
-            txtPrimeros.Text = datos.Datos.PrimerosAuxilios;
-            txtMedidas.Text = datos.Datos.MedidasSanitarias;
-            txtOrganos.Text = datos.Datos.OrganosAfectados;
-            txtSintomas.Text = datos.Datos.Sintomas;
+            txtNombreProducto.Text = datosList[indiceActual].Datos.NombreDelProducto;
+            txtUso.Text = datosList[indiceActual].Datos.Uso;
+            txtFecha.Text = datosList[indiceActual].Datos.FechaDeActualizacionDeHDS;
+            txtTDI.Text = datosList[indiceActual].Datos.TemperaturaDeInflamacion;
+            txtDescripcion.Text = datosList[indiceActual].Datos.Descripcion;
+            txtEPP.Text = datosList[indiceActual].Datos.EquipoDeProteccionPersonal;
+            txtIncompatibilidad.Text = datosList[indiceActual].Datos.Incompatibilidad;
+            txtCondicionesAEvitar.Text = datosList[indiceActual].Datos.CondicionesAEvitar;
+            txtNoCAS.Text = datosList[indiceActual].Datos.NoCAS;
+            txtLimiteExposicion.Text = datosList[indiceActual].Datos.LimiteDeExposicion;
+            txtCaracteristicasFisicoQuimicas.Text = datosList[indiceActual].Datos.CaracteristicasFisicoQuimicas;
+            txtMedidasSanitarias.Text = datosList[indiceActual].Datos.MedidasSanitarias;
+            txtSintomas.Text = datosList[indiceActual].Datos.Sintomas;
+            txtPrimerosAuxilios.Text = datosList[indiceActual].Datos.PrimerosAuxilios;
+            txtOrganosAfectados.Text = datosList[indiceActual].Datos.OrganosAfectados;
+            txtArea.Text = datosList[indiceActual].Datos.Area;
+            txtCantidad.Text = datosList[indiceActual].Datos.Cantidad;
+            txtFabricante.Text = datosList[indiceActual].Datos.Fabricante;
+            txtHDEspanol.Text = datosList[indiceActual].Datos.HDSEnEspanol;
 
             var comboList = new List<ComboBox> { cmbPictograma1, cmbPictograma2, cmbPictograma3, cmbPictograma4 };
             var pictureBoxes = new List<PictureBox> { pictureBox, pictureBox1, pictureBox2, pictureBox3 };
@@ -255,21 +306,14 @@ namespace IDIEW.Forms.PdfToTable_Service
                     lblList[i].Visible = false;
                 }
             }
+
+            datosActualClonado = ClonarDatos(datosList[indiceActual]);
         }
         private void Btn_siguiente_Click(object sender, EventArgs e)
         {
-            if (indiceActual < datosList.Count - 1)
-            {
-                btnGuardar_Click(sender, e);
-                indiceActual++;
-                MostrarDatos();
-            }
-            else
-            {
-                btnGuardar_Click(sender, e);
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
+            btnGuardar_Click(sender, e); // Primero guardar los cambios actuales
+            this.DialogResult = DialogResult.OK; // Decirle al ExportarDesdeCarpeta que sí queremos exportar
+            this.Close(); // Cerrar el formulario
         }
 
 
@@ -290,5 +334,86 @@ namespace IDIEW.Forms.PdfToTable_Service
 
             botonSeleccionado = nuevoSeleccionado;
         }
+
+        private Classes.JsonConDatos ClonarDatos(Classes.JsonConDatos original)
+        {
+            string json = JsonConvert.SerializeObject(original);
+            return JsonConvert.DeserializeObject<Classes.JsonConDatos>(json);
+        }
+
+        private bool HayCambiosSinGuardar()
+        {
+            if (datosActualClonado == null)
+                return false;
+
+            var datosActual = datosList[indiceActual];
+
+            // Comparar campos de texto
+            if (txtNombreProducto.Text != datosActualClonado.Datos.NombreDelProducto) return true;
+            if (txtArea.Text != datosActualClonado.Datos.Area) return true;
+            if (txtCantidad.Text != datosActualClonado.Datos.Cantidad) return true;
+            if (txtUso.Text != datosActualClonado.Datos.Uso) return true;
+            if (txtFecha.Text != datosActualClonado.Datos.FechaDeActualizacionDeHDS) return true;
+            if (txtTDI.Text != datosActualClonado.Datos.TemperaturaDeInflamacion) return true;
+            if (txtFabricante.Text != datosActualClonado.Datos.Fabricante) return true;
+            if (txtHDEspanol.Text != datosActualClonado.Datos.HDSEnEspanol) return true;
+            if (txtNoCAS.Text != datosActualClonado.Datos.NoCAS) return true;
+            if (txtEPP.Text != datosActualClonado.Datos.EquipoDeProteccionPersonal) return true;
+            if (txtDescripcion.Text != datosActualClonado.Datos.Descripcion) return true;
+            if (txtIncompatibilidad.Text != datosActualClonado.Datos.Incompatibilidad) return true;
+            if (txtCondicionesAEvitar.Text != datosActualClonado.Datos.CondicionesAEvitar) return true;
+            if (txtCaracteristicasFisicoQuimicas.Text != datosActualClonado.Datos.CaracteristicasFisicoQuimicas) return true;
+            if (txtLimiteExposicion.Text != datosActualClonado.Datos.LimiteDeExposicion) return true;
+            if (txtPrimerosAuxilios.Text != datosActualClonado.Datos.PrimerosAuxilios) return true;
+            if (txtMedidasSanitarias.Text != datosActualClonado.Datos.MedidasSanitarias) return true;
+            if (txtOrganosAfectados.Text != datosActualClonado.Datos.OrganosAfectados) return true;
+            if (txtSintomas.Text != datosActualClonado.Datos.Sintomas) return true;
+
+            // Comparar pictogramas
+            var pictogramasActuales = new List<string>();
+            var comboList = new List<ComboBox> { cmbPictograma1, cmbPictograma2, cmbPictograma3, cmbPictograma4 };
+
+            foreach (var combo in comboList)
+            {
+                if (combo.Visible && combo.SelectedItem != null)
+                {
+                    pictogramasActuales.Add(combo.SelectedItem.ToString());
+                }
+            }
+
+            var pictogramasOriginales = datosActualClonado.PictogramasSeleccionados ?? new List<string>();
+
+            if (!pictogramasActuales.SequenceEqual(pictogramasOriginales))
+                return true;
+
+            return false;
+        }
+
+        private void ClonarEstadoActualComoOriginal()
+        {
+            if (datosList != null && datosList.Count > indiceActual)
+            {
+                datosActualClonado = ClonarDatos(datosList[indiceActual]);
+                datosEstadoOriginal = JsonConvert.DeserializeObject<Classes.JsonConDatos>(
+                    JsonConvert.SerializeObject(datosList[indiceActual])
+                    
+                );
+            }
+        }
+
+        private void ActualizarIconoBotonGuardar(bool cambiosGuardados)
+        {
+            if (cambiosGuardados)
+            {
+                // Cambiar al ícono de "Guardado"
+                btnGuardar.Image = Properties.Resources.file_success; // Este es el ícono de "Guardado"
+            }
+            else
+            {
+                // Cambiar al ícono de "Pendiente" o "Editar"
+                btnGuardar.Image = Properties.Resources.file_tips_one; // Este es el ícono de "Editar"
+            }
+        }
+
     }
 }

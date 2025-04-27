@@ -20,6 +20,7 @@ namespace IDIEW
             Form1.TopLevel = false;
             Form1.Dock = DockStyle.Fill;   // Hace que ocupe todo el panel
             panelContenedor.Controls.Clear();
+            guna2ShadowForm1.SetShadowForm(this);
             panelContenedor.Controls.Add(Form1); // Agrega el form al panel 
             Form1.Show();                  // Muestra el form
         }

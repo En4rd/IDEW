@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditorHDS));
             this.txtNombreProducto = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtArea = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -54,29 +55,31 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtTDI = new Guna.UI2.WinForms.Guna2TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtHDSes = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtHDEspanol = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtNoCAS = new Guna.UI2.WinForms.Guna2TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.guna2GradientTileButton2 = new Guna.UI2.WinForms.Guna2GradientTileButton();
+            this.guna2GradientTileButton1 = new Guna.UI2.WinForms.Guna2GradientTileButton();
             this.label25 = new System.Windows.Forms.Label();
             this.Organosdd = new System.Windows.Forms.Label();
-            this.txtOrganos = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtOrganosAfectados = new Guna.UI2.WinForms.Guna2TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.txtSintomas = new Guna.UI2.WinForms.Guna2TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.txtMedidas = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtMedidasSanitarias = new Guna.UI2.WinForms.Guna2TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.txtLimites = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtLimiteExposicion = new Guna.UI2.WinForms.Guna2TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.txtPrimeros = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtPrimerosAuxilios = new Guna.UI2.WinForms.Guna2TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.txtCaracteristicas = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtCaracteristicasFisicoQuimicas = new Guna.UI2.WinForms.Guna2TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.txtEvitar = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtCondicionesAEvitar = new Guna.UI2.WinForms.Guna2TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtIncompatibilidad = new Guna.UI2.WinForms.Guna2TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -91,12 +94,14 @@
             this.Lbl4 = new System.Windows.Forms.Label();
             this.Btn_siguiente = new Guna.UI2.WinForms.Guna2GradientButton();
             this.panelBotones = new System.Windows.Forms.Panel();
-            this.guna2GradientTileButton1 = new Guna.UI2.WinForms.Guna2GradientTileButton();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
+            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.NumPictogramas)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -162,11 +167,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(47, 33);
+            this.label1.Location = new System.Drawing.Point(28, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 21);
+            this.label1.Size = new System.Drawing.Size(57, 17);
             this.label1.TabIndex = 24;
             this.label1.Text = "Nombre";
             // 
@@ -554,32 +559,32 @@
             this.label9.TabIndex = 47;
             this.label9.Text = "español";
             // 
-            // txtHDSes
+            // txtHDEspanol
             // 
-            this.txtHDSes.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.txtHDSes.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtHDSes.DefaultText = "";
-            this.txtHDSes.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtHDSes.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtHDSes.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtHDSes.DisabledState.Parent = this.txtHDSes;
-            this.txtHDSes.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtHDSes.FillColor = System.Drawing.Color.Silver;
-            this.txtHDSes.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtHDSes.FocusedState.Parent = this.txtHDSes;
-            this.txtHDSes.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHDSes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtHDSes.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtHDSes.HoverState.Parent = this.txtHDSes;
-            this.txtHDSes.Location = new System.Drawing.Point(124, 278);
-            this.txtHDSes.Margin = new System.Windows.Forms.Padding(6);
-            this.txtHDSes.Name = "txtHDSes";
-            this.txtHDSes.PasswordChar = '\0';
-            this.txtHDSes.PlaceholderText = "";
-            this.txtHDSes.SelectedText = "";
-            this.txtHDSes.ShadowDecoration.Parent = this.txtHDSes;
-            this.txtHDSes.Size = new System.Drawing.Size(189, 26);
-            this.txtHDSes.TabIndex = 48;
+            this.txtHDEspanol.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtHDEspanol.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtHDEspanol.DefaultText = "";
+            this.txtHDEspanol.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtHDEspanol.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtHDEspanol.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtHDEspanol.DisabledState.Parent = this.txtHDEspanol;
+            this.txtHDEspanol.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtHDEspanol.FillColor = System.Drawing.Color.Silver;
+            this.txtHDEspanol.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtHDEspanol.FocusedState.Parent = this.txtHDEspanol;
+            this.txtHDEspanol.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHDEspanol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtHDEspanol.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtHDEspanol.HoverState.Parent = this.txtHDEspanol;
+            this.txtHDEspanol.Location = new System.Drawing.Point(124, 278);
+            this.txtHDEspanol.Margin = new System.Windows.Forms.Padding(6);
+            this.txtHDEspanol.Name = "txtHDEspanol";
+            this.txtHDEspanol.PasswordChar = '\0';
+            this.txtHDEspanol.PlaceholderText = "";
+            this.txtHDEspanol.SelectedText = "";
+            this.txtHDEspanol.ShadowDecoration.Parent = this.txtHDEspanol;
+            this.txtHDEspanol.Size = new System.Drawing.Size(189, 26);
+            this.txtHDEspanol.TabIndex = 48;
             // 
             // txtNoCAS
             // 
@@ -622,26 +627,27 @@
             // panel1
             // 
             this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.guna2GradientTileButton2);
             this.panel1.Controls.Add(this.guna2GradientTileButton1);
             this.panel1.Controls.Add(this.label25);
             this.panel1.Controls.Add(this.Organosdd);
-            this.panel1.Controls.Add(this.txtOrganos);
+            this.panel1.Controls.Add(this.txtOrganosAfectados);
             this.panel1.Controls.Add(this.label24);
             this.panel1.Controls.Add(this.label23);
             this.panel1.Controls.Add(this.txtSintomas);
             this.panel1.Controls.Add(this.label22);
             this.panel1.Controls.Add(this.label21);
-            this.panel1.Controls.Add(this.txtMedidas);
+            this.panel1.Controls.Add(this.txtMedidasSanitarias);
             this.panel1.Controls.Add(this.label20);
             this.panel1.Controls.Add(this.label19);
-            this.panel1.Controls.Add(this.txtLimites);
+            this.panel1.Controls.Add(this.txtLimiteExposicion);
             this.panel1.Controls.Add(this.label18);
             this.panel1.Controls.Add(this.label17);
-            this.panel1.Controls.Add(this.txtPrimeros);
+            this.panel1.Controls.Add(this.txtPrimerosAuxilios);
             this.panel1.Controls.Add(this.label16);
-            this.panel1.Controls.Add(this.txtCaracteristicas);
+            this.panel1.Controls.Add(this.txtCaracteristicasFisicoQuimicas);
             this.panel1.Controls.Add(this.label15);
-            this.panel1.Controls.Add(this.txtEvitar);
+            this.panel1.Controls.Add(this.txtCondicionesAEvitar);
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.txtIncompatibilidad);
             this.panel1.Controls.Add(this.label13);
@@ -649,7 +655,7 @@
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.txtDescripcion);
             this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.txtHDSes);
+            this.panel1.Controls.Add(this.txtHDEspanol);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.txtNoCAS);
@@ -667,10 +673,46 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txtCantidad);
-            this.panel1.Location = new System.Drawing.Point(167, 51);
+            this.panel1.Location = new System.Drawing.Point(188, 51);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(672, 718);
+            this.panel1.Size = new System.Drawing.Size(666, 718);
             this.panel1.TabIndex = 51;
+            // 
+            // guna2GradientTileButton2
+            // 
+            this.guna2GradientTileButton2.BorderRadius = 5;
+            this.guna2GradientTileButton2.CheckedState.Parent = this.guna2GradientTileButton2;
+            this.guna2GradientTileButton2.CustomImages.Parent = this.guna2GradientTileButton2;
+            this.guna2GradientTileButton2.FillColor = System.Drawing.Color.Gainsboro;
+            this.guna2GradientTileButton2.FillColor2 = System.Drawing.Color.Gainsboro;
+            this.guna2GradientTileButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GradientTileButton2.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientTileButton2.HoverState.Parent = this.guna2GradientTileButton2;
+            this.guna2GradientTileButton2.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientTileButton2.Image")));
+            this.guna2GradientTileButton2.Location = new System.Drawing.Point(402, 364);
+            this.guna2GradientTileButton2.Name = "guna2GradientTileButton2";
+            this.guna2GradientTileButton2.ShadowDecoration.Parent = this.guna2GradientTileButton2;
+            this.guna2GradientTileButton2.Size = new System.Drawing.Size(29, 30);
+            this.guna2GradientTileButton2.TabIndex = 78;
+            this.toolTip2.SetToolTip(this.guna2GradientTileButton2, "Equipo De Proteccion Personal");
+            // 
+            // guna2GradientTileButton1
+            // 
+            this.guna2GradientTileButton1.BorderRadius = 5;
+            this.guna2GradientTileButton1.CheckedState.Parent = this.guna2GradientTileButton1;
+            this.guna2GradientTileButton1.CustomImages.Parent = this.guna2GradientTileButton1;
+            this.guna2GradientTileButton1.FillColor = System.Drawing.Color.Gainsboro;
+            this.guna2GradientTileButton1.FillColor2 = System.Drawing.Color.Gainsboro;
+            this.guna2GradientTileButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GradientTileButton1.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientTileButton1.HoverState.Parent = this.guna2GradientTileButton1;
+            this.guna2GradientTileButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientTileButton1.Image")));
+            this.guna2GradientTileButton1.Location = new System.Drawing.Point(400, 197);
+            this.guna2GradientTileButton1.Name = "guna2GradientTileButton1";
+            this.guna2GradientTileButton1.ShadowDecoration.Parent = this.guna2GradientTileButton1;
+            this.guna2GradientTileButton1.Size = new System.Drawing.Size(29, 30);
+            this.guna2GradientTileButton1.TabIndex = 77;
+            this.toolTip1.SetToolTip(this.guna2GradientTileButton1, "Temperatura de Ignicion");
             // 
             // label25
             // 
@@ -694,33 +736,33 @@
             this.Organosdd.TabIndex = 75;
             this.Organosdd.Text = "Organos";
             // 
-            // txtOrganos
+            // txtOrganosAfectados
             // 
-            this.txtOrganos.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.txtOrganos.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtOrganos.DefaultText = "";
-            this.txtOrganos.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtOrganos.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtOrganos.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtOrganos.DisabledState.Parent = this.txtOrganos;
-            this.txtOrganos.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtOrganos.FillColor = System.Drawing.Color.Silver;
-            this.txtOrganos.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtOrganos.FocusedState.Parent = this.txtOrganos;
-            this.txtOrganos.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOrganos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtOrganos.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtOrganos.HoverState.Parent = this.txtOrganos;
-            this.txtOrganos.Location = new System.Drawing.Point(124, 1212);
-            this.txtOrganos.Margin = new System.Windows.Forms.Padding(4);
-            this.txtOrganos.Multiline = true;
-            this.txtOrganos.Name = "txtOrganos";
-            this.txtOrganos.PasswordChar = '\0';
-            this.txtOrganos.PlaceholderText = "";
-            this.txtOrganos.SelectedText = "";
-            this.txtOrganos.ShadowDecoration.Parent = this.txtOrganos;
-            this.txtOrganos.Size = new System.Drawing.Size(189, 187);
-            this.txtOrganos.TabIndex = 74;
+            this.txtOrganosAfectados.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtOrganosAfectados.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtOrganosAfectados.DefaultText = "";
+            this.txtOrganosAfectados.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtOrganosAfectados.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtOrganosAfectados.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtOrganosAfectados.DisabledState.Parent = this.txtOrganosAfectados;
+            this.txtOrganosAfectados.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtOrganosAfectados.FillColor = System.Drawing.Color.Silver;
+            this.txtOrganosAfectados.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtOrganosAfectados.FocusedState.Parent = this.txtOrganosAfectados;
+            this.txtOrganosAfectados.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOrganosAfectados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtOrganosAfectados.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtOrganosAfectados.HoverState.Parent = this.txtOrganosAfectados;
+            this.txtOrganosAfectados.Location = new System.Drawing.Point(124, 1212);
+            this.txtOrganosAfectados.Margin = new System.Windows.Forms.Padding(4);
+            this.txtOrganosAfectados.Multiline = true;
+            this.txtOrganosAfectados.Name = "txtOrganosAfectados";
+            this.txtOrganosAfectados.PasswordChar = '\0';
+            this.txtOrganosAfectados.PlaceholderText = "";
+            this.txtOrganosAfectados.SelectedText = "";
+            this.txtOrganosAfectados.ShadowDecoration.Parent = this.txtOrganosAfectados;
+            this.txtOrganosAfectados.Size = new System.Drawing.Size(189, 187);
+            this.txtOrganosAfectados.TabIndex = 74;
             // 
             // label24
             // 
@@ -794,33 +836,33 @@
             this.label21.TabIndex = 69;
             this.label21.Text = "Medidas";
             // 
-            // txtMedidas
+            // txtMedidasSanitarias
             // 
-            this.txtMedidas.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.txtMedidas.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtMedidas.DefaultText = "";
-            this.txtMedidas.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtMedidas.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtMedidas.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMedidas.DisabledState.Parent = this.txtMedidas;
-            this.txtMedidas.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMedidas.FillColor = System.Drawing.Color.Silver;
-            this.txtMedidas.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMedidas.FocusedState.Parent = this.txtMedidas;
-            this.txtMedidas.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMedidas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtMedidas.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMedidas.HoverState.Parent = this.txtMedidas;
-            this.txtMedidas.Location = new System.Drawing.Point(124, 853);
-            this.txtMedidas.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMedidas.Multiline = true;
-            this.txtMedidas.Name = "txtMedidas";
-            this.txtMedidas.PasswordChar = '\0';
-            this.txtMedidas.PlaceholderText = "";
-            this.txtMedidas.SelectedText = "";
-            this.txtMedidas.ShadowDecoration.Parent = this.txtMedidas;
-            this.txtMedidas.Size = new System.Drawing.Size(189, 292);
-            this.txtMedidas.TabIndex = 68;
+            this.txtMedidasSanitarias.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtMedidasSanitarias.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtMedidasSanitarias.DefaultText = "";
+            this.txtMedidasSanitarias.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtMedidasSanitarias.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtMedidasSanitarias.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMedidasSanitarias.DisabledState.Parent = this.txtMedidasSanitarias;
+            this.txtMedidasSanitarias.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMedidasSanitarias.FillColor = System.Drawing.Color.Silver;
+            this.txtMedidasSanitarias.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMedidasSanitarias.FocusedState.Parent = this.txtMedidasSanitarias;
+            this.txtMedidasSanitarias.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMedidasSanitarias.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtMedidasSanitarias.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMedidasSanitarias.HoverState.Parent = this.txtMedidasSanitarias;
+            this.txtMedidasSanitarias.Location = new System.Drawing.Point(124, 853);
+            this.txtMedidasSanitarias.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMedidasSanitarias.Multiline = true;
+            this.txtMedidasSanitarias.Name = "txtMedidasSanitarias";
+            this.txtMedidasSanitarias.PasswordChar = '\0';
+            this.txtMedidasSanitarias.PlaceholderText = "";
+            this.txtMedidasSanitarias.SelectedText = "";
+            this.txtMedidasSanitarias.ShadowDecoration.Parent = this.txtMedidasSanitarias;
+            this.txtMedidasSanitarias.Size = new System.Drawing.Size(189, 292);
+            this.txtMedidasSanitarias.TabIndex = 68;
             // 
             // label20
             // 
@@ -844,33 +886,33 @@
             this.label19.TabIndex = 66;
             this.label19.Text = "Limites";
             // 
-            // txtLimites
+            // txtLimiteExposicion
             // 
-            this.txtLimites.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.txtLimites.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtLimites.DefaultText = "";
-            this.txtLimites.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtLimites.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtLimites.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtLimites.DisabledState.Parent = this.txtLimites;
-            this.txtLimites.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtLimites.FillColor = System.Drawing.Color.Silver;
-            this.txtLimites.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtLimites.FocusedState.Parent = this.txtLimites;
-            this.txtLimites.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLimites.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtLimites.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtLimites.HoverState.Parent = this.txtLimites;
-            this.txtLimites.Location = new System.Drawing.Point(124, 722);
-            this.txtLimites.Margin = new System.Windows.Forms.Padding(4);
-            this.txtLimites.Multiline = true;
-            this.txtLimites.Name = "txtLimites";
-            this.txtLimites.PasswordChar = '\0';
-            this.txtLimites.PlaceholderText = "";
-            this.txtLimites.SelectedText = "";
-            this.txtLimites.ShadowDecoration.Parent = this.txtLimites;
-            this.txtLimites.Size = new System.Drawing.Size(189, 84);
-            this.txtLimites.TabIndex = 65;
+            this.txtLimiteExposicion.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtLimiteExposicion.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtLimiteExposicion.DefaultText = "";
+            this.txtLimiteExposicion.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtLimiteExposicion.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtLimiteExposicion.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtLimiteExposicion.DisabledState.Parent = this.txtLimiteExposicion;
+            this.txtLimiteExposicion.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtLimiteExposicion.FillColor = System.Drawing.Color.Silver;
+            this.txtLimiteExposicion.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtLimiteExposicion.FocusedState.Parent = this.txtLimiteExposicion;
+            this.txtLimiteExposicion.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLimiteExposicion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtLimiteExposicion.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtLimiteExposicion.HoverState.Parent = this.txtLimiteExposicion;
+            this.txtLimiteExposicion.Location = new System.Drawing.Point(124, 722);
+            this.txtLimiteExposicion.Margin = new System.Windows.Forms.Padding(4);
+            this.txtLimiteExposicion.Multiline = true;
+            this.txtLimiteExposicion.Name = "txtLimiteExposicion";
+            this.txtLimiteExposicion.PasswordChar = '\0';
+            this.txtLimiteExposicion.PlaceholderText = "";
+            this.txtLimiteExposicion.SelectedText = "";
+            this.txtLimiteExposicion.ShadowDecoration.Parent = this.txtLimiteExposicion;
+            this.txtLimiteExposicion.Size = new System.Drawing.Size(189, 84);
+            this.txtLimiteExposicion.TabIndex = 65;
             // 
             // label18
             // 
@@ -893,33 +935,33 @@
             this.label17.Size = new System.Drawing.Size(0, 17);
             this.label17.TabIndex = 63;
             // 
-            // txtPrimeros
+            // txtPrimerosAuxilios
             // 
-            this.txtPrimeros.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.txtPrimeros.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtPrimeros.DefaultText = "";
-            this.txtPrimeros.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtPrimeros.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtPrimeros.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPrimeros.DisabledState.Parent = this.txtPrimeros;
-            this.txtPrimeros.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPrimeros.FillColor = System.Drawing.Color.Silver;
-            this.txtPrimeros.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPrimeros.FocusedState.Parent = this.txtPrimeros;
-            this.txtPrimeros.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrimeros.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtPrimeros.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPrimeros.HoverState.Parent = this.txtPrimeros;
-            this.txtPrimeros.Location = new System.Drawing.Point(450, 809);
-            this.txtPrimeros.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPrimeros.Multiline = true;
-            this.txtPrimeros.Name = "txtPrimeros";
-            this.txtPrimeros.PasswordChar = '\0';
-            this.txtPrimeros.PlaceholderText = "";
-            this.txtPrimeros.SelectedText = "";
-            this.txtPrimeros.ShadowDecoration.Parent = this.txtPrimeros;
-            this.txtPrimeros.Size = new System.Drawing.Size(189, 292);
-            this.txtPrimeros.TabIndex = 62;
+            this.txtPrimerosAuxilios.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtPrimerosAuxilios.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtPrimerosAuxilios.DefaultText = "";
+            this.txtPrimerosAuxilios.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtPrimerosAuxilios.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtPrimerosAuxilios.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPrimerosAuxilios.DisabledState.Parent = this.txtPrimerosAuxilios;
+            this.txtPrimerosAuxilios.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPrimerosAuxilios.FillColor = System.Drawing.Color.Silver;
+            this.txtPrimerosAuxilios.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPrimerosAuxilios.FocusedState.Parent = this.txtPrimerosAuxilios;
+            this.txtPrimerosAuxilios.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrimerosAuxilios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtPrimerosAuxilios.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPrimerosAuxilios.HoverState.Parent = this.txtPrimerosAuxilios;
+            this.txtPrimerosAuxilios.Location = new System.Drawing.Point(450, 809);
+            this.txtPrimerosAuxilios.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPrimerosAuxilios.Multiline = true;
+            this.txtPrimerosAuxilios.Name = "txtPrimerosAuxilios";
+            this.txtPrimerosAuxilios.PasswordChar = '\0';
+            this.txtPrimerosAuxilios.PlaceholderText = "";
+            this.txtPrimerosAuxilios.SelectedText = "";
+            this.txtPrimerosAuxilios.ShadowDecoration.Parent = this.txtPrimerosAuxilios;
+            this.txtPrimerosAuxilios.Size = new System.Drawing.Size(189, 292);
+            this.txtPrimerosAuxilios.TabIndex = 62;
             // 
             // label16
             // 
@@ -932,33 +974,33 @@
             this.label16.TabIndex = 61;
             this.label16.Text = "físico-químicas";
             // 
-            // txtCaracteristicas
+            // txtCaracteristicasFisicoQuimicas
             // 
-            this.txtCaracteristicas.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.txtCaracteristicas.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtCaracteristicas.DefaultText = "";
-            this.txtCaracteristicas.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtCaracteristicas.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtCaracteristicas.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCaracteristicas.DisabledState.Parent = this.txtCaracteristicas;
-            this.txtCaracteristicas.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCaracteristicas.FillColor = System.Drawing.Color.Silver;
-            this.txtCaracteristicas.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCaracteristicas.FocusedState.Parent = this.txtCaracteristicas;
-            this.txtCaracteristicas.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCaracteristicas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtCaracteristicas.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCaracteristicas.HoverState.Parent = this.txtCaracteristicas;
-            this.txtCaracteristicas.Location = new System.Drawing.Point(450, 576);
-            this.txtCaracteristicas.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCaracteristicas.Multiline = true;
-            this.txtCaracteristicas.Name = "txtCaracteristicas";
-            this.txtCaracteristicas.PasswordChar = '\0';
-            this.txtCaracteristicas.PlaceholderText = "";
-            this.txtCaracteristicas.SelectedText = "";
-            this.txtCaracteristicas.ShadowDecoration.Parent = this.txtCaracteristicas;
-            this.txtCaracteristicas.Size = new System.Drawing.Size(189, 198);
-            this.txtCaracteristicas.TabIndex = 60;
+            this.txtCaracteristicasFisicoQuimicas.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtCaracteristicasFisicoQuimicas.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtCaracteristicasFisicoQuimicas.DefaultText = "";
+            this.txtCaracteristicasFisicoQuimicas.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtCaracteristicasFisicoQuimicas.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtCaracteristicasFisicoQuimicas.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCaracteristicasFisicoQuimicas.DisabledState.Parent = this.txtCaracteristicasFisicoQuimicas;
+            this.txtCaracteristicasFisicoQuimicas.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCaracteristicasFisicoQuimicas.FillColor = System.Drawing.Color.Silver;
+            this.txtCaracteristicasFisicoQuimicas.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCaracteristicasFisicoQuimicas.FocusedState.Parent = this.txtCaracteristicasFisicoQuimicas;
+            this.txtCaracteristicasFisicoQuimicas.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCaracteristicasFisicoQuimicas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtCaracteristicasFisicoQuimicas.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCaracteristicasFisicoQuimicas.HoverState.Parent = this.txtCaracteristicasFisicoQuimicas;
+            this.txtCaracteristicasFisicoQuimicas.Location = new System.Drawing.Point(450, 576);
+            this.txtCaracteristicasFisicoQuimicas.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCaracteristicasFisicoQuimicas.Multiline = true;
+            this.txtCaracteristicasFisicoQuimicas.Name = "txtCaracteristicasFisicoQuimicas";
+            this.txtCaracteristicasFisicoQuimicas.PasswordChar = '\0';
+            this.txtCaracteristicasFisicoQuimicas.PlaceholderText = "";
+            this.txtCaracteristicasFisicoQuimicas.SelectedText = "";
+            this.txtCaracteristicasFisicoQuimicas.ShadowDecoration.Parent = this.txtCaracteristicasFisicoQuimicas;
+            this.txtCaracteristicasFisicoQuimicas.Size = new System.Drawing.Size(189, 198);
+            this.txtCaracteristicasFisicoQuimicas.TabIndex = 60;
             // 
             // label15
             // 
@@ -971,33 +1013,33 @@
             this.label15.TabIndex = 59;
             this.label15.Text = "Características";
             // 
-            // txtEvitar
+            // txtCondicionesAEvitar
             // 
-            this.txtEvitar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.txtEvitar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtEvitar.DefaultText = "";
-            this.txtEvitar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtEvitar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtEvitar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtEvitar.DisabledState.Parent = this.txtEvitar;
-            this.txtEvitar.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtEvitar.FillColor = System.Drawing.Color.Silver;
-            this.txtEvitar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEvitar.FocusedState.Parent = this.txtEvitar;
-            this.txtEvitar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEvitar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtEvitar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEvitar.HoverState.Parent = this.txtEvitar;
-            this.txtEvitar.Location = new System.Drawing.Point(124, 576);
-            this.txtEvitar.Margin = new System.Windows.Forms.Padding(4);
-            this.txtEvitar.Multiline = true;
-            this.txtEvitar.Name = "txtEvitar";
-            this.txtEvitar.PasswordChar = '\0';
-            this.txtEvitar.PlaceholderText = "";
-            this.txtEvitar.SelectedText = "";
-            this.txtEvitar.ShadowDecoration.Parent = this.txtEvitar;
-            this.txtEvitar.Size = new System.Drawing.Size(189, 84);
-            this.txtEvitar.TabIndex = 58;
+            this.txtCondicionesAEvitar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtCondicionesAEvitar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtCondicionesAEvitar.DefaultText = "";
+            this.txtCondicionesAEvitar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtCondicionesAEvitar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtCondicionesAEvitar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCondicionesAEvitar.DisabledState.Parent = this.txtCondicionesAEvitar;
+            this.txtCondicionesAEvitar.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCondicionesAEvitar.FillColor = System.Drawing.Color.Silver;
+            this.txtCondicionesAEvitar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCondicionesAEvitar.FocusedState.Parent = this.txtCondicionesAEvitar;
+            this.txtCondicionesAEvitar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCondicionesAEvitar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtCondicionesAEvitar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCondicionesAEvitar.HoverState.Parent = this.txtCondicionesAEvitar;
+            this.txtCondicionesAEvitar.Location = new System.Drawing.Point(124, 576);
+            this.txtCondicionesAEvitar.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCondicionesAEvitar.Multiline = true;
+            this.txtCondicionesAEvitar.Name = "txtCondicionesAEvitar";
+            this.txtCondicionesAEvitar.PasswordChar = '\0';
+            this.txtCondicionesAEvitar.PlaceholderText = "";
+            this.txtCondicionesAEvitar.SelectedText = "";
+            this.txtCondicionesAEvitar.ShadowDecoration.Parent = this.txtCondicionesAEvitar;
+            this.txtCondicionesAEvitar.Size = new System.Drawing.Size(189, 84);
+            this.txtCondicionesAEvitar.TabIndex = 58;
             // 
             // label14
             // 
@@ -1222,26 +1264,8 @@
             this.panelBotones.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelBotones.Location = new System.Drawing.Point(0, 0);
             this.panelBotones.Name = "panelBotones";
-            this.panelBotones.Size = new System.Drawing.Size(170, 769);
+            this.panelBotones.Size = new System.Drawing.Size(190, 769);
             this.panelBotones.TabIndex = 83;
-            // 
-            // guna2GradientTileButton1
-            // 
-            this.guna2GradientTileButton1.BorderRadius = 5;
-            this.guna2GradientTileButton1.CheckedState.Parent = this.guna2GradientTileButton1;
-            this.guna2GradientTileButton1.CustomImages.Parent = this.guna2GradientTileButton1;
-            this.guna2GradientTileButton1.FillColor = System.Drawing.Color.Gainsboro;
-            this.guna2GradientTileButton1.FillColor2 = System.Drawing.Color.Gainsboro;
-            this.guna2GradientTileButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GradientTileButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientTileButton1.HoverState.Parent = this.guna2GradientTileButton1;
-            this.guna2GradientTileButton1.Image = global::IDIEW.Properties.Resources.info;
-            this.guna2GradientTileButton1.Location = new System.Drawing.Point(400, 197);
-            this.guna2GradientTileButton1.Name = "guna2GradientTileButton1";
-            this.guna2GradientTileButton1.ShadowDecoration.Parent = this.guna2GradientTileButton1;
-            this.guna2GradientTileButton1.Size = new System.Drawing.Size(29, 30);
-            this.guna2GradientTileButton1.TabIndex = 77;
-            this.toolTip1.SetToolTip(this.guna2GradientTileButton1, "Temperatura de Ignicion");
             // 
             // pictureBox3
             // 
@@ -1279,6 +1303,7 @@
             // pictureBox
             // 
             this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox.Image = global::IDIEW.Properties.Resources.file_tips_one__1_;
             this.pictureBox.Location = new System.Drawing.Point(1095, 170);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(53, 51);
@@ -1290,6 +1315,15 @@
             // 
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip1.ToolTipTitle = "Info";
+            // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.TargetControl = this;
+            // 
+            // toolTip2
+            // 
+            this.toolTip2.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip2.ToolTipTitle = "Info";
             // 
             // EditorHDS
             // 
@@ -1365,19 +1399,19 @@
         private System.Windows.Forms.Label label8;
         private Guna.UI2.WinForms.Guna2TextBox txtTDI;
         private System.Windows.Forms.Label label9;
-        private Guna.UI2.WinForms.Guna2TextBox txtHDSes;
+        private Guna.UI2.WinForms.Guna2TextBox txtHDEspanol;
         private Guna.UI2.WinForms.Guna2TextBox txtNoCAS;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
-        private Guna.UI2.WinForms.Guna2TextBox txtLimites;
+        private Guna.UI2.WinForms.Guna2TextBox txtLimiteExposicion;
         private System.Windows.Forms.Label label18;
-        private Guna.UI2.WinForms.Guna2TextBox txtPrimeros;
+        private Guna.UI2.WinForms.Guna2TextBox txtPrimerosAuxilios;
         private System.Windows.Forms.Label label16;
-        private Guna.UI2.WinForms.Guna2TextBox txtCaracteristicas;
+        private Guna.UI2.WinForms.Guna2TextBox txtCaracteristicasFisicoQuimicas;
         private System.Windows.Forms.Label label15;
-        private Guna.UI2.WinForms.Guna2TextBox txtEvitar;
+        private Guna.UI2.WinForms.Guna2TextBox txtCondicionesAEvitar;
         private System.Windows.Forms.Label label14;
         private Guna.UI2.WinForms.Guna2TextBox txtIncompatibilidad;
         private System.Windows.Forms.Label label13;
@@ -1387,13 +1421,13 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label Organosdd;
-        private Guna.UI2.WinForms.Guna2TextBox txtOrganos;
+        private Guna.UI2.WinForms.Guna2TextBox txtOrganosAfectados;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
         private Guna.UI2.WinForms.Guna2TextBox txtSintomas;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
-        private Guna.UI2.WinForms.Guna2TextBox txtMedidas;
+        private Guna.UI2.WinForms.Guna2TextBox txtMedidasSanitarias;
         private System.Windows.Forms.Label label17;
         private Guna.UI2.WinForms.Guna2GradientButton btncancelar;
         private System.Windows.Forms.Label Lbl1;
@@ -1404,5 +1438,9 @@
         private System.Windows.Forms.Panel panelBotones;
         private Guna.UI2.WinForms.Guna2GradientTileButton guna2GradientTileButton1;
         private System.Windows.Forms.ToolTip toolTip1;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
+        private Guna.UI2.WinForms.Guna2GradientTileButton guna2GradientTileButton2;
+        private System.Windows.Forms.ToolTip toolTip2;
     }
 }

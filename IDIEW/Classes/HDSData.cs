@@ -64,5 +64,8 @@ namespace IDIEW.Classes
         public string NoHDS { get; set; }
         public string Area { get; set; } = "General";
         public string Cantidad { get; set; } = "N/A";
+
+        public List<string> PictogramasSeleccionados { get; set; } = new List<string>();
+
     }
 }

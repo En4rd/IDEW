@@ -300,6 +300,15 @@
   <ItemGroup>
     <None Include="Resources\info.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file-success.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file-tips-one.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file-tips-one %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
   <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
