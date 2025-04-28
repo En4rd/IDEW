@@ -206,3 +206,10 @@ C:\Users\dell\Documents\GitHub\IDEW\IDIEW\bin\Debug\PdfiumViewer.xml
 C:\Users\dell\Documents\GitHub\IDEW\IDIEW\bin\Debug\nl\PdfiumViewer.resources.dll
 C:\Users\dell\Documents\GitHub\IDEW\IDIEW\obj\Debug\IDIEW.Forms.PdfToTable_Service.EditorHDS.resources
 C:\Users\dell\Documents\GitHub\IDEW\IDIEW\obj\Debug\IDIEW.PdfToTable.resources
+C:\Users\dell\Desktop\JOSE PEREZ\USB\PROGRAMAS INTALADOS\VISUAL STUDIO\GitHub\IDEW\IDIEW\bin\Debug\x86\pdfium.dll
+C:\Users\dell\Desktop\JOSE PEREZ\USB\PROGRAMAS INTALADOS\VISUAL STUDIO\GitHub\IDEW\IDIEW\bin\Debug\x64\pdfium.dll
+C:\Users\dell\Desktop\JOSE PEREZ\USB\PROGRAMAS INTALADOS\VISUAL STUDIO\GitHub\IDEW\IDIEW\bin\Debug\PdfiumViewer.dll
+C:\Users\dell\Desktop\JOSE PEREZ\USB\PROGRAMAS INTALADOS\VISUAL STUDIO\GitHub\IDEW\IDIEW\bin\Debug\PdfiumViewer.xml
+C:\Users\dell\Desktop\JOSE PEREZ\USB\PROGRAMAS INTALADOS\VISUAL STUDIO\GitHub\IDEW\IDIEW\bin\Debug\nl\PdfiumViewer.resources.dll
+C:\Users\dell\Desktop\JOSE PEREZ\USB\PROGRAMAS INTALADOS\VISUAL STUDIO\GitHub\IDEW\IDIEW\obj\Debug\IDIEW.Forms.PdfToTable_Service.EditorHDS.resources
+C:\Users\dell\Desktop\JOSE PEREZ\USB\PROGRAMAS INTALADOS\VISUAL STUDIO\GitHub\IDEW\IDIEW\obj\Debug\IDIEW.PdfToTable.resources
